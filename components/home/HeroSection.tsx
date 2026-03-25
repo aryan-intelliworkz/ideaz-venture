@@ -1,55 +1,26 @@
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background images from Figma */}
-      <div className="absolute inset-0 bg-bg-primary">
+    <section className="relative h-screen flex items-center overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
         <Image
-          src="/assets/hero/hero-bg-left.png"
+          src="/assets/hero/HeroHome.png"
           alt=""
           fill
-          className="object-cover object-left opacity-40"
+          className="object-cover"
           priority
           aria-hidden="true"
         />
-        <Image
-          src="/assets/hero/hero-bg-right.png"
-          alt=""
-          fill
-          className="object-cover object-right opacity-40"
-          priority
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-primary/60 to-bg-primary" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary via-transparent to-bg-primary" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/70 via-transparent to-bg-primary" />
       </div>
 
-      {/* Large background text - "TR UST" and "US" positioned per Figma */}
-      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <span
-          className="absolute font-syne font-bold text-[80px] lg:text-[120px] text-white/20 whitespace-nowrap"
-          style={{
-            left: "51%",
-            top: "60%",
-            transform: "translateY(-50%)",
-            filter: "blur(2px)",
-          }}
-        >
-          TR UST
-        </span>
-        <span
-          className="absolute font-syne font-bold text-[80px] lg:text-[120px] text-white/20 whitespace-nowrap"
-          style={{
-            left: "62.2%",
-            top: "60%",
-            transform: "translateY(-50%)",
-            filter: "blur(2px)",
-          }}
-        >
-          US
+      {/* Large background "TRUST" text */}
+      <div className="absolute inset-0 flex items-end justify-center pointer-events-none select-none overflow-hidden pb-[5%]">
+        <span className="font-syne font-bold text-[120px] md:text-[200px] lg:text-[260px] text-white/15 tracking-tight leading-none">
+          TR&nbsp;&nbsp;UST
         </span>
       </div>
 
@@ -65,10 +36,9 @@ export default function HeroSection() {
           </p>
           <Link
             href="/get-in-touch"
-            className="inline-flex items-center gap-2 px-[54px] py-2 border border-white/20 font-bricolage text-[18px] text-white bg-bg-primary hover:bg-white/5 transition-colors duration-200"
+            className="inline-flex items-center px-8 py-3 border border-white/30 font-bricolage text-[16px] text-white hover:bg-white/10 transition-colors duration-200"
           >
             Let&apos;s Grow Together
-            <ArrowRight size={18} />
           </Link>
         </div>
       </div>

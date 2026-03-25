@@ -26,7 +26,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
   const toggleMobile = useCallback(() => setMobileOpen((prev) => !prev), []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-navbar backdrop-blur-md border-b border-white/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/80 backdrop-blur-md border-b border-white/5">
       <div className="mx-auto max-w-[1920px] flex items-center justify-between px-8 lg:px-[160px] h-[72px]">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">

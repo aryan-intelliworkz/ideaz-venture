@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* ============================
+   Ideaz Ventures - Design System
+   Colors, fonts, and custom theme
+   ============================ */
+
+@theme inline {
+  /* Brand Colors */
+  --color-bg-primary: #050505;
+  --color-bg-card: rgba(17, 17, 17, 0.2);
+  --color-bg-navbar: rgba(5, 5, 5, 0.2);
+  --color-bg-overlay: rgba(5, 5, 5, 0.5);
+
+  --color-white: #ffffff;
+  --color-red: #ec1c24;
+  --color-blue-purple: #2e3191;
+
+  --color-gray-100: #dddddd;
+  --color-gray-200: #bbbbbb;
+  --color-gray-300: #999999;
+  --color-gray-400: #888888;
+  --color-gray-500: #666666;
+  --color-gray-600: #333333;
+
+  /* Font families */
+  --font-syne: "Syne", sans-serif;
+  --font-archivo: "Archivo", sans-serif;
+  --font-bricolage: "Bricolage Grotesque", sans-serif;
+}
+
+/* Global reset and base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: "Bricolage Grotesque", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #ec1c24;
+  color: #ffffff;
+}
+
+/* Gradient utility for the brand gradient */
+.gradient-brand {
+  background: linear-gradient(0deg, #ec1c24 0%, #2e3191 100%);
+}
+
+.gradient-brand-text {
+  background: linear-gradient(0deg, #ec1c24 0%, #2e3191 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}

@@ -1,5 +1,4 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import PrimaryButton from "@/components/ui/PrimaryButton";
 
 const stats = [
   { value: "₹174 Crore", label: "Strategic Exit Achieved." },
@@ -12,59 +11,73 @@ export default function StatsSection() {
   return (
     <section className="relative py-20 lg:py-32">
       <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          {/* Left: intro text */}
-          <div className="flex-1 flex flex-col gap-6">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-6 h-6 flex items-center justify-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+        <div className="flex flex-col gap-[60px]">
+          {/* Top row: Arrow + Title | Paragraphs + Button */}
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-[32px]">
+            {/* Left: Arrow + Title */}
+            <div className="flex items-start gap-4 shrink-0">
+              {/* Red arrow SVG */}
+              <svg
+                width="69"
+                height="63"
+                viewBox="0 0 69 63"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="shrink-0 mt-1"
+              >
+                <path
+                  d="M0 31.25H55M55 31.25L38 14M55 31.25L38 48.5"
+                  stroke="#EC1C24"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <h2 className="font-archivo font-medium text-[32px] lg:text-[40px] leading-[1.2] text-white capitalize max-w-[510px]">
+                Startup Execution Backed by Experience
+              </h2>
+            </div>
+
+            {/* Right: Paragraphs + Button */}
+            <div className="flex flex-col gap-[25px] flex-1">
+              <div className="flex flex-col gap-[14px]">
+                <p className="font-bricolage text-[18px] leading-[1.44] text-gray-400">
+                  Building a startup requires more than great ideas. It demands
+                  strategic clarity, reliable technology, and disciplined
+                  execution.
+                </p>
+                <p className="font-bricolage text-[18px] leading-[1.44] text-gray-400">
+                  At Ideaz Ventures, we help founders transform early concepts
+                  into market-ready products and scalable platforms.
+                </p>
+                <p className="font-bricolage text-[18px] leading-[1.44] text-gray-400">
+                  Our team works across strategy, product development, branding,
+                  and operational execution to ensure every venture is built on
+                  a strong foundation.
+                </p>
               </div>
+              <PrimaryButton as="a" href="/get-in-touch" className="w-fit">
+                Let&apos;s Grow Together
+              </PrimaryButton>
             </div>
-            <h2 className="font-archivo font-medium text-[32px] lg:text-[40px] leading-[1.2] text-white capitalize">
-              Startup Execution Backed by Experience
-            </h2>
-            <div className="space-y-4">
-              <p className="font-bricolage text-[18px] leading-[1.44] text-gray-400">
-                Building a startup requires more than great ideas. It demands
-                strategic clarity, reliable technology, and disciplined
-                execution.
-              </p>
-              <p className="font-bricolage text-[18px] leading-[1.44] text-gray-400">
-                At Ideaz Ventures, we help founders transform early concepts
-                into market-ready products and scalable platforms.
-              </p>
-              <p className="font-bricolage text-[18px] leading-[1.44] text-gray-400">
-                Our team works across strategy, product development, branding,
-                and operational execution to ensure every venture is built on a
-                strong foundation.
-              </p>
-            </div>
-            <Link
-              href="/get-in-touch"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 font-bricolage text-[18px] text-white bg-bg-primary hover:bg-white/5 transition-colors mt-4 w-fit"
-            >
-              Let&apos;s Grow Together
-              <ArrowRight size={18} />
-            </Link>
           </div>
 
-          {/* Right: stats grid */}
-          <div className="grid grid-cols-2 gap-8 lg:gap-12 flex-1">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col gap-2">
-                <span className="font-archivo font-medium text-[32px] lg:text-[40px] leading-[1.09] text-white capitalize">
-                  {stat.value}
-                </span>
-                <div className="h-[1px] w-full bg-gradient-to-r from-white/20 to-transparent" />
-                <p className="font-bricolage text-[18px] leading-[1.44] text-gray-100">
+          {/* Stats row: 4 in a row separated by vertical lines */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className={`flex flex-col gap-6 ${
+                  i !== 0 ? "lg:border-l lg:border-gray-400 lg:pl-8" : ""
+                } ${i === 2 ? "border-l border-gray-400 pl-6 lg:pl-8" : ""} ${i === 1 || i === 3 ? "border-l border-gray-400 pl-6 lg:pl-8" : ""}`}
+              >
+                <div className="flex flex-col gap-4">
+                  <span className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[40px] leading-[1.09] text-white capitalize">
+                    {stat.value}
+                  </span>
+                  <div className="h-[1px] w-full bg-gray-400" />
+                </div>
+                <p className="font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-100">
                   {stat.label}
                 </p>
               </div>

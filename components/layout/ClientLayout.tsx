@@ -18,7 +18,7 @@ export default function ClientLayout({
   return (
     <>
       <Navbar onOpenModal={openModal} />
-      <main className="flex-1 pt-[72px]">{children}</main>
+      <main className="flex-1 pt-[100px]">{children}</main>
       <Footer />
       <StrategyCallModal isOpen={modalOpen} onClose={closeModal} />
     </>

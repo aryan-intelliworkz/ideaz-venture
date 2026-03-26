@@ -76,3 +76,204 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #666666;
 }
+
+/* ============================
+   Primary Button — spinning conic gradient border
+   with red glow hover effect (reference style)
+   ============================ */
+.primary-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 2px;
+  text-decoration: none;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+/* The dark inner background that clips the spinning border to edges */
+.primary-btn-bg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #050505;
+  border-radius: 0.25em;
+  padding: 8px 54px;
+  gap: 10px;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Button text */
+.primary-btn-text {
+  position: relative;
+  z-index: 1;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Red blurred glow circle — hidden by default, appears on hover */
+.primary-btn-glow {
+  position: absolute;
+  aspect-ratio: 1;
+  width: 90%;
+  background-color: #ec1c24;
+  opacity: 0;
+  filter: blur(1.5rem);
+  border-radius: 99rem;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.primary-btn:hover .primary-btn-glow {
+  opacity: 1;
+}
+
+/* Spinning conic gradient that creates the animated border */
+.primary-btn-border-spin {
+  position: absolute;
+  aspect-ratio: 1;
+  width: 110%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #050505 100deg,
+    #ec1c24 180deg,
+    #050505 260deg
+  );
+  animation: primary-btn-spin 3s linear infinite;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes primary-btn-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================
+   Tech Stack Infinite Scroll
+   ============================ */
+.tech-scroll-track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.tech-scroll-content {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: tech-scroll 25s linear infinite;
+}
+
+.tech-scroll-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tech-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ============================
+   Services Section — Accordion Cards
+   ============================ */
+
+/* Vertical text for collapsed cards */
+.service-card-vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  letter-spacing: 0.02em;
+}
+
+/* Arrow circle button — same spinning border as primary button */
+.service-arrow-btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.service-arrow-btn-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.service-arrow-glow {
+  position: absolute;
+  aspect-ratio: 1;
+  width: 90%;
+  background-color: #ec1c24;
+  opacity: 0;
+  filter: blur(0.8rem);
+  border-radius: 99rem;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.service-arrow-btn:hover .service-arrow-glow,
+.service-card:hover .service-arrow-glow {
+  opacity: 0.6;
+}
+
+.service-arrow-border-spin {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  aspect-ratio: 1;
+  width: 140%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #050505 100deg,
+    #ec1c24 180deg,
+    #050505 260deg
+  );
+  animation: primary-btn-spin 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Service card hover background */
+.service-card {
+  background: transparent;
+  transition:
+    background 0.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+    flex 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.service-card-expanded {
+  background: rgba(255, 255, 255, 0.02);
+}

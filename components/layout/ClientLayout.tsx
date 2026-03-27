@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ThemeProvider from "./ThemeProvider";
 import StrategyCallModal from "@/components/modals/StrategyCallModal";
 
 export default function ClientLayout({
@@ -16,11 +17,11 @@ export default function ClientLayout({
   const closeModal = useCallback(() => setModalOpen(false), []);
 
   return (
-    <>
+    <ThemeProvider>
       <Navbar onOpenModal={openModal} />
       <main className="flex-1 pt-[100px]">{children}</main>
       <Footer />
       <StrategyCallModal isOpen={modalOpen} onClose={closeModal} />
-    </>
+    </ThemeProvider>
   );
 }

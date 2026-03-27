@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import PrimaryButton from "@/components/ui/PrimaryButton";
 import { cn } from "@/lib/utils";
 
 /* ─── Process Steps Data ─── */
@@ -95,43 +94,49 @@ export default function HowWeWorkContent() {
 
   return (
     <>
-      {/* ── Intro Hero Block ── */}
-      <section className="py-16 lg:py-28">
-        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="max-w-[900px] mx-auto text-center">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[52px] xl:text-[60px] leading-[1.1] text-white capitalize mb-5 lg:mb-6">
-              A Clear Process To Build, Launch, And Scale Products
-            </h2>
-            <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.6] text-white/50 mb-8 lg:mb-10 max-w-[780px] mx-auto">
-              We follow a structured yet flexible product development process
-              that helps founders move from idea to launch with clarity, speed,
-              and confidence — without unnecessary complexity.
-            </p>
-            <PrimaryButton as="a" href="/get-in-touch">
-              Book an Idea Discovery Call
-            </PrimaryButton>
-          </div>
-        </div>
-      </section>
-
       {/* ── Built for Execution ── */}
-      <section className="py-12 lg:py-20">
+      <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="flex items-start gap-4 mb-6">
-            {/* Red dot accent */}
-            <span className="mt-3 w-2.5 h-2.5 rounded-full bg-[#EC1C24] shrink-0" />
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[48px] leading-[1.1] text-white capitalize">
-              Built For Execution,
-              <br />
-              Not Guesswork.
-            </h2>
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+            {/* Left — arrow + heading */}
+            <div className="flex items-start gap-4 lg:w-[45%] shrink-0">
+              <svg
+                width="40"
+                height="20"
+                viewBox="0 0 40 20"
+                fill="none"
+                className="mt-2 shrink-0"
+              >
+                <path
+                  d="M0 10H36M36 10L28 2M36 10L28 18"
+                  stroke="#EC1C24"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.15] text-white">
+                Built For Execution,
+                <br />
+                Not Guesswork.
+              </h2>
+            </div>
+
+            {/* Right — description */}
+            <div className="lg:w-[55%]">
+              <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/60 mb-4">
+                Every product we build follows a proven execution framework. It
+                keeps teams aligned, reduces risk, and ensures progress at every
+                stage — while still allowing room to adapt as you learn from
+                users and the market.
+              </p>
+              <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/60">
+                From validation to launch and beyond, we take ownership of
+                building, shipping, and scaling digital products that are
+                designed to succeed in real markets.
+              </p>
+            </div>
           </div>
-          <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.75] text-white/50 max-w-[780px]">
-            Every product we build follows a proven execution framework. It
-            keeps teams aligned, reduces risk, and ensures progress at every
-            stage — while still allowing room to adapt as you learn from users
-            and the market.
-          </p>
         </div>
       </section>
 
@@ -153,7 +158,7 @@ export default function HowWeWorkContent() {
                       !isEven && "lg:order-2",
                     )}
                   >
-                    <p className="font-bricolage text-[13px] lg:text-[14px] leading-[1.6] text-white/40 italic mb-4">
+                    <p className="font-bricolage text-[13px] lg:text-[14px] leading-[1.6] text-[#EC1C24] italic mb-4">
                       {step.tagline}
                     </p>
                     <div className="w-full h-px bg-white/[0.08] mb-6" />
@@ -168,7 +173,7 @@ export default function HowWeWorkContent() {
                   {/* Image */}
                   <div
                     className={cn(
-                      "relative aspect-[4/3] overflow-hidden rounded-[4px]",
+                      "relative aspect-[16/10] overflow-hidden rounded-[4px]",
                       !isEven && "lg:order-1",
                     )}
                   >

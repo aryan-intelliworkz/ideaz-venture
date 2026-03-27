@@ -40,11 +40,220 @@ body {
   font-family: "Bricolage Grotesque", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 ::selection {
   background-color: #ec1c24;
   color: #ffffff;
+}
+
+/* ============================
+   Light Theme Overrides
+   ============================ */
+[data-theme="light"] body {
+  background-color: #f5f5f5;
+  color: #111111;
+}
+
+/* Nav & layout backgrounds */
+.nav-bg {
+  background: rgba(5, 5, 5, 0.2);
+}
+[data-theme="light"] .nav-bg {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.mobile-menu-bg {
+  background-color: var(--color-bg-primary);
+}
+[data-theme="light"] .mobile-menu-bg {
+  background-color: #f5f5f5;
+}
+
+/* Nav link colors */
+.nav-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.nav-link:hover {
+  color: #ffffff;
+}
+.nav-link-active {
+  color: #ffffff;
+}
+[data-theme="light"] .nav-link {
+  color: rgba(0, 0, 0, 0.55);
+}
+[data-theme="light"] .nav-link:hover {
+  color: #111111;
+}
+[data-theme="light"] .nav-link-active {
+  color: #111111;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+[data-theme="light"] .theme-toggle-btn {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Text colors */
+[data-theme="light"] .text-white {
+  color: #111111;
+}
+[data-theme="light"] .text-white\/50 {
+  color: rgba(17, 17, 17, 0.5);
+}
+[data-theme="light"] .text-white\/60 {
+  color: rgba(17, 17, 17, 0.6);
+}
+[data-theme="light"] .text-white\/70 {
+  color: rgba(17, 17, 17, 0.7);
+}
+[data-theme="light"] .text-white\/80 {
+  color: rgba(17, 17, 17, 0.8);
+}
+[data-theme="light"] .text-gray-300 {
+  color: #444444;
+}
+[data-theme="light"] .text-gray-400 {
+  color: #555555;
+}
+
+/* Background colors */
+[data-theme="light"] .bg-bg-primary {
+  background-color: #f5f5f5;
+}
+[data-theme="light"] .bg-\[\#050505\] {
+  background-color: #1a1a2e;
+}
+[data-theme="light"] .bg-\[\#0a0a0a\] {
+  background-color: #ffffff;
+}
+[data-theme="light"] .bg-\[\#111\] {
+  background-color: #ffffff;
+}
+[data-theme="light"] .bg-\[\#111111\] {
+  background-color: #ffffff;
+}
+[data-theme="light"] .bg-\[\#0d0d0d\] {
+  background-color: #ffffff;
+}
+[data-theme="light"] .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+[data-theme="light"] .bg-white\/\[0\.02\] {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+[data-theme="light"] .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Borders */
+[data-theme="light"] .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+[data-theme="light"] .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .border-\[\#1a1a1a\] {
+  border-color: #e0e0e0;
+}
+[data-theme="light"] .border-\[\#222\] {
+  border-color: #e0e0e0;
+}
+[data-theme="light"] .border-\[\#333\] {
+  border-color: #d0d0d0;
+}
+
+/* Divide */
+[data-theme="light"] .divide-white\/10 > :not(:first-child) {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Primary button light theme */
+[data-theme="light"] .primary-btn-bg {
+  background-color: #111111;
+}
+[data-theme="light"] .primary-btn-text {
+  color: #ffffff;
+}
+[data-theme="light"] .primary-btn-border-spin {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #e0e0e0 100deg,
+    #ec1c24 180deg,
+    #e0e0e0 260deg
+  );
+}
+
+/* Service arrow button light theme */
+[data-theme="light"] .service-arrow-btn-bg {
+  background-color: #111111;
+}
+[data-theme="light"] .service-arrow-border-spin {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #e0e0e0 100deg,
+    #ec1c24 180deg,
+    #e0e0e0 260deg
+  );
+}
+
+/* Card backgrounds */
+[data-theme="light"] .service-card-expanded {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Scrollbar light */
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: #aaaaaa;
+}
+
+/* Placeholder text in forms */
+[data-theme="light"] ::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Input / textarea backgrounds in light mode */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  color: #111111;
+}
+
+/* Footer stays dark */
+[data-theme="light"] footer {
+  background-color: #1a1a2e;
+  color: #ffffff;
+}
+[data-theme="light"] footer .text-white {
+  color: #ffffff;
+}
+[data-theme="light"] footer .text-white\/50 {
+  color: rgba(255, 255, 255, 0.5);
+}
+[data-theme="light"] footer .text-white\/60 {
+  color: rgba(255, 255, 255, 0.6);
+}
+[data-theme="light"] footer .text-white\/70 {
+  color: rgba(255, 255, 255, 0.7);
+}
+[data-theme="light"] footer .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Gradient utility for the brand gradient */

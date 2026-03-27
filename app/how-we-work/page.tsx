@@ -5,10 +5,10 @@ export default function HowWeWorkPage() {
   return (
     <>
       <MasterLayout
-        backgroundImage="https://picsum.photos/seed/howwework-hero/1920/800?grayscale"
-        heading="How We Work"
-        description="From idea to execution — a structured, transparent process that keeps founders in control and products on track."
-        ctaText="Get In Touch"
+        backgroundImage="/assets/whoWeAreBg.png"
+        heading="A Clear Process To Build, Launch, And Scale Products"
+        description="We follow a structured yet flexible product development process that helps founders move from idea to launch with clarity, speed, and confidence — without unnecessary complexity."
+        ctaText="Book an Idea Discovery Call"
         ctaHref="/get-in-touch"
       />
       <HowWeWorkContent />

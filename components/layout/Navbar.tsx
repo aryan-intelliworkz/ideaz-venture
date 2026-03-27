@@ -3,9 +3,10 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
   { label: "Services", href: "/" },
@@ -23,12 +24,13 @@ interface NavbarProps {
 export default function Navbar({ onOpenModal }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   const toggleMobile = useCallback(() => setMobileOpen((prev) => !prev), []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(5,5,5,0.2)] backdrop-blur-md">
-      <div className="mx-auto max-w-[1920px] flex items-center justify-between px-8 lg:px-[160px] h-[100px]">
+    <nav className="fixed top-0 left-0 right-0 z-50 nav-bg backdrop-blur-md">
+      <div className="mx-auto max-w-[1920px] flex items-center justify-between px-6 md:px-8 lg:px-[160px] h-[100px]">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -50,8 +52,8 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "font-bricolage text-[18px] font-normal leading-[1.2] transition-colors duration-200 flex items-center gap-2",
-                  isActive ? "text-white" : "text-white/70 hover:text-white",
+                  "font-bricolage text-[18px] font-normal leading-[1.2] transition-colors duration-200 flex items-center gap-2 nav-link",
+                  isActive ? "nav-link-active" : "",
                 )}
               >
                 {link.label}
@@ -61,25 +63,53 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
           })}
         </div>
 
-        {/* CTA Button */}
-        <PrimaryButton onClick={onOpenModal} className="hidden lg:flex">
-          Book Strategy Call
-        </PrimaryButton>
+        {/* Desktop: Theme toggle + CTA */}
+        <div className="hidden lg:flex items-center gap-4">
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center theme-toggle-btn transition-colors cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <Sun size={18} className="text-white/70" />
+            ) : (
+              <Moon size={18} className="text-gray-700" />
+            )}
+          </button>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMobile}
-          className="lg:hidden text-white p-2"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <PrimaryButton onClick={onOpenModal}>
+            Book Strategy Call
+          </PrimaryButton>
+        </div>
+
+        {/* Mobile: Theme toggle + Hamburger */}
+        <div className="flex lg:hidden items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center theme-toggle-btn transition-colors cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <Sun size={16} className="text-white/70" />
+            ) : (
+              <Moon size={16} className="text-gray-700" />
+            )}
+          </button>
+          <button
+            onClick={toggleMobile}
+            className="text-current p-2"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 top-[100px] bg-bg-primary z-40 transition-transform duration-300",
+          "lg:hidden fixed inset-0 top-[100px] mobile-menu-bg z-40 transition-transform duration-300",
           mobileOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
@@ -94,8 +124,8 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "font-bricolage text-[24px] transition-colors flex items-center gap-3",
-                  isActive ? "text-white" : "text-white/70",
+                  "font-bricolage text-[24px] transition-colors flex items-center gap-3 nav-link",
+                  isActive ? "nav-link-active" : "",
                 )}
               >
                 {link.label}

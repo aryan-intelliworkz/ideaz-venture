@@ -1,91 +1,126 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
 
+/* Company logo names matching screenshot */
+const companyLogos = [
+  { name: "DATANOTE", superscript: "®", subtitle: "OpenLogic ERP" },
+  { name: "talentwale", suffix: ".com", superscript: "®" },
+  { name: "realty", suffix: "mart.com", superscript: "®" },
+  { name: "ATCO MAART", superscript: "" },
+];
+
+/* Arrow button with spinning gradient border — same as services section */
+function ArrowButton() {
+  return (
+    <div className="service-arrow-btn shrink-0">
+      <div className="service-arrow-btn-bg">
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 17 17"
+          fill="none"
+          className="relative z-10"
+        >
+          <path
+            d="M4 13L13 4M13 4H5M13 4V12"
+            stroke="#EC1C24"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <div className="service-arrow-glow" />
+      </div>
+      <div className="service-arrow-border-spin" />
+    </div>
+  );
+}
+
+function CompanyLogo({ logo }: { logo: (typeof companyLogos)[number] }) {
+  return (
+    <div className="flex items-baseline gap-0">
+      <span className="font-archivo font-bold text-[18px] md:text-[20px] text-white tracking-wide">
+        {logo.name}
+      </span>
+      {logo.suffix && (
+        <span className="font-archivo font-normal text-[18px] md:text-[20px] text-white">
+          {logo.suffix}
+        </span>
+      )}
+      {logo.superscript && (
+        <sup className="text-[10px] text-white ml-0.5">{logo.superscript}</sup>
+      )}
+      {logo.subtitle && (
+        <span className="ml-2 font-bricolage text-[10px] text-white/60 tracking-wider uppercase">
+          {logo.subtitle}
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default function CaseStudiesPreview() {
+  const cards = caseStudies.slice(0, 4);
+
   return (
     <section className="py-20 lg:py-32">
-      <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
-        {/* Section heading */}
-        <div className="mb-10">
-          <h2 className="font-archivo font-medium text-[32px] lg:text-[40px] leading-[1.09] text-white capitalize">
-            Execution Stories
-          </h2>
-        </div>
+      <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-6 lg:items-stretch">
+          {/* Left: Chess image + text block — matches total height of right grid */}
+          <div className="flex flex-col lg:w-[35%] shrink-0">
+            {/* Chess 3D image — fills available space above the text block */}
+            <div className="relative w-full flex-1 min-h-[300px] md:min-h-[350px]">
+              <Image
+                src="/assets/ChessImg.png"
+                alt="Execution Stories"
+                fill
+                className="object-contain object-center"
+                sizes="(max-width: 1024px) 100vw, 35vw"
+              />
+            </div>
 
-        <div className="flex flex-col lg:flex-row gap-10">
-          {/* Left: Hero card with background image */}
-          <div className="relative flex-shrink-0 lg:w-[37.5%] overflow-hidden min-h-[600px]">
-            <Image
-              src="/assets/sections/case-studies-hero.png"
-              alt="Execution Stories"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent" />
-            {/* Overlay text card at bottom */}
-            <div className="absolute bottom-0 left-0 right-0 bg-bg-primary/50 border border-gray-100 p-8 lg:p-10 backdrop-blur-sm">
-              <div className="flex flex-col items-center text-center gap-6">
-                <h3 className="font-archivo font-medium text-[40px] leading-[1.09] text-white capitalize">
-                  Execution Stories
-                </h3>
-                <p className="font-bricolage font-medium text-[24px] leading-[1.5] text-white">
-                  Built. Launched. Validated.
-                </p>
-              </div>
+            {/* Text block at bottom — bordered card */}
+            <div className="border border-gray-600 rounded-[20px] p-6 md:p-8 lg:p-10 bg-bg-card mt-4">
+              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.09] text-white capitalize">
+                Execution Stories
+              </h2>
+              <p className="font-bricolage font-medium text-[18px] md:text-[22px] lg:text-[24px] leading-[1.5] text-white mt-3">
+                Built. Launched. Validated.
+              </p>
             </div>
           </div>
 
-          {/* Right: 2x2 Case study cards */}
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
-            {caseStudies.slice(0, 4).map((cs) => (
+          {/* Right: 2x2 cards grid — each card equal height */}
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 auto-rows-fr">
+            {cards.map((cs, index) => (
               <Link
                 href={`/case-studies/${cs.slug}`}
                 key={cs.slug}
-                className="border border-gray-100 rounded-[30px] p-8 hover:border-white/30 transition-all duration-300 group bg-transparent"
+                className="group border border-gray-600 rounded-[30px] p-5 md:p-6 lg:p-7 bg-bg-card hover:border-white/30 transition-all duration-300 flex flex-col"
               >
-                <div className="flex flex-col gap-6 h-full">
-                  {/* Top: Logo area + arrow button */}
-                  <div className="flex items-center justify-between">
-                    <div className="font-archivo font-medium text-[18px] text-white/90">
-                      {cs.subtitle}
-                    </div>
-                    <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-bg-primary to-red p-[1px]">
-                      <div className="w-full h-full rounded-full bg-bg-primary flex items-center justify-center">
-                        <ArrowUpRight
-                          size={18}
-                          className="text-white group-hover:text-red transition-colors"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                {/* Top: company logo + arrow */}
+                <div className="flex items-start justify-between mb-4">
+                  <CompanyLogo logo={companyLogos[index]} />
+                  <ArrowButton />
+                </div>
 
-                  {/* Title */}
-                  <h4 className="font-bricolage text-[18px] leading-[1.2] text-gray-100">
-                    {cs.title.endsWith(".") ? cs.title : `${cs.title}.`}
-                  </h4>
+                {/* Description */}
+                <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.5] text-gray-400 mb-auto">
+                  {cs.description}
+                </p>
 
-                  {/* Stats */}
-                  <p className="font-bricolage text-[18px] leading-[1.44] text-gray-500 mt-auto">
-                    {cs.stats
-                      .map((s) => `${s.value} ${s.label.toLowerCase()}.`)
-                      .join("\n")}
-                  </p>
+                {/* Stats */}
+                <div className="font-bricolage text-[13px] md:text-[14px] leading-[1.7] text-gray-500 mt-4">
+                  {cs.stats.map((s) => (
+                    <div key={s.label}>
+                      {s.value} {s.label.toLowerCase()}.
+                    </div>
+                  ))}
                 </div>
               </Link>
             ))}
           </div>
-        </div>
-
-        {/* View All link */}
-        <div className="mt-10">
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center gap-2 font-bricolage text-[18px] text-white hover:text-red transition-colors"
-          >
-            View All Case Studies <ArrowRight size={18} />
-          </Link>
         </div>
       </div>
     </section>

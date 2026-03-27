@@ -40,7 +40,10 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${archivo.variable} ${bricolage.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-bg-primary text-white font-bricolage">
+      <body
+        className="min-h-full flex flex-col bg-bg-primary text-white font-bricolage"
+        suppressHydrationWarning
+      >
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

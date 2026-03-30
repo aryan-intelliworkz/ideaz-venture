@@ -42,7 +42,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8 xl:gap-[60px]">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 min-[1800px]:gap-[60px]">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -52,7 +52,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "font-bricolage text-[18px] font-normal leading-[1.2] transition-colors duration-200 flex items-center gap-2 nav-link",
+                  "font-bricolage text-[14px] xl:text-[15px] 2xl:text-[16px] min-[1800px]:text-[18px] font-normal leading-[1.2] transition-colors duration-200 flex items-center gap-2 nav-link",
                   isActive ? "nav-link-active" : "",
                 )}
               >
@@ -124,7 +124,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "font-bricolage text-[24px] transition-colors flex items-center gap-3 nav-link",
+                  "font-bricolage text-[20px] sm:text-[22px] md:text-[24px] transition-colors flex items-center gap-3 nav-link",
                   isActive ? "nav-link-active" : "",
                 )}
               >

@@ -47,10 +47,10 @@ export default function GetInTouchPage() {
       />
 
       {/* Arrow Section + Form */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Arrow heading + description row */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-12 lg:mb-16">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-10 md:mb-12 lg:mb-16">
             {/* Left — arrow + heading */}
             <div className="flex items-start gap-4 lg:w-[40%] shrink-0">
               <svg
@@ -98,10 +98,10 @@ export default function GetInTouchPage() {
       </section>
 
       {/* Our Global Offices */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section heading */}
-          <div className="text-center mb-10 lg:mb-14">
+          <div className="text-center mb-8 md:mb-10 lg:mb-14">
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.15] text-white capitalize mb-4">
               Our Global Offices
             </h2>

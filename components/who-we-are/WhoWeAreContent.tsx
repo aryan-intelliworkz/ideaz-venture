@@ -351,7 +351,7 @@ export default function WhoWeAreContent() {
   return (
     <>
       {/* ── Intro: "We Don't Just Build Products…" ── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
             {/* Left — arrow + heading */}
@@ -371,7 +371,7 @@ export default function WhoWeAreContent() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.15] text-white">
+              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.15] text-white">
                 We Don&apos;t Just Build Products
                 <br />
                 We Execute Startups.
@@ -396,11 +396,11 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* ── What Makes Us Different (Accordion) ── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section heading */}
           <div className="flex flex-col items-center gap-3 mb-10">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize text-center">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
               What Makes Us Different
             </h2>
             <p className="font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
@@ -552,11 +552,11 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* ── Mission & Vision (Venn Diagram) ── */}
-      <section className="py-20 lg:py-32 overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-28 overflow-hidden">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize">
+          <div className="text-center mb-10 md:mb-12 lg:mb-16">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Mission & Vision
             </h2>
             <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
@@ -570,7 +570,7 @@ export default function WhoWeAreContent() {
             {/* Left Circle — Our Mission */}
             <div className="relative w-[380px] lg:w-[460px] xl:w-[520px] h-[380px] lg:h-[460px] xl:h-[520px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center z-10">
               <div className="flex flex-col items-center gap-4 px-10 lg:px-14 -translate-x-4 lg:-translate-x-6">
-                <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[32px] leading-[1.09] text-white capitalize">
+                <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[28px] min-[1800px]:text-[32px] leading-[1.09] text-white capitalize">
                   Our Mission
                 </h3>
                 <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.6] text-white/70 max-w-[260px]">
@@ -610,7 +610,7 @@ export default function WhoWeAreContent() {
             {/* Right Circle — Our Vision */}
             <div className="relative w-[380px] lg:w-[460px] xl:w-[520px] h-[380px] lg:h-[460px] xl:h-[520px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center -ml-[70px] lg:-ml-[90px] xl:-ml-[100px] z-10">
               <div className="flex flex-col items-center gap-4 px-10 lg:px-14 translate-x-4 lg:translate-x-6">
-                <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[32px] leading-[1.09] text-white capitalize">
+                <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[28px] min-[1800px]:text-[32px] leading-[1.09] text-white capitalize">
                   Our Vision
                 </h3>
                 <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.6] text-white/70 max-w-[260px]">
@@ -674,11 +674,11 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* ── Who We Work With (Carousel) ── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
-          <div className="text-center mb-10 lg:mb-14">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize">
+          <div className="text-center mb-8 md:mb-10 lg:mb-14">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Who We Work With
             </h2>
             <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
@@ -710,7 +710,7 @@ export default function WhoWeAreContent() {
                     )}
                   />
                   {/* Dashed line below except last */}
-                  <span className="font-bricolage text-[14px] text-white leading-[1.4]">
+                  <span className="font-bricolage text-[13px] lg:text-[14px] text-white leading-[1.4]">
                     {item.title}
                   </span>
                 </button>
@@ -751,10 +751,10 @@ export default function WhoWeAreContent() {
               >
                 {String(activeWorkWith + 1).padStart(2, "0")}
               </span>
-              <h3 className="font-archivo font-medium text-[20px] leading-[1.2] text-white mb-3">
+              <h3 className="font-archivo font-medium text-[18px] xl:text-[20px] leading-[1.2] text-white mb-3">
                 {workWithData[activeWorkWith].title}
               </h3>
-              <p className="font-bricolage text-[14px] leading-[1.6] text-white/60">
+              <p className="font-bricolage text-[13px] xl:text-[14px] leading-[1.6] text-white/60">
                 {workWithData[activeWorkWith].description}
               </p>
             </div>
@@ -791,11 +791,11 @@ export default function WhoWeAreContent() {
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-archivo font-medium text-[18px] leading-[1.2] text-white">
+                    <h3 className="font-archivo font-medium text-[16px] md:text-[18px] leading-[1.2] text-white">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="font-bricolage text-[14px] leading-[1.6] text-white/60">
+                  <p className="font-bricolage text-[13px] md:text-[14px] leading-[1.6] text-white/60">
                     {item.description}
                   </p>
                 </div>
@@ -806,11 +806,11 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* ── Our Core Principles ── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
-          <div className="text-center mb-10 lg:mb-14">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize">
+          <div className="text-center mb-8 md:mb-10 lg:mb-14">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Our Core Principles
             </h2>
             <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
@@ -835,7 +835,7 @@ export default function WhoWeAreContent() {
                   />
                 </div>
                 <div className="p-6 lg:p-8">
-                  <h3 className="font-archivo font-medium text-[20px] lg:text-[24px] leading-[1.2] text-white mb-3">
+                  <h3 className="font-archivo font-medium text-[20px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.2] text-white mb-3">
                     {principle.title}
                   </h3>
                   <p className="font-bricolage text-[14px] lg:text-[16px] leading-[1.6] text-white/60">
@@ -849,11 +849,11 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* ── How We Approach Execution ── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
-          <div className="text-center mb-10 lg:mb-14">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize">
+          <div className="text-center mb-8 md:mb-10 lg:mb-14">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               How We Approach Execution
             </h2>
             <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[780px] mx-auto">
@@ -882,7 +882,7 @@ export default function WhoWeAreContent() {
                 <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-10 lg:gap-16">
                   {/* Left — Text content */}
                   <div className="flex flex-col lg:w-[55%] py-4">
-                    <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[30px] leading-[1.15] text-white mb-6">
+                    <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[27px] min-[1800px]:text-[30px] leading-[1.15] text-white mb-6">
                       {step.title}
                     </h3>
                     <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/50 mb-5">
@@ -924,10 +924,10 @@ export default function WhoWeAreContent() {
                           />
                         </div>
                         <div className="pt-4 pb-1">
-                          <h4 className="font-archivo font-medium text-[18px] leading-[1.3] text-white mb-1.5">
+                          <h4 className="font-archivo font-medium text-[16px] md:text-[17px] lg:text-[18px] leading-[1.3] text-white mb-1.5">
                             {step.title}
                           </h4>
-                          <p className="font-bricolage text-[13px] leading-[1.5] text-white/50">
+                          <p className="font-bricolage text-[12px] md:text-[13px] leading-[1.5] text-white/50">
                             {step.cardDesc}
                           </p>
                         </div>

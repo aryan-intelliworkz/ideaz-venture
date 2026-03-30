@@ -228,21 +228,21 @@ export default function ServicesSection() {
   const [expandedIndex, setExpandedIndex] = useState(0);
 
   return (
-    <section id="services" className="py-20 lg:py-32">
-      <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+    <section id="services" className="py-16 md:py-20 lg:py-28">
+      <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section heading */}
         <div className="flex flex-col items-center gap-3 mb-10">
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize text-center">
             We Partner With Founders From Idea Validation to Scale.
           </h2>
-          <p className="font-bricolage text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
+          <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
             Our services cover the entire startup journey — from strategy and
             product development to launch and operational growth.
           </p>
         </div>
 
         {/* Desktop: accordion row */}
-        <div className="hidden lg:flex gap-4 h-[450px]">
+        <div className="hidden lg:flex gap-4 h-[380px] xl:h-[420px] 2xl:h-[450px]">
           {services.map((service, index) => {
             const isExpanded = expandedIndex === index;
             return (

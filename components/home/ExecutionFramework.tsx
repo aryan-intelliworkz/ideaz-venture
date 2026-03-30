@@ -35,10 +35,10 @@ const steps = [
 
 function StepCard({ step }: { step: (typeof steps)[number] }) {
   return (
-    <div className="relative h-[200px] md:h-[240px] lg:h-[280px] bg-[rgba(17,17,17,0.2)] border border-gray-600 -ml-px -mt-px overflow-hidden">
+    <div className="relative h-[200px] md:h-[240px] lg:h-[250px] xl:h-[265px] 2xl:h-[280px] bg-[rgba(17,17,17,0.2)] border border-gray-600 -ml-px -mt-px overflow-hidden">
       {/* Large number — top right */}
       <span
-        className="absolute top-3 lg:top-[18px] right-4 lg:right-[calc(100%-247px-135px)] font-archivo font-medium text-[60px] md:text-[80px] lg:text-[120px] leading-[1.09] text-red select-none pointer-events-none"
+        className="absolute top-3 lg:top-4 right-4 lg:right-5 font-archivo font-medium text-[60px] md:text-[80px] lg:text-[80px] xl:text-[100px] 2xl:text-[120px] leading-none text-red select-none pointer-events-none"
         style={{
           WebkitTextStroke: "1px #666",
           WebkitTextFillColor: "transparent",
@@ -49,10 +49,10 @@ function StepCard({ step }: { step: (typeof steps)[number] }) {
 
       {/* Content — bottom left */}
       <div className="absolute bottom-6 md:bottom-8 lg:bottom-[24px] left-5 md:left-6 lg:left-[24px] flex flex-col gap-3 max-w-[85%] lg:max-w-[341px]">
-        <h3 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[40px] leading-[1.09] text-white capitalize">
+        <h3 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[32px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
           {step.title}
         </h3>
-        <p className="font-bricolage font-normal text-[16px] md:text-[20px] lg:text-[24px] leading-[1.5] text-gray-100">
+        <p className="font-bricolage font-normal text-[16px] md:text-[20px] lg:text-[20px] min-[1800px]:text-[24px] leading-[1.5] text-gray-100">
           {step.description}
         </p>
       </div>
@@ -62,7 +62,7 @@ function StepCard({ step }: { step: (typeof steps)[number] }) {
 
 export default function ExecutionFramework() {
   return (
-    <section className="relative h-auto lg:h-[750px] overflow-hidden">
+    <section className="relative h-auto lg:h-[650px] xl:h-[700px] 2xl:h-[750px] overflow-hidden">
       {/* Background image with gradient overlays */}
       <div className="absolute inset-0">
         <Image
@@ -93,7 +93,7 @@ export default function ExecutionFramework() {
       <div className="relative mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px] py-10 lg:py-0 lg:pt-[35px]">
         {/* Section heading */}
         <div className="flex flex-col gap-3 mb-8 lg:mb-0">
-          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
             The Ideaz Execution Framework™
           </h2>
           <p className="font-bricolage font-normal text-[16px] md:text-[18px] leading-[1.44] text-gray-400">

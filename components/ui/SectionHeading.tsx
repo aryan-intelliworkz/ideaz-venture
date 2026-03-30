@@ -21,11 +21,11 @@ export default function SectionHeading({
         className,
       )}
     >
-      <h2 className="font-archivo font-medium text-[32px] lg:text-[40px] leading-[1.2] text-white capitalize">
+      <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 font-bricolage text-[18px] leading-[1.44] text-gray-400">
+        <p className="mt-4 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
           {subtitle}
         </p>
       )}

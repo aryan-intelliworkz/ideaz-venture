@@ -155,16 +155,16 @@ export default function StrategyCallModal({
               <div className="w-20 h-20 rounded-full gradient-brand flex items-center justify-center mb-6">
                 <Check size={40} className="text-white" />
               </div>
-              <h3 className="font-archivo font-medium text-[40px] leading-[1.09] text-white mb-4 capitalize">
+              <h3 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[40px] leading-[1.09] text-white mb-4 capitalize">
                 Thank You!
               </h3>
-              <p className="font-bricolage text-[18px] leading-[1.44] text-gray-400 mb-8 max-w-[400px]">
+              <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 mb-8 max-w-[400px]">
                 Your strategy call request has been submitted. Our team will
                 reach out to you within 24 hours.
               </p>
               <button
                 onClick={resetForm}
-                className="px-8 py-4 gradient-brand text-white font-bricolage text-[18px] hover:opacity-90 transition-opacity"
+                className="px-8 py-4 gradient-brand text-white font-bricolage text-[15px] md:text-[16px] lg:text-[18px] hover:opacity-90 transition-opacity"
               >
                 Close
               </button>
@@ -173,10 +173,10 @@ export default function StrategyCallModal({
             <>
               {/* Header */}
               <div className="mb-8">
-                <h3 className="font-archivo font-medium text-[32px] lg:text-[40px] leading-[1.09] text-white mb-2 capitalize">
+                <h3 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[40px] leading-[1.09] text-white mb-2 capitalize">
                   Book A Strategy Call
                 </h3>
-                <p className="font-bricolage text-[18px] text-gray-400">
+                <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] text-gray-400">
                   Tell us about your venture and we&apos;ll set up a call.
                 </p>
               </div>
@@ -197,54 +197,54 @@ export default function StrategyCallModal({
               {/* Step Content */}
               {step === 1 && (
                 <div className="space-y-6">
-                  <p className="font-bricolage text-[14px] text-gray-300 uppercase tracking-wider mb-4">
+                  <p className="font-bricolage text-[13px] md:text-[14px] text-gray-300 uppercase tracking-wider mb-4">
                     Step 1 — Your Details
                   </p>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-2">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-2">
                       Full Name *
                     </label>
                     <input
                       type="text"
                       value={formData.name}
                       onChange={(e) => updateField("name", e.target.value)}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[16px] focus:outline-none focus:border-red transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[15px] md:text-[16px] focus:outline-none focus:border-red transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-2">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-2">
                       Email Address *
                     </label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => updateField("email", e.target.value)}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[16px] focus:outline-none focus:border-red transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[15px] md:text-[16px] focus:outline-none focus:border-red transition-colors"
                       placeholder="john@company.com"
                     />
                   </div>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-2">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-2">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => updateField("phone", e.target.value)}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[16px] focus:outline-none focus:border-red transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[15px] md:text-[16px] focus:outline-none focus:border-red transition-colors"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-2">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-2">
                       Company / Venture Name
                     </label>
                     <input
                       type="text"
                       value={formData.company}
                       onChange={(e) => updateField("company", e.target.value)}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[16px] focus:outline-none focus:border-red transition-colors"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[15px] md:text-[16px] focus:outline-none focus:border-red transition-colors"
                       placeholder="Acme Inc."
                     />
                   </div>
@@ -253,11 +253,11 @@ export default function StrategyCallModal({
 
               {step === 2 && (
                 <div className="space-y-6">
-                  <p className="font-bricolage text-[14px] text-gray-300 uppercase tracking-wider mb-4">
+                  <p className="font-bricolage text-[13px] md:text-[14px] text-gray-300 uppercase tracking-wider mb-4">
                     Step 2 — Your Venture
                   </p>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-3">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-3">
                       What stage is your venture at? *
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -267,7 +267,7 @@ export default function StrategyCallModal({
                           type="button"
                           onClick={() => updateField("stage", s)}
                           className={cn(
-                            "px-4 py-2 border font-bricolage text-[14px] transition-colors",
+                            "px-4 py-2 border font-bricolage text-[13px] md:text-[14px] transition-colors",
                             formData.stage === s
                               ? "border-red bg-red/10 text-white"
                               : "border-white/10 text-gray-400 hover:border-white/30",
@@ -279,7 +279,7 @@ export default function StrategyCallModal({
                     </div>
                   </div>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-3">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-3">
                       What services are you interested in? *
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -289,7 +289,7 @@ export default function StrategyCallModal({
                           type="button"
                           onClick={() => toggleService(s)}
                           className={cn(
-                            "px-4 py-2 border font-bricolage text-[14px] transition-colors",
+                            "px-4 py-2 border font-bricolage text-[13px] md:text-[14px] transition-colors",
                             formData.services.includes(s)
                               ? "border-red bg-red/10 text-white"
                               : "border-white/10 text-gray-400 hover:border-white/30",
@@ -301,7 +301,7 @@ export default function StrategyCallModal({
                     </div>
                   </div>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-3">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-3">
                       Budget Range
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -311,7 +311,7 @@ export default function StrategyCallModal({
                           type="button"
                           onClick={() => updateField("budget", b)}
                           className={cn(
-                            "px-4 py-2 border font-bricolage text-[14px] transition-colors",
+                            "px-4 py-2 border font-bricolage text-[13px] md:text-[14px] transition-colors",
                             formData.budget === b
                               ? "border-red bg-red/10 text-white"
                               : "border-white/10 text-gray-400 hover:border-white/30",
@@ -327,11 +327,11 @@ export default function StrategyCallModal({
 
               {step === 3 && (
                 <div className="space-y-6">
-                  <p className="font-bricolage text-[14px] text-gray-300 uppercase tracking-wider mb-4">
+                  <p className="font-bricolage text-[13px] md:text-[14px] text-gray-300 uppercase tracking-wider mb-4">
                     Step 3 — Project Details
                   </p>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-3">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-3">
                       When would you like to start? *
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -341,7 +341,7 @@ export default function StrategyCallModal({
                           type="button"
                           onClick={() => updateField("timeline", t)}
                           className={cn(
-                            "px-4 py-2 border font-bricolage text-[14px] transition-colors",
+                            "px-4 py-2 border font-bricolage text-[13px] md:text-[14px] transition-colors",
                             formData.timeline === t
                               ? "border-red bg-red/10 text-white"
                               : "border-white/10 text-gray-400 hover:border-white/30",
@@ -353,7 +353,7 @@ export default function StrategyCallModal({
                     </div>
                   </div>
                   <div>
-                    <label className="block font-bricolage text-[14px] text-gray-300 mb-2">
+                    <label className="block font-bricolage text-[13px] md:text-[14px] text-gray-300 mb-2">
                       Tell us about your project *
                     </label>
                     <textarea
@@ -362,7 +362,7 @@ export default function StrategyCallModal({
                         updateField("description", e.target.value)
                       }
                       rows={5}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[16px] focus:outline-none focus:border-red transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 text-white font-bricolage text-[15px] md:text-[16px] focus:outline-none focus:border-red transition-colors resize-none"
                       placeholder="Briefly describe your project, goals, and any specific challenges you're facing..."
                     />
                   </div>
@@ -374,7 +374,7 @@ export default function StrategyCallModal({
                 {step > 1 ? (
                   <button
                     onClick={() => setStep((s) => s - 1)}
-                    className="flex items-center gap-2 font-bricolage text-[16px] text-gray-400 hover:text-white transition-colors"
+                    className="flex items-center gap-2 font-bricolage text-[15px] md:text-[16px] text-gray-400 hover:text-white transition-colors"
                   >
                     <ChevronLeft size={18} /> Previous
                   </button>
@@ -384,14 +384,14 @@ export default function StrategyCallModal({
                 {step < totalSteps ? (
                   <button
                     onClick={() => setStep((s) => s + 1)}
-                    className="flex items-center gap-2 px-8 py-3 gradient-brand text-white font-bricolage text-[16px] hover:opacity-90 transition-opacity"
+                    className="flex items-center gap-2 px-8 py-3 gradient-brand text-white font-bricolage text-[15px] md:text-[16px] hover:opacity-90 transition-opacity"
                   >
                     Next <ChevronRight size={18} />
                   </button>
                 ) : (
                   <button
                     onClick={handleSubmit}
-                    className="flex items-center gap-2 px-8 py-3 gradient-brand text-white font-bricolage text-[16px] hover:opacity-90 transition-opacity"
+                    className="flex items-center gap-2 px-8 py-3 gradient-brand text-white font-bricolage text-[15px] md:text-[16px] hover:opacity-90 transition-opacity"
                   >
                     Submit <Check size={18} />
                   </button>

@@ -34,6 +34,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ============================
+   Fluid site padding — scales proportionally
+   across all viewport widths instead of jumping
+   from 32px to 160px at the lg breakpoint.
+   clamp(40px at 1024px → 160px at 2000px+)
+   ============================ */
+@media (min-width: 1024px) {
+  .lg\:px-\[160px\] {
+    --site-px: clamp(40px, 8vw, 160px);
+    padding-left: var(--site-px) !important;
+    padding-right: var(--site-px) !important;
+  }
+}
+
 body {
   background-color: #050505;
   color: #ffffff;

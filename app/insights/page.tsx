@@ -23,7 +23,7 @@ export default function InsightsPage() {
       />
 
       {/* Insights Grid */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {insights.map((insight) => (

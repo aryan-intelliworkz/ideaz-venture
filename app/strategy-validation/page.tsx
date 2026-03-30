@@ -10,17 +10,17 @@ export default function StrategyValidationPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+      <section className="relative py-16 md:py-20 lg:py-28 overflow-hidden">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="max-w-[900px] mx-auto text-center">
-            <h1 className="font-archivo font-medium text-[36px] lg:text-[64px] leading-[1.1] text-white capitalize mb-6">
+            <h1 className="font-archivo font-medium text-[28px] md:text-[48px] lg:text-[54px] min-[1800px]:text-[64px] leading-[1.1] text-white capitalize mb-6">
               Validate, Structure, and De-Risk Your Vision.
             </h1>
-            <p className="font-bricolage text-[18px] lg:text-[24px] leading-[1.5] text-gray-400 mb-10">
+            <p className="font-bricolage text-[16px] md:text-[18px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.5] text-gray-400 mb-8 md:mb-10">
               We help founders validate, structure, and de-risk their startup
               ideas before execution
             </p>
-            <button className="inline-block px-8 py-4 border border-white/20 font-bricolage text-[16px] text-white hover:bg-white/10 transition-colors">
+            <button className="inline-block px-8 py-4 border border-white/20 font-bricolage text-[14px] md:text-[15px] lg:text-[16px] text-white hover:bg-white/10 transition-colors">
               Book an Idea Discovery Call
             </button>
           </div>
@@ -28,13 +28,13 @@ export default function StrategyValidationPage() {
       </section>
 
       {/* Execution Without Strategy */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+      <section className="py-12 md:py-16 lg:py-24">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="max-w-[900px]">
-            <h2 className="font-archivo font-medium text-[32px] lg:text-[54px] leading-[1.1] text-white capitalize mb-8">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[46px] min-[1800px]:text-[54px] leading-[1.1] text-white capitalize mb-6 md:mb-8">
               Execution Without Strategy is a Liability.
             </h2>
-            <p className="font-bricolage text-[18px] leading-[1.78] text-gray-400">
+            <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.78] text-gray-400">
               Too many startups rush into development based on assumptions,
               leading to wasted capital and products that the market
               doesn&apos;t actually need. We take a different approach. We work
@@ -49,9 +49,9 @@ export default function StrategyValidationPage() {
       </section>
 
       {/* Validation Framework */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
-          <h2 className="font-archivo font-medium text-[32px] lg:text-[54px] leading-[1.1] text-white capitalize mb-12">
+      <section className="py-12 md:py-16 lg:py-24">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[46px] min-[1800px]:text-[54px] leading-[1.1] text-white capitalize mb-8 md:mb-12">
             Our Validation Framework
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -97,13 +97,13 @@ export default function StrategyValidationPage() {
                 key={step.number}
                 className="p-8 border border-white/10 hover:border-white/20 transition-colors group"
               >
-                <span className="font-syne font-bold text-[48px] gradient-brand-text opacity-50 group-hover:opacity-100 transition-opacity">
+                <span className="font-syne font-bold text-[32px] md:text-[40px] lg:text-[42px] min-[1800px]:text-[48px] gradient-brand-text opacity-50 group-hover:opacity-100 transition-opacity">
                   {step.number}
                 </span>
-                <h3 className="font-archivo font-medium text-[24px] text-white capitalize mt-4 mb-4">
+                <h3 className="font-archivo font-medium text-[20px] md:text-[22px] lg:text-[24px] text-white capitalize mt-4 mb-4">
                   {step.title}
                 </h3>
-                <p className="font-bricolage text-[16px] leading-[1.78] text-gray-400">
+                <p className="font-bricolage text-[15px] md:text-[16px] leading-[1.78] text-gray-400">
                   {step.description}
                 </p>
               </div>
@@ -113,9 +113,9 @@ export default function StrategyValidationPage() {
       </section>
 
       {/* Who Is This For */}
-      <section className="py-16 lg:py-24 border-t border-white/10">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
-          <h2 className="font-archivo font-medium text-[32px] lg:text-[54px] leading-[1.1] text-white capitalize mb-12">
+      <section className="py-12 md:py-16 lg:py-24 border-t border-white/10">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[46px] min-[1800px]:text-[54px] leading-[1.1] text-white capitalize mb-8 md:mb-12">
             Who Is This For?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[900px]">
@@ -127,7 +127,7 @@ export default function StrategyValidationPage() {
             ].map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
                 <div className="w-2 h-2 bg-red rounded-full mt-2 shrink-0" />
-                <p className="font-bricolage text-[18px] leading-[1.78] text-gray-400">
+                <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.78] text-gray-400">
                   {item}
                 </p>
               </div>
@@ -137,17 +137,17 @@ export default function StrategyValidationPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-32">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+      <section className="py-16 md:py-20 lg:py-28">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="text-center max-w-[700px] mx-auto">
-            <h2 className="font-archivo font-medium text-[32px] lg:text-[48px] leading-[1.1] text-white capitalize mb-6">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[42px] min-[1800px]:text-[48px] leading-[1.1] text-white capitalize mb-6">
               Ready to Validate Your Idea?
             </h2>
-            <p className="font-bricolage text-[18px] leading-[1.5] text-gray-400 mb-10">
+            <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.5] text-gray-400 mb-8 md:mb-10">
               Book a free strategy call and let&apos;s assess your startup idea
               together. No commitments, just clarity.
             </p>
-            <button className="px-8 py-4 gradient-brand font-bricolage text-[16px] text-white hover:opacity-90 transition-opacity">
+            <button className="px-8 py-4 gradient-brand font-bricolage text-[14px] md:text-[15px] lg:text-[16px] text-white hover:opacity-90 transition-opacity">
               Book Strategy Call
             </button>
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Phone, Mail } from "lucide-react";
 
 const pageLinks = [
@@ -22,17 +23,18 @@ const serviceLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#050505]">
-      <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px] py-12 lg:py-16">
+      <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px] py-10 md:py-12 lg:py-16">
         {/* Top Card */}
         <div className="border border-white/[0.08] rounded-[4px] flex flex-col lg:flex-row overflow-hidden">
           {/* Left — Image Block */}
           <div className="relative lg:w-[30%] min-h-[250px] lg:min-h-[320px] bg-[#0a0a0a] overflow-hidden">
-            {/* Placeholder glow effect mimicking the tech orb image */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[200px] h-[200px] rounded-full bg-gradient-to-br from-[#EC1C24]/30 via-[#2E3191]/20 to-transparent blur-[60px]" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <h3 className="absolute top-6 left-6 font-archivo font-bold italic text-white text-[28px] lg:text-[32px] leading-[1.2] max-w-[260px]">
+            <Image
+              src="/assets/FooterImg.png"
+              alt=""
+              fill
+              className="object-cover"
+            />
+            <h3 className="absolute top-6 left-6 font-archivo font-bold italic text-white text-[24px] md:text-[28px] lg:text-[28px] min-[1800px]:text-[32px] leading-[1.2] max-w-[260px]">
               Lorem Ipsum
               <br />
               Dolor Sit Amet
@@ -44,7 +46,7 @@ export default function Footer() {
 
           {/* Right — Quick Links */}
           <div className="flex-1 p-8 lg:p-10 xl:p-12">
-            <h2 className="font-archivo font-light text-white/40 text-[36px] lg:text-[48px] leading-[1.1] mb-8 lg:mb-10">
+            <h2 className="font-archivo font-light text-white/40 text-[28px] md:text-[36px] lg:text-[42px] min-[1800px]:text-[48px] leading-[1.1] mb-6 md:mb-8 lg:mb-10">
               Quick Links
             </h2>
 
@@ -54,7 +56,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="group flex items-center justify-between gap-2 pb-2 border-b border-white/[0.12] font-bricolage text-[14px] text-white/80 hover:text-white transition-colors"
+                  className="group flex items-center justify-between gap-2 pb-2 border-b border-white/[0.12] font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-white/80 hover:text-white transition-colors"
                 >
                   <span>{link.label}</span>
                   <ArrowUpRight
@@ -71,7 +73,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="group flex items-center justify-between gap-2 pb-2 border-b border-white/[0.12] font-bricolage text-[14px] text-white/80 hover:text-white transition-colors"
+                  className="group flex items-center justify-between gap-2 pb-2 border-b border-white/[0.12] font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-white/80 hover:text-white transition-colors"
                 >
                   <span>{link.label}</span>
                   <ArrowUpRight
@@ -85,14 +87,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 mt-12 lg:mt-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 mt-12 lg:mt-16 items-center">
           {/* Logo */}
           <div className="shrink-0">
             <Link href="/">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/assets/logo.svg"
+              <Image
+                src="/assets/FooterLogo.png"
                 alt="Ideaz Ventures"
+                width={240}
+                height={120}
                 className="h-[80px] lg:h-[120px] w-auto"
               />
             </Link>
@@ -100,7 +103,7 @@ export default function Footer() {
 
           {/* Description & Contact */}
           <div className="flex-1">
-            <p className="font-bricolage text-[14px] lg:text-[16px] leading-[1.7] text-white/50 mb-8 max-w-[800px]">
+            <p className="font-bricolage text-[13px] md:text-[14px] lg:text-[16px] leading-[1.7] text-white/50 mb-8">
               Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies
               lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam
               tristique diam nisi quis metus. Mi arcu magna posuere odio auctor.
@@ -114,7 +117,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
               <a
                 href="tel:+919737045567"
-                className="flex items-center gap-2 font-bricolage text-[14px] text-white/70 hover:text-white transition-colors"
+                className="flex items-center gap-2 font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-white/70 hover:text-white transition-colors"
               >
                 <Phone size={16} className="text-white/50" />
                 <span>+91 97370 45567</span>
@@ -122,7 +125,7 @@ export default function Footer() {
               <div className="hidden sm:block w-px h-4 bg-white/20" />
               <a
                 href="mailto:hello@ideaz.ventures"
-                className="flex items-center gap-2 font-bricolage text-[14px] text-white/70 hover:text-white transition-colors"
+                className="flex items-center gap-2 font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-white/70 hover:text-white transition-colors"
               >
                 <Mail size={16} className="text-white/50" />
                 <span>hello@ideaz.ventures</span>

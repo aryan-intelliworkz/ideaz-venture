@@ -4,14 +4,14 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 
 export default function CTASection() {
   return (
-    <section className="py-20 lg:py-32 overflow-hidden">
+    <section className="py-16 md:py-20 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
             Choose Your Path
           </h2>
-          <p className="mt-3 font-bricolage text-[18px] leading-[1.44] text-gray-400">
+          <p className="mt-3 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
             Built for Founders. Trusted by Enterprises.
           </p>
         </div>
@@ -20,9 +20,9 @@ export default function CTASection() {
         {/* Desktop: side by side overlapping */}
         <div className="hidden md:flex justify-center items-center relative">
           {/* Left Circle */}
-          <div className="relative w-[420px] lg:w-[520px] xl:w-[600px] h-[420px] lg:h-[520px] xl:h-[600px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center z-10">
+          <div className="relative w-[420px] lg:w-[520px] xl:w-[600px] h-[420px] lg:h-[520px] xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
             <div className="flex flex-col items-center gap-4 px-10 lg:px-14 -translate-x-4 lg:-translate-x-6">
-              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[1.09] text-white capitalize">
+              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                 Build A Venture
               </h3>
               <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.5] text-gray-100 max-w-[280px]">
@@ -65,9 +65,9 @@ export default function CTASection() {
           </div>
 
           {/* Right Circle — overlaps left by translating leftward */}
-          <div className="relative w-[420px] lg:w-[520px] xl:w-[600px] h-[420px] lg:h-[520px] xl:h-[600px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center -ml-[80px] lg:-ml-[100px] xl:-ml-[120px] z-10">
+          <div className="relative w-[420px] lg:w-[520px] xl:w-[600px] h-[420px] lg:h-[520px] xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -ml-[80px] lg:-ml-[100px] xl:-ml-[120px] z-10">
             <div className="flex flex-col items-center gap-4 px-10 lg:px-14 translate-x-4 lg:translate-x-6">
-              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[1.09] text-white capitalize">
+              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                 Build Your
                 <br />
                 Engineering Team
@@ -85,7 +85,7 @@ export default function CTASection() {
         {/* Mobile: stacked circles with vertical overlap */}
         <div className="flex md:hidden flex-col items-center relative">
           {/* Top Circle */}
-          <div className="relative w-[320px] h-[320px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center z-10">
+          <div className="relative w-[320px] h-[320px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
             <div className="flex flex-col items-center gap-3 px-8 -translate-y-3">
               <h3 className="font-archivo font-medium text-[24px] leading-[1.09] text-white capitalize">
                 Build A Venture
@@ -124,7 +124,7 @@ export default function CTASection() {
           </div>
 
           {/* Bottom Circle — overlaps top */}
-          <div className="relative w-[320px] h-[320px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center -mt-[60px] z-10">
+          <div className="relative w-[320px] h-[320px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -mt-[60px] z-10">
             <div className="flex flex-col items-center gap-3 px-8 translate-y-3">
               <h3 className="font-archivo font-medium text-[24px] leading-[1.09] text-white capitalize">
                 Build Your

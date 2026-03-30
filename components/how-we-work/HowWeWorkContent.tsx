@@ -95,7 +95,7 @@ export default function HowWeWorkContent() {
   return (
     <>
       {/* ── Built for Execution ── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
             {/* Left — arrow + heading */}
@@ -115,7 +115,7 @@ export default function HowWeWorkContent() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.15] text-white">
+              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.15] text-white">
                 Built For Execution,
                 <br />
                 Not Guesswork.
@@ -141,7 +141,7 @@ export default function HowWeWorkContent() {
       </section>
 
       {/* ── Process Steps (Alternating Cards) ── */}
-      <section className="py-10 lg:py-16">
+      <section className="py-8 md:py-10 lg:py-16">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="space-y-12 lg:space-y-0">
             {steps.map((step, i) => {
@@ -154,7 +154,7 @@ export default function HowWeWorkContent() {
                   {/* Text content */}
                   <div
                     className={cn(
-                      "flex flex-col justify-center py-8 lg:py-14",
+                      "flex flex-col justify-center py-6 md:py-8 lg:py-14",
                       !isEven && "lg:order-2",
                     )}
                   >
@@ -162,7 +162,7 @@ export default function HowWeWorkContent() {
                       {step.tagline}
                     </p>
                     <div className="w-full h-px bg-white/[0.08] mb-6" />
-                    <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[36px] leading-[1.1] text-white capitalize mb-5">
+                    <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.1] text-white capitalize mb-5">
                       {step.title}
                     </h3>
                     <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.75] text-white/50">
@@ -194,9 +194,9 @@ export default function HowWeWorkContent() {
       </section>
 
       {/* ── FAQ Section ── */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[48px] leading-[1.1] text-white capitalize mb-10 lg:mb-14 text-center">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[42px] min-[1800px]:text-[48px] leading-[1.1] text-white capitalize mb-8 md:mb-10 lg:mb-14 text-center">
             Frequently Asked Questions
           </h2>
 

@@ -18,12 +18,12 @@ const technologies = [
 
 export default function TechStack() {
   return (
-    <section className="py-12 lg:py-16">
-      <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+    <section className="py-10 md:py-12 lg:py-16">
+      <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div className="flex flex-col items-center gap-10">
           {/* Heading with red underline */}
           <div className="flex flex-col items-center gap-1.5">
-            <h3 className="font-bricolage text-[24px] leading-[1.2] text-white">
+            <h3 className="font-bricolage text-[20px] md:text-[22px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.2] text-white">
               Technology Stack
             </h3>
             <div className="h-[1px] w-full bg-red" />

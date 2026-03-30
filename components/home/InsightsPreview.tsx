@@ -6,20 +6,20 @@ export default function InsightsPreview() {
   const previewInsights = insights.slice(0, 3);
 
   return (
-    <section className="py-20 lg:py-32">
-      <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+    <section className="py-16 md:py-20 lg:py-28">
+      <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12">
           <div>
-            <h2 className="font-archivo font-medium text-[32px] lg:text-[40px] leading-[1.2] text-white capitalize">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Latest Insights
             </h2>
-            <p className="mt-2 font-bricolage text-[18px] text-gray-400">
+            <p className="mt-2 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] text-gray-400">
               Perspectives on startup execution, technology, and growth.
             </p>
           </div>
           <Link
             href="/insights"
-            className="mt-4 lg:mt-0 inline-flex items-center gap-2 font-bricolage text-[18px] text-white hover:text-red transition-colors"
+            className="mt-4 lg:mt-0 inline-flex items-center gap-2 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] text-white hover:text-red transition-colors"
           >
             View All <ArrowRight size={18} />
           </Link>
@@ -34,7 +34,7 @@ export default function InsightsPreview() {
             >
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <span className="font-bricolage text-[14px] text-red uppercase tracking-wider">
+                  <span className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-red uppercase tracking-wider">
                     {insight.category}
                   </span>
                   <ArrowUpRight
@@ -42,17 +42,17 @@ export default function InsightsPreview() {
                     className="text-white/40 group-hover:text-white transition-colors"
                   />
                 </div>
-                <h3 className="font-archivo font-normal text-[24px] leading-[1.25] text-white capitalize">
+                <h3 className="font-archivo font-normal text-[20px] md:text-[22px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.25] text-white capitalize">
                   {insight.title}
                 </h3>
-                <p className="font-bricolage text-[16px] leading-[1.5] text-gray-400 line-clamp-3">
+                <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.5] text-gray-400 line-clamp-3">
                   {insight.excerpt}
                 </p>
                 <div className="flex items-center gap-4 mt-2">
-                  <span className="font-bricolage text-[14px] text-gray-500">
+                  <span className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-gray-500">
                     {insight.date}
                   </span>
-                  <span className="font-bricolage text-[14px] text-gray-500">
+                  <span className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-gray-500">
                     {insight.readTime}
                   </span>
                 </div>

@@ -37,30 +37,30 @@ export default async function InsightDetailPage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="py-20 lg:py-32">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+      <section className="py-16 md:py-20 lg:py-28">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <Link
             href="/insights"
-            className="inline-flex items-center gap-2 font-bricolage text-[16px] text-gray-400 hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 font-bricolage text-[14px] md:text-[16px] text-gray-400 hover:text-white transition-colors mb-8"
           >
             <ArrowLeft size={16} /> Back to Insights
           </Link>
           <div className="max-w-[800px]">
             <div className="flex items-center gap-4 mb-4">
-              <span className="inline-block px-3 py-1 bg-red/20 font-bricolage text-[12px] text-red uppercase tracking-wider">
+              <span className="inline-block px-3 py-1 bg-red/20 font-bricolage text-[11px] md:text-[12px] text-red uppercase tracking-wider">
                 {insight.category}
               </span>
-              <span className="font-bricolage text-[14px] text-gray-500">
+              <span className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-gray-500">
                 {insight.date}
               </span>
-              <span className="font-bricolage text-[14px] text-gray-500">
+              <span className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-gray-500">
                 {insight.readTime}
               </span>
             </div>
-            <h1 className="font-archivo font-medium text-[36px] lg:text-[54px] leading-[1.09] text-white capitalize mb-6">
+            <h1 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[46px] min-[1800px]:text-[54px] leading-[1.09] text-white capitalize mb-6">
               {insight.title}
             </h1>
-            <p className="font-bricolage text-[18px] lg:text-[24px] leading-[1.25] text-gray-400">
+            <p className="font-bricolage text-[16px] md:text-[18px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.25] text-gray-400">
               {insight.excerpt}
             </p>
           </div>
@@ -68,14 +68,14 @@ export default async function InsightDetailPage({ params }: Props) {
       </section>
 
       {/* Content */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+      <section className="py-12 md:py-16 lg:py-24">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="max-w-[720px] mx-auto">
             <div className="space-y-8">
               {insight.content.map((paragraph, i) => (
                 <p
                   key={i}
-                  className="font-bricolage text-[18px] leading-[1.78] text-gray-300"
+                  className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.78] text-gray-300"
                 >
                   {paragraph}
                 </p>
@@ -85,15 +85,15 @@ export default async function InsightDetailPage({ params }: Props) {
             {/* Author */}
             <div className="mt-16 pt-8 border-t border-white/10 flex items-center gap-4">
               <div className="w-12 h-12 rounded-full gradient-brand flex items-center justify-center">
-                <span className="font-archivo font-medium text-[16px] text-white">
+                <span className="font-archivo font-medium text-[14px] md:text-[15px] lg:text-[16px] text-white">
                   IV
                 </span>
               </div>
               <div>
-                <p className="font-archivo font-medium text-[16px] text-white">
+                <p className="font-archivo font-medium text-[14px] md:text-[15px] lg:text-[16px] text-white">
                   {insight.author}
                 </p>
-                <p className="font-bricolage text-[14px] text-gray-500">
+                <p className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-gray-500">
                   {insight.date}
                 </p>
               </div>
@@ -103,8 +103,8 @@ export default async function InsightDetailPage({ params }: Props) {
       </section>
 
       {/* Navigation */}
-      <section className="py-12 border-t border-white/10">
-        <div className="mx-auto max-w-[1920px] px-8 lg:px-[160px]">
+      <section className="py-8 md:py-12 border-t border-white/10">
+        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="flex items-center justify-between">
             <Link
               href={`/insights/${prevInsight.slug}`}
@@ -115,10 +115,10 @@ export default async function InsightDetailPage({ params }: Props) {
                 className="text-gray-400 group-hover:text-white transition-colors"
               />
               <div>
-                <p className="font-bricolage text-[14px] text-gray-500">
+                <p className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-gray-500">
                   Previous
                 </p>
-                <p className="font-archivo text-[16px] text-white group-hover:text-red transition-colors line-clamp-1 max-w-[250px]">
+                <p className="font-archivo text-[14px] md:text-[15px] lg:text-[16px] text-white group-hover:text-red transition-colors line-clamp-1 max-w-[250px]">
                   {prevInsight.title}
                 </p>
               </div>
@@ -128,8 +128,10 @@ export default async function InsightDetailPage({ params }: Props) {
               className="flex items-center gap-3 group text-right"
             >
               <div>
-                <p className="font-bricolage text-[14px] text-gray-500">Next</p>
-                <p className="font-archivo text-[16px] text-white group-hover:text-red transition-colors line-clamp-1 max-w-[250px]">
+                <p className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-gray-500">
+                  Next
+                </p>
+                <p className="font-archivo text-[14px] md:text-[15px] lg:text-[16px] text-white group-hover:text-red transition-colors line-clamp-1 max-w-[250px]">
                   {nextInsight.title}
                 </p>
               </div>

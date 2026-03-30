@@ -64,7 +64,7 @@ export default function CaseStudiesPreview() {
   const cards = caseStudies.slice(0, 4);
 
   return (
-    <section className="py-20 lg:py-32">
+    <section className="py-16 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-6 lg:items-stretch">
           {/* Left: Chess image + text block — matches total height of right grid */}
@@ -82,10 +82,10 @@ export default function CaseStudiesPreview() {
 
             {/* Text block at bottom — bordered card */}
             <div className="border border-gray-600 rounded-[20px] p-6 md:p-8 lg:p-10 bg-bg-card mt-4">
-              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.09] text-white capitalize">
+              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
                 Execution Stories
               </h2>
-              <p className="font-bricolage font-medium text-[18px] md:text-[22px] lg:text-[24px] leading-[1.5] text-white mt-3">
+              <p className="font-bricolage font-medium text-[18px] md:text-[22px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.5] text-white mt-3">
                 Built. Launched. Validated.
               </p>
             </div>

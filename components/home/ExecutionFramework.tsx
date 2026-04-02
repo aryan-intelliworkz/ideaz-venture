@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const steps = [
   {
@@ -61,6 +64,10 @@ function StepCard({ step }: { step: (typeof steps)[number] }) {
 }
 
 export default function ExecutionFramework() {
+  const headingRef = useScrollReveal();
+  const row1Ref = useStaggerReveal({ threshold: 0.1 });
+  const row2Ref = useStaggerReveal({ threshold: 0.1 });
+
   return (
     <section className="relative h-auto lg:h-[650px] xl:h-[700px] 2xl:h-[750px] overflow-hidden">
       {/* Background image with gradient overlays */}
@@ -92,7 +99,10 @@ export default function ExecutionFramework() {
 
       <div className="relative mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px] py-10 lg:py-0 lg:pt-[35px]">
         {/* Section heading */}
-        <div className="flex flex-col gap-3 mb-8 lg:mb-0">
+        <div
+          ref={headingRef}
+          className="reveal-fade-up flex flex-col gap-3 mb-8 lg:mb-0"
+        >
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
             The Ideaz Execution Framework™
           </h2>
@@ -105,16 +115,26 @@ export default function ExecutionFramework() {
         {/* Grid: positioned at y:191 in Figma = ~156px from heading top */}
         <div className="lg:mt-[40px]">
           {/* Row 1: 2 cards — same width as row 2 cards, above blocks 3 & 4 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          <div
+            ref={row1Ref}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          >
             {steps.slice(0, 2).map((step) => (
-              <StepCard key={step.number} step={step} />
+              <div key={step.number} className="reveal-child">
+                <StepCard step={step} />
+              </div>
             ))}
           </div>
 
           {/* Row 2: 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          <div
+            ref={row2Ref}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          >
             {steps.slice(2).map((step) => (
-              <StepCard key={step.number} step={step} />
+              <div key={step.number} className="reveal-child">
+                <StepCard step={step} />
+              </div>
             ))}
           </div>
         </div>

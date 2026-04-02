@@ -1,14 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { insights } from "@/lib/insights";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 export default function InsightsPreview() {
   const previewInsights = insights.slice(0, 3);
+  const headingRef = useScrollReveal();
+  const gridRef = useStaggerReveal({ threshold: 0.1 });
 
   return (
     <section className="py-16 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12">
+        <div
+          ref={headingRef}
+          className="reveal-fade-up flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12"
+        >
           <div>
             <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Latest Insights
@@ -25,12 +33,12 @@ export default function InsightsPreview() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {previewInsights.map((insight) => (
             <Link
               key={insight.slug}
               href={`/insights/${insight.slug}`}
-              className="group border border-white/10 p-8 hover:border-white/20 transition-all duration-300"
+              className="reveal-child group border border-white/10 p-8 hover:border-white/20 transition-all duration-300"
             >
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">

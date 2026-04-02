@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import RevealSection from "@/components/ui/RevealSection";
 
 /* ─── Process Steps Data ─── */
 const steps = [
@@ -91,6 +93,8 @@ const faqs = [
 
 export default function HowWeWorkContent() {
   const [openFaq, setOpenFaq] = useState<number>(0);
+  const introLeftRef = useScrollReveal();
+  const introRightRef = useScrollReveal();
 
   return (
     <>
@@ -99,7 +103,10 @@ export default function HowWeWorkContent() {
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
             {/* Left — arrow + heading */}
-            <div className="flex items-start gap-4 lg:w-[45%] shrink-0">
+            <div
+              ref={introLeftRef}
+              className="reveal-slide-left flex items-start gap-4 lg:w-[45%] shrink-0"
+            >
               <svg
                 width="40"
                 height="20"
@@ -123,7 +130,7 @@ export default function HowWeWorkContent() {
             </div>
 
             {/* Right — description */}
-            <div className="lg:w-[55%]">
+            <div ref={introRightRef} className="reveal-slide-right lg:w-[55%]">
               <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/60 mb-4">
                 Every product we build follows a proven execution framework. It
                 keeps teams aligned, reduces risk, and ensures progress at every
@@ -147,46 +154,51 @@ export default function HowWeWorkContent() {
             {steps.map((step, i) => {
               const isEven = i % 2 === 0;
               return (
-                <div
+                <RevealSection
                   key={step.number}
-                  className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 xl:gap-16 items-stretch"
+                  className={
+                    isEven ? "reveal-slide-left" : "reveal-slide-right"
+                  }
+                  threshold={0.1}
                 >
-                  {/* Text content */}
-                  <div
-                    className={cn(
-                      "flex flex-col justify-center py-6 md:py-8 lg:py-14",
-                      !isEven && "lg:order-2",
-                    )}
-                  >
-                    <p className="font-bricolage text-[13px] lg:text-[14px] leading-[1.6] text-[#EC1C24] italic mb-4">
-                      {step.tagline}
-                    </p>
-                    <div className="w-full h-px bg-white/[0.08] mb-6" />
-                    <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.1] text-white capitalize mb-5">
-                      {step.title}
-                    </h3>
-                    <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.75] text-white/50">
-                      {step.description}
-                    </p>
-                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 xl:gap-16 items-stretch">
+                    {/* Text content */}
+                    <div
+                      className={cn(
+                        "flex flex-col justify-center py-6 md:py-8 lg:py-14",
+                        !isEven && "lg:order-2",
+                      )}
+                    >
+                      <p className="font-bricolage text-[13px] lg:text-[14px] leading-[1.6] text-[#EC1C24] italic mb-4">
+                        {step.tagline}
+                      </p>
+                      <div className="w-full h-px bg-white/[0.08] mb-6" />
+                      <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.1] text-white capitalize mb-5">
+                        {step.title}
+                      </h3>
+                      <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.75] text-white/50">
+                        {step.description}
+                      </p>
+                    </div>
 
-                  {/* Image */}
-                  <div
-                    className={cn(
-                      "relative aspect-[16/10] overflow-hidden rounded-[4px]",
-                      !isEven && "lg:order-1",
-                    )}
-                  >
-                    <Image
-                      src={step.image}
-                      alt={step.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      unoptimized
-                    />
+                    {/* Image */}
+                    <div
+                      className={cn(
+                        "relative aspect-[16/10] overflow-hidden rounded-[4px]",
+                        !isEven && "lg:order-1",
+                      )}
+                    >
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        unoptimized
+                      />
+                    </div>
                   </div>
-                </div>
+                </RevealSection>
               );
             })}
           </div>

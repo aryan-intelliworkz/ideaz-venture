@@ -19,17 +19,19 @@ export default function HeroSection() {
 
       <div className="relative mx-auto max-w-[1920px] w-full px-6 md:px-8 lg:px-[160px] py-16 md:py-20">
         <div className="max-w-[800px]">
-          <h1 className="font-archivo font-medium text-[36px] sm:text-[48px] md:text-[64px] lg:text-[66px] min-[1800px]:text-[80px] leading-[1.09] text-white capitalize mb-6">
+          <h1 className="font-archivo font-medium text-[36px] sm:text-[48px] md:text-[64px] lg:text-[66px] min-[1800px]:text-[80px] leading-[1.09] text-white capitalize mb-6 animate-hero-heading">
             Place your trust in us
           </h1>
-          <p className="font-bricolage text-[16px] sm:text-[18px] md:text-[22px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.25] text-white mb-8 md:mb-10 max-w-[600px]">
+          <p className="font-bricolage text-[16px] sm:text-[18px] md:text-[22px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.25] text-white mb-8 md:mb-10 max-w-[600px] animate-hero-text">
             We believe the best work comes from a foundation of mutual respect.
             Our team is here to listen to your vision and provide the
             thoughtful, reliable guidance your brand deserves.
           </p>
-          <PrimaryButton as="a" href="/get-in-touch">
-            Let&apos;s Grow Together
-          </PrimaryButton>
+          <div className="animate-hero-cta">
+            <PrimaryButton as="a" href="/get-in-touch">
+              Let&apos;s Grow Together
+            </PrimaryButton>
+          </div>
         </div>
       </div>
     </section>

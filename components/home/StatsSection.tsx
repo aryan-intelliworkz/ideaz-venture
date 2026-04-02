@@ -1,4 +1,7 @@
+"use client";
+
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
   { value: "₹174 Crore", label: "Strategic Exit Achieved." },
@@ -8,6 +11,10 @@ const stats = [
 ];
 
 export default function StatsSection() {
+  const headingRef = useScrollReveal();
+  const contentRef = useScrollReveal({ threshold: 0.1 });
+  const statsRef = useStaggerReveal();
+
   return (
     <section className="relative py-16 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
@@ -15,7 +22,10 @@ export default function StatsSection() {
           {/* Top row: Arrow + Title | Paragraphs + Button */}
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-[32px]">
             {/* Left: Arrow + Title */}
-            <div className="flex items-start gap-4 shrink-0">
+            <div
+              ref={headingRef}
+              className="reveal-slide-left flex items-start gap-4 shrink-0"
+            >
               {/* Red arrow SVG */}
               <svg
                 width="69"
@@ -39,7 +49,10 @@ export default function StatsSection() {
             </div>
 
             {/* Right: Paragraphs + Button */}
-            <div className="flex flex-col gap-[25px] flex-1">
+            <div
+              ref={contentRef}
+              className="reveal-slide-right flex flex-col gap-[25px] flex-1"
+            >
               <div className="flex flex-col gap-[14px]">
                 <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
                   strategic clarity, reliable technology, and disciplined
@@ -60,11 +73,14 @@ export default function StatsSection() {
           </div>
 
           {/* Stats row: 4 in a row separated by vertical lines */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
+          <div
+            ref={statsRef}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-y-10"
+          >
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className={`flex flex-col gap-6 ${
+                className={`reveal-child flex flex-col gap-6 ${
                   i !== 0 ? "lg:border-gray-400 lg:pl-8" : ""
                 } ${i === 2 ? "border-gray-400 pl-6 lg:pl-8" : ""} ${i === 1 || i === 3 ? "border-gray-400 pl-6 lg:pl-8" : ""}`}
               >

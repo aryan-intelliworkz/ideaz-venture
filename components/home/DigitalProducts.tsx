@@ -7,6 +7,7 @@ import { Navigation, EffectFade } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const products = [
   {
@@ -123,12 +124,17 @@ function NavArrow({
 export default function DigitalProducts() {
   const swiperRef = useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const headingRef = useScrollReveal();
+  const sliderRef = useScrollReveal({ threshold: 0.05 });
 
   return (
     <section className="py-16 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section heading */}
-        <div className="flex flex-col items-center gap-3 mb-10">
+        <div
+          ref={headingRef}
+          className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
+        >
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
             Digital Products & Platforms We Build
           </h2>
@@ -139,65 +145,67 @@ export default function DigitalProducts() {
         </div>
 
         {/* Slide: Image left + Content right */}
-        <Swiper
-          modules={[Navigation, EffectFade]}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          slidesPerView={1}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          loop
-          speed={500}
-          allowTouchMove
-          className="digital-products-swiper"
-        >
-          {products.map((product) => (
-            <SwiperSlide key={product.title}>
-              {/* Desktop / Tablet: side-by-side */}
-              <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 md:gap-8 lg:gap-12 xl:gap-16">
-                {/* Image — 50% width on desktop, exactly 550px tall */}
-                <div className="relative w-full lg:w-1/2 h-[280px] md:h-[380px] lg:h-[440px] xl:h-[500px] 2xl:h-[550px] shrink-0 overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-
-                {/* Content — 50% width, 550px tall, padding 24px */}
-                <div className="flex flex-col lg:w-1/2 lg:h-[440px] xl:h-[500px] 2xl:h-[550px] lg:py-6 pt-6 gap-8">
-                  <div className="flex flex-col gap-[19px]">
-                    <h3 className="font-archivo font-normal text-[24px] md:text-[28px] lg:text-[27px] min-[1800px]:text-[30px] leading-[1.09] text-white capitalize">
-                      {product.title}
-                    </h3>
-                    <p className="font-bricolage text-[16px] md:text-[18px] leading-[1.44] text-gray-500">
-                      {product.descriptionOne}
-                    </p>
-                    <p className="font-bricolage text-[16px] md:text-[18px] leading-[1.44] text-gray-500">
-                      {product.descriptionTwo}
-                    </p>
-                  </div>
-
-                  {/* Navigation arrows */}
-                  <div className="flex items-center gap-[14px] mt-auto pb-8 lg:pb-12">
-                    <NavArrow
-                      direction="prev"
-                      onClick={() => swiperRef.current?.slidePrev()}
-                    />
-                    <NavArrow
-                      direction="next"
-                      onClick={() => swiperRef.current?.slideNext()}
+        <div ref={sliderRef} className="reveal-scale">
+          <Swiper
+            modules={[Navigation, EffectFade]}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            slidesPerView={1}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
+            loop
+            speed={500}
+            allowTouchMove
+            className="digital-products-swiper"
+          >
+            {products.map((product) => (
+              <SwiperSlide key={product.title}>
+                {/* Desktop / Tablet: side-by-side */}
+                <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 md:gap-8 lg:gap-12 xl:gap-16">
+                  {/* Image — 50% width on desktop, exactly 550px tall */}
+                  <div className="relative w-full lg:w-1/2 h-[280px] md:h-[380px] lg:h-[440px] xl:h-[500px] 2xl:h-[550px] shrink-0 overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
+
+                  {/* Content — 50% width, 550px tall, padding 24px */}
+                  <div className="flex flex-col lg:w-1/2 lg:h-[440px] xl:h-[500px] 2xl:h-[550px] lg:py-6 pt-6 gap-8">
+                    <div className="flex flex-col gap-[19px]">
+                      <h3 className="font-archivo font-normal text-[24px] md:text-[28px] lg:text-[27px] min-[1800px]:text-[30px] leading-[1.09] text-white capitalize">
+                        {product.title}
+                      </h3>
+                      <p className="font-bricolage text-[16px] md:text-[18px] leading-[1.44] text-gray-500">
+                        {product.descriptionOne}
+                      </p>
+                      <p className="font-bricolage text-[16px] md:text-[18px] leading-[1.44] text-gray-500">
+                        {product.descriptionTwo}
+                      </p>
+                    </div>
+
+                    {/* Navigation arrows */}
+                    <div className="flex items-center gap-[14px] mt-auto pb-8 lg:pb-12">
+                      <NavArrow
+                        direction="prev"
+                        onClick={() => swiperRef.current?.slidePrev()}
+                      />
+                      <NavArrow
+                        direction="next"
+                        onClick={() => swiperRef.current?.slideNext()}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

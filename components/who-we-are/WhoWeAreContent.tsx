@@ -8,6 +8,7 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { cn } from "@/lib/utils";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 /* ─── Data ─── */
 
@@ -328,6 +329,14 @@ export default function WhoWeAreContent() {
   const executionSwiperRef = useRef<SwiperType | null>(null);
   const [executionIndex, setExecutionIndex] = useState(0);
 
+  const introLeftRef = useScrollReveal();
+  const introRightRef = useScrollReveal();
+  const diffHeadingRef = useScrollReveal();
+  const vennRef = useScrollReveal({ threshold: 0.1 });
+  const workWithRef = useScrollReveal();
+  const principlesRef = useStaggerReveal({ threshold: 0.1 });
+  const execRef = useScrollReveal();
+
   /* Auto-rotate Who We Work With every 5s */
   const resetWorkWithTimer = useCallback(() => {
     if (workWithTimerRef.current) clearInterval(workWithTimerRef.current);
@@ -355,7 +364,10 @@ export default function WhoWeAreContent() {
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
             {/* Left — arrow + heading */}
-            <div className="flex items-start gap-4 lg:w-[45%] shrink-0">
+            <div
+              ref={introLeftRef}
+              className="reveal-slide-left flex items-start gap-4 lg:w-[45%] shrink-0"
+            >
               <svg
                 width="40"
                 height="20"
@@ -379,7 +391,7 @@ export default function WhoWeAreContent() {
             </div>
 
             {/* Right — description */}
-            <div className="lg:w-[55%]">
+            <div ref={introRightRef} className="reveal-slide-right lg:w-[55%]">
               <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/60 mb-4">
                 Ideaz Ventures is a startup execution partner helping founders
                 move from idea to scalable product with clarity, speed, and
@@ -399,7 +411,10 @@ export default function WhoWeAreContent() {
       <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section heading */}
-          <div className="flex flex-col items-center gap-3 mb-10">
+          <div
+            ref={diffHeadingRef}
+            className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
+          >
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
               What Makes Us Different
             </h2>
@@ -555,7 +570,10 @@ export default function WhoWeAreContent() {
       <section className="py-16 md:py-20 lg:py-28 overflow-hidden">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
-          <div className="text-center mb-10 md:mb-12 lg:mb-16">
+          <div
+            ref={vennRef}
+            className="reveal-fade-up text-center mb-10 md:mb-12 lg:mb-16"
+          >
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Mission & Vision
             </h2>
@@ -677,7 +695,10 @@ export default function WhoWeAreContent() {
       <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
-          <div className="text-center mb-8 md:mb-10 lg:mb-14">
+          <div
+            ref={workWithRef}
+            className="reveal-fade-up text-center mb-8 md:mb-10 lg:mb-14"
+          >
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Who We Work With
             </h2>
@@ -820,11 +841,14 @@ export default function WhoWeAreContent() {
           </div>
 
           {/* 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            ref={principlesRef}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
             {corePrinciples.map((principle) => (
               <div
                 key={principle.title}
-                className="border border-white/[0.08] rounded-[4px] overflow-hidden group hover:border-white/[0.15] transition-colors"
+                className="reveal-child border border-white/[0.08] rounded-[4px] overflow-hidden group hover:border-white/[0.15] transition-colors"
               >
                 <div className="relative h-[220px] lg:h-[260px] overflow-hidden">
                   <Image
@@ -852,7 +876,10 @@ export default function WhoWeAreContent() {
       <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
-          <div className="text-center mb-8 md:mb-10 lg:mb-14">
+          <div
+            ref={execRef}
+            className="reveal-fade-up text-center mb-8 md:mb-10 lg:mb-14"
+          >
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               How We Approach Execution
             </h2>

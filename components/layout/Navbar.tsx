@@ -52,12 +52,20 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "font-bricolage text-[14px] xl:text-[15px] 2xl:text-[16px] min-[1800px]:text-[18px] font-normal leading-[1.2] transition-colors duration-200 flex items-center gap-2 nav-link",
+                  "group relative font-bricolage text-[14px] xl:text-[15px] 2xl:text-[16px] min-[1800px]:text-[18px] font-normal leading-[1.2] transition-all duration-300 flex items-center gap-2 nav-link",
                   isActive ? "nav-link-active" : "",
                 )}
               >
                 {link.label}
-                {isActive && <span className="w-2 h-2 bg-red shrink-0" />}
+                {isActive && (
+                  <span className="w-2 h-2 bg-red shrink-0 animate-[fadeScale_0.3s_ease-out]" />
+                )}
+                <span
+                  className={cn(
+                    "absolute -bottom-1 left-0 h-[1px] bg-red transition-all duration-300",
+                    isActive ? "w-full" : "w-0 group-hover:w-full",
+                  )}
+                />
               </Link>
             );
           })}
@@ -110,7 +118,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
       <div
         className={cn(
           "lg:hidden fixed inset-0 top-[100px] mobile-menu-bg z-40 transition-transform duration-300",
-          mobileOpen ? "translate-x-0" : "translate-x-full",
+          mobileOpen ? "translate-x-0 mobile-menu-open" : "translate-x-full",
         )}
       >
         <div className="flex flex-col p-8 gap-6">
@@ -124,7 +132,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "font-bricolage text-[20px] sm:text-[22px] md:text-[24px] transition-colors flex items-center gap-3 nav-link",
+                  "font-bricolage text-[20px] sm:text-[22px] md:text-[24px] transition-colors flex items-center gap-3 nav-link mobile-nav-item",
                   isActive ? "nav-link-active" : "",
                 )}
               >
@@ -138,7 +146,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               setMobileOpen(false);
               onOpenModal();
             }}
-            className="mt-4"
+            className="mt-4 mobile-nav-cta"
           >
             Book Strategy Call
           </PrimaryButton>

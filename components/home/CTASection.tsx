@@ -1,13 +1,20 @@
 "use client";
 
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function CTASection() {
+  const headingRef = useScrollReveal();
+  const circlesRef = useScrollReveal({ threshold: 0.1 });
+
   return (
     <section className="py-16 md:py-20 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div
+          ref={headingRef}
+          className="reveal-fade-up text-center mb-12 lg:mb-16"
+        >
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
             Choose Your Path
           </h2>
@@ -18,7 +25,10 @@ export default function CTASection() {
 
         {/* Venn Diagram — two overlapping circles */}
         {/* Desktop: side by side overlapping */}
-        <div className="hidden md:flex justify-center items-center relative">
+        <div
+          ref={circlesRef}
+          className="reveal-scale hidden md:flex justify-center items-center relative"
+        >
           {/* Left Circle */}
           <div className="relative w-[420px] lg:w-[520px] xl:w-[600px] h-[420px] lg:h-[520px] xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
             <div className="flex flex-col items-center gap-4 px-10 lg:px-14 -translate-x-4 lg:-translate-x-6">

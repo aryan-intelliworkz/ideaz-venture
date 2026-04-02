@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
+import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 /* Company logo names matching screenshot */
 const companyLogos = [
@@ -62,13 +65,18 @@ function CompanyLogo({ logo }: { logo: (typeof companyLogos)[number] }) {
 
 export default function CaseStudiesPreview() {
   const cards = caseStudies.slice(0, 4);
+  const leftRef = useScrollReveal();
+  const gridRef = useStaggerReveal({ threshold: 0.1 });
 
   return (
     <section className="py-16 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-6 lg:items-stretch">
           {/* Left: Chess image + text block — matches total height of right grid */}
-          <div className="flex flex-col lg:w-[35%] shrink-0">
+          <div
+            ref={leftRef}
+            className="reveal-slide-left flex flex-col lg:w-[35%] shrink-0"
+          >
             {/* Chess 3D image — fills available space above the text block */}
             <div className="relative w-full flex-1 min-h-[300px] md:min-h-[350px]">
               <Image
@@ -92,12 +100,15 @@ export default function CaseStudiesPreview() {
           </div>
 
           {/* Right: 2x2 cards grid — each card equal height */}
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 auto-rows-fr">
+          <div
+            ref={gridRef}
+            className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 auto-rows-fr"
+          >
             {cards.map((cs, index) => (
               <Link
                 href={`/case-studies/${cs.slug}`}
                 key={cs.slug}
-                className="group border border-gray-600 rounded-[30px] p-5 md:p-6 lg:p-7 bg-bg-card hover:border-white/30 transition-all duration-300 flex flex-col"
+                className="reveal-child group border border-gray-600 rounded-[30px] p-5 md:p-6 lg:p-7 bg-bg-card hover:border-white/30 transition-all duration-300 flex flex-col"
               >
                 {/* Top: company logo + arrow */}
                 <div className="flex items-start justify-between mb-4">

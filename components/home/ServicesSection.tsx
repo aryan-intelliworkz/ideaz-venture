@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
   {
@@ -226,12 +227,17 @@ function ArrowButton() {
 
 export default function ServicesSection() {
   const [expandedIndex, setExpandedIndex] = useState(0);
+  const headingRef = useScrollReveal();
+  const cardsRef = useScrollReveal({ threshold: 0.05 });
 
   return (
     <section id="services" className="py-16 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section heading */}
-        <div className="flex flex-col items-center gap-3 mb-10">
+        <div
+          ref={headingRef}
+          className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
+        >
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize text-center">
             We Partner With Founders From Idea Validation to Scale.
           </h2>
@@ -242,7 +248,10 @@ export default function ServicesSection() {
         </div>
 
         {/* Desktop: accordion row */}
-        <div className="hidden lg:flex gap-4 h-[380px] xl:h-[420px] 2xl:h-[450px]">
+        <div
+          ref={cardsRef}
+          className="reveal-fade-up hidden lg:flex gap-4 h-[380px] xl:h-[420px] 2xl:h-[450px]"
+        >
           {services.map((service, index) => {
             const isExpanded = expandedIndex === index;
             return (

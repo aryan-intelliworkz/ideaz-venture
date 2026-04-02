@@ -1,19 +1,32 @@
 "use client";
 
-import Image from "next/image";
+import { type ReactNode } from "react";
+import {
+  SiDotnet,
+  SiFlutter,
+  SiPhp,
+  SiReact,
+  SiLaravel,
+  SiFigma,
+  SiNodedotjs,
+  SiNextdotjs,
+  SiAngular,
+  SiDocker,
+  SiTypescript,
+} from "react-icons/si";
 
-const technologies = [
-  { name: ".NET", icon: "/assets/tech/dotnet.svg" },
-  { name: "Flutter", icon: "/assets/tech/flutter.svg" },
-  { name: "PHP", icon: "/assets/tech/php.svg" },
-  { name: "React Native", icon: "/assets/tech/react-native.svg" },
-  { name: "Laravel", icon: "/assets/tech/laravel.svg" },
-  { name: "UI/UX", icon: "/assets/tech/uiux.svg" },
-  { name: "Node.js", icon: "/assets/tech/nodejs.svg" },
-  { name: "React", icon: "/assets/tech/react.svg" },
-  { name: "DevOps", icon: "/assets/tech/devops.svg" },
-  { name: "Next.js", icon: "/assets/tech/nextjs.svg" },
-  { name: "Angular", icon: "/assets/tech/angular.svg" },
+const technologies: { name: string; icon: ReactNode; color: string }[] = [
+  { name: "Angular", icon: <SiAngular />, color: "#DD0031" },
+  { name: ".NET", icon: <SiDotnet />, color: "#512BD4" },
+  { name: "Flutter", icon: <SiFlutter />, color: "#02569B" },
+  { name: "PHP", icon: <SiPhp />, color: "#777BB4" },
+  { name: "React", icon: <SiReact />, color: "#61DAFB" },
+  { name: "Laravel", icon: <SiLaravel />, color: "#FF2D20" },
+  { name: "Figma", icon: <SiFigma />, color: "#F24E1E" },
+  { name: "Node.js", icon: <SiNodedotjs />, color: "#339933" },
+  { name: "Next.js", icon: <SiNextdotjs />, color: "#ffffff" },
+  { name: "DevOps", icon: <SiDocker />, color: "#2496ED" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
 ];
 
 export default function TechStack() {
@@ -42,15 +55,14 @@ export default function TechStack() {
                 {[...technologies, ...technologies].map((tech, i) => (
                   <div
                     key={`${tech.name}-${i}`}
-                    className="flex items-center justify-center w-[120px] h-[120px] rounded-full border border-gray-500 bg-white overflow-hidden shrink-0"
+                    className="tech-icon-wrapper group flex items-center justify-center w-[100px] h-[100px] md:w-[110px] md:h-[110px] lg:w-[120px] lg:h-[120px] rounded-full border border-gray-600 bg-[#111111] shrink-0 transition-all duration-500 hover:border-gray-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)]"
                   >
-                    <Image
-                      src={tech.icon}
-                      alt={tech.name}
-                      width={120}
-                      height={120}
-                      className="w-full h-full object-contain p-4"
-                    />
+                    <span
+                      className="tech-icon text-[36px] md:text-[40px] lg:text-[44px] transition-all duration-500 group-hover:scale-110"
+                      style={{ color: tech.color }}
+                    >
+                      {tech.icon}
+                    </span>
                   </div>
                 ))}
               </div>

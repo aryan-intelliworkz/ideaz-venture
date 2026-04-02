@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import MasterLayout from "@/components/layout/MasterLayout";
+import RevealSection from "@/components/ui/RevealSection";
 import ContactForm from "@/components/get-in-touch/ContactForm";
 
 export const metadata: Metadata = {
@@ -52,44 +53,48 @@ export default function GetInTouchPage() {
           {/* Arrow heading + description row */}
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-10 md:mb-12 lg:mb-16">
             {/* Left — arrow + heading */}
-            <div className="flex items-start gap-4 lg:w-[40%] shrink-0">
-              <svg
-                width="40"
-                height="20"
-                viewBox="0 0 40 20"
-                fill="none"
-                className="mt-2 shrink-0"
-              >
-                <path
-                  d="M0 10H36M36 10L28 2M36 10L28 18"
-                  stroke="#EC1C24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <h2 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[40px] leading-[1.15] text-white">
-                Let&apos;s Start Building
-                <br />
-                Something That Scales.
-              </h2>
-            </div>
+            <RevealSection className="reveal-slide-left" threshold={0.1}>
+              <div className="flex items-start gap-4 lg:w-[40%] shrink-0">
+                <svg
+                  width="40"
+                  height="20"
+                  viewBox="0 0 40 20"
+                  fill="none"
+                  className="mt-2 shrink-0"
+                >
+                  <path
+                    d="M0 10H36M36 10L28 2M36 10L28 18"
+                    stroke="#EC1C24"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <h2 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[40px] leading-[1.15] text-white">
+                  Let&apos;s Start Building
+                  <br />
+                  Something That Scales.
+                </h2>
+              </div>
+            </RevealSection>
 
             {/* Right — description */}
-            <div className="lg:w-[60%]">
-              <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.7] text-white/50">
-                Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies
-                lacus eget. Ullamcorper sit enim in ultricies sollicitudin.
-                Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio
-                auctor. Odio feugiat maecenas sed risus sapien et lectus velit.
-                Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus
-                consequat egestas mauris ut.
-              </p>
-              <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.7] text-white/50 mt-3">
-                Choose the option that best fits your goal — we&apos;ll connect
-                you with the right team.
-              </p>
-            </div>
+            <RevealSection className="reveal-slide-right" threshold={0.1}>
+              <div className="lg:w-[60%]">
+                <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.7] text-white/50">
+                  Lorem ipsum dolor sit amet consectetur. Nisl arcu sit
+                  ultricies lacus eget. Ullamcorper sit enim in ultricies
+                  sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu
+                  magna posuere odio auctor. Odio feugiat maecenas sed risus
+                  sapien et lectus velit. Faucibus ac ut faucibus id sit.
+                  Fermentum orci eu diam at purus consequat egestas mauris ut.
+                </p>
+                <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.7] text-white/50 mt-3">
+                  Choose the option that best fits your goal — we&apos;ll
+                  connect you with the right team.
+                </p>
+              </div>
+            </RevealSection>
           </div>
 
           {/* Tabbed Contact Form */}

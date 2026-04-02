@@ -38,7 +38,7 @@ const steps = [
 
 function StepCard({ step }: { step: (typeof steps)[number] }) {
   return (
-    <div className="relative h-[200px] md:h-[240px] lg:h-[250px] xl:h-[265px] 2xl:h-[280px] bg-[rgba(17,17,17,0.2)] border border-gray-600 -ml-px -mt-px overflow-hidden">
+    <div className="relative h-[200px] md:h-[240px] lg:h-[220px] xl:h-[250px] 2xl:h-[280px] bg-[rgba(17,17,17,0.2)] border border-gray-600 -ml-px -mt-px overflow-hidden">
       {/* Large number — top right */}
       <span
         className="absolute top-3 lg:top-4 right-4 lg:right-5 font-archivo font-medium text-[60px] md:text-[80px] lg:text-[80px] xl:text-[100px] 2xl:text-[120px] leading-none text-red select-none pointer-events-none"
@@ -52,10 +52,10 @@ function StepCard({ step }: { step: (typeof steps)[number] }) {
 
       {/* Content — bottom left */}
       <div className="absolute bottom-6 md:bottom-8 lg:bottom-[24px] left-5 md:left-6 lg:left-[24px] flex flex-col gap-3 max-w-[85%] lg:max-w-[341px]">
-        <h3 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[32px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
+        <h3 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
           {step.title}
         </h3>
-        <p className="font-bricolage font-normal text-[16px] md:text-[20px] lg:text-[20px] min-[1800px]:text-[24px] leading-[1.5] text-gray-100">
+        <p className="font-bricolage font-normal text-[16px] md:text-[20px] lg:text-[18px] xl:text-[20px] min-[1800px]:text-[24px] leading-[1.5] text-gray-100">
           {step.description}
         </p>
       </div>
@@ -69,7 +69,7 @@ export default function ExecutionFramework() {
   const row2Ref = useStaggerReveal({ threshold: 0.1 });
 
   return (
-    <section className="relative h-auto lg:h-[650px] xl:h-[700px] 2xl:h-[750px] overflow-hidden">
+    <section className="relative h-auto xl:h-[700px] 2xl:h-[750px] overflow-hidden">
       {/* Background image with gradient overlays */}
       <div className="absolute inset-0">
         <Image
@@ -103,7 +103,7 @@ export default function ExecutionFramework() {
           ref={headingRef}
           className="reveal-fade-up flex flex-col gap-3 mb-8 lg:mb-0"
         >
-          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
             The Ideaz Execution Framework™
           </h2>
           <p className="font-bricolage font-normal text-[16px] md:text-[18px] leading-[1.44] text-gray-400">

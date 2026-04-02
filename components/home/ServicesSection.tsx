@@ -231,14 +231,17 @@ export default function ServicesSection() {
   const cardsRef = useScrollReveal({ threshold: 0.05 });
 
   return (
-    <section id="services" className="py-16 md:py-20 lg:py-28">
+    <section
+      id="services"
+      className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28"
+    >
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section heading */}
         <div
           ref={headingRef}
           className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
         >
-          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.2] text-white capitalize text-center">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] xl:text-[38px] 2xl:text-[40px] leading-[1.2] text-white capitalize text-center">
             We Partner With Founders From Idea Validation to Scale.
           </h2>
           <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
@@ -250,7 +253,7 @@ export default function ServicesSection() {
         {/* Desktop: accordion row */}
         <div
           ref={cardsRef}
-          className="reveal-fade-up hidden lg:flex gap-4 h-[380px] xl:h-[420px] 2xl:h-[450px]"
+          className="reveal-fade-up hidden lg:flex gap-4 h-[340px] xl:h-[400px] 2xl:h-[450px]"
         >
           {services.map((service, index) => {
             const isExpanded = expandedIndex === index;

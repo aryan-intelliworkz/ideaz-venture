@@ -383,7 +383,7 @@ export default function WhoWeAreContent() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.15] text-white">
+              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.15] text-white">
                 We Don&apos;t Just Build Products
                 <br />
                 We Execute Startups.
@@ -415,10 +415,10 @@ export default function WhoWeAreContent() {
             ref={diffHeadingRef}
             className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
           >
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
               What Makes Us Different
             </h2>
-            <p className="font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
+            <p className="font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
               We&apos;re not a typical development agency. We operate as an
               execution partner — combining strategy, engineering, and
               operational ownership to build products that actually succeed in
@@ -574,10 +574,10 @@ export default function WhoWeAreContent() {
             ref={vennRef}
             className="reveal-fade-up text-center mb-10 md:mb-12 lg:mb-16"
           >
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Mission & Vision
             </h2>
-            <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
+            <p className="mt-3 font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
               We are driven by a clear purpose — to help founders build
               meaningful products and scale them with confidence.
             </p>
@@ -699,10 +699,10 @@ export default function WhoWeAreContent() {
             ref={workWithRef}
             className="reveal-fade-up text-center mb-8 md:mb-10 lg:mb-14"
           >
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Who We Work With
             </h2>
-            <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
+            <p className="mt-3 font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
               We partner with founders and businesses at different stages of
               growth — supporting them with the right strategy, technology, and
               execution.
@@ -831,10 +831,10 @@ export default function WhoWeAreContent() {
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
           <div className="text-center mb-8 md:mb-10 lg:mb-14">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Our Core Principles
             </h2>
-            <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
+            <p className="mt-3 font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
               These principles guide how we think, build, and collaborate —
               ensuring consistency in every product we deliver.
             </p>
@@ -880,10 +880,10 @@ export default function WhoWeAreContent() {
             ref={execRef}
             className="reveal-fade-up text-center mb-8 md:mb-10 lg:mb-14"
           >
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               How We Approach Execution
             </h2>
-            <p className="mt-3 font-bricolage text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[780px] mx-auto">
+            <p className="mt-3 font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-400 max-w-[780px] mx-auto">
               Our approach combines structured thinking with practical execution
               — ensuring every product is built with clarity, speed, and
               long-term scalability.

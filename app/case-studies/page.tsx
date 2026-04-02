@@ -50,7 +50,7 @@ export default function CaseStudiesPage() {
                       </p>
 
                       {/* Title */}
-                      <h3 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[36px] leading-[1.15] text-white capitalize mb-4">
+                      <h3 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[32px] xl:text-[36px] leading-[1.15] text-white capitalize mb-4">
                         {cs.title}
                       </h3>
 

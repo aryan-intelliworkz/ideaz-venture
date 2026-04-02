@@ -8,14 +8,14 @@ export default function CTASection() {
   const circlesRef = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section className="py-16 md:py-20 lg:py-28 overflow-hidden">
+    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28 overflow-hidden">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section Header */}
         <div
           ref={headingRef}
           className="reveal-fade-up text-center mb-12 lg:mb-16"
         >
-          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
             Choose Your Path
           </h2>
           <p className="mt-3 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
@@ -30,9 +30,9 @@ export default function CTASection() {
           className="reveal-scale hidden md:flex justify-center items-center relative"
         >
           {/* Left Circle */}
-          <div className="relative w-[420px] lg:w-[520px] xl:w-[600px] h-[420px] lg:h-[520px] xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
-            <div className="flex flex-col items-center gap-4 px-10 lg:px-14 -translate-x-4 lg:-translate-x-6">
-              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
+          <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[600px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
+            <div className="flex flex-col items-center gap-4 px-10 lg:px-12 xl:px-14 -translate-x-4 lg:-translate-x-6">
+              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                 Build A Venture
               </h3>
               <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.5] text-gray-100 max-w-[280px]">
@@ -75,9 +75,9 @@ export default function CTASection() {
           </div>
 
           {/* Right Circle — overlaps left by translating leftward */}
-          <div className="relative w-[420px] lg:w-[520px] xl:w-[600px] h-[420px] lg:h-[520px] xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -ml-[80px] lg:-ml-[100px] xl:-ml-[120px] z-10">
-            <div className="flex flex-col items-center gap-4 px-10 lg:px-14 translate-x-4 lg:translate-x-6">
-              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
+          <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[600px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -ml-[80px] lg:-ml-[80px] xl:-ml-[100px] 2xl:-ml-[120px] z-10">
+            <div className="flex flex-col items-center gap-4 px-10 lg:px-12 xl:px-14 translate-x-4 lg:translate-x-6">
+              <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                 Build Your
                 <br />
                 Engineering Team

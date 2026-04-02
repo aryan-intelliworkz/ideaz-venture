@@ -30,7 +30,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 nav-bg backdrop-blur-md">
-      <div className="mx-auto max-w-[1920px] flex items-center justify-between px-6 md:px-8 lg:px-[160px] h-[100px]">
+      <div className="mx-auto max-w-[1920px] flex items-center justify-between px-6 md:px-8 lg:px-[160px] h-[80px] xl:h-[90px] 2xl:h-[100px]">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -42,7 +42,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 min-[1800px]:gap-[60px]">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-8 min-[1800px]:gap-[60px]">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -117,7 +117,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 top-[100px] mobile-menu-bg z-40 transition-transform duration-300",
+          "lg:hidden fixed inset-0 top-[80px] mobile-menu-bg z-40 transition-transform duration-300",
           mobileOpen ? "translate-x-0 mobile-menu-open" : "translate-x-full",
         )}
       >

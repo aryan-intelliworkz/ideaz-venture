@@ -70,7 +70,7 @@ export default function GetInTouchPage() {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <h2 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[40px] leading-[1.15] text-white">
+                <h2 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] leading-[1.15] text-white">
                   Let&apos;s Start Building
                   <br />
                   Something That Scales.
@@ -107,7 +107,7 @@ export default function GetInTouchPage() {
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section heading */}
           <div className="text-center mb-8 md:mb-10 lg:mb-14">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[40px] leading-[1.15] text-white capitalize mb-4">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] xl:text-[40px] leading-[1.15] text-white capitalize mb-4">
               Our Global Offices
             </h2>
             <p className="font-bricolage text-[14px] md:text-[16px] leading-[1.6] text-white/40 max-w-[700px] mx-auto">
@@ -117,7 +117,7 @@ export default function GetInTouchPage() {
           </div>
 
           {/* Office Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6 xl:gap-8">
             {offices.map((office) => (
               <div
                 key={office.country}

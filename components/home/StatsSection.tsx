@@ -16,11 +16,11 @@ export default function StatsSection() {
   const statsRef = useStaggerReveal();
 
   return (
-    <section className="relative py-16 md:py-20 lg:py-28">
+    <section className="relative py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-        <div className="flex flex-col gap-[60px]">
+        <div className="flex flex-col gap-10 lg:gap-12 xl:gap-[60px]">
           {/* Top row: Arrow + Title | Paragraphs + Button */}
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-[32px]">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-6 xl:gap-[32px]">
             {/* Left: Arrow + Title */}
             <div
               ref={headingRef}
@@ -43,7 +43,7 @@ export default function StatsSection() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize max-w-[510px]">
+              <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize max-w-[510px]">
                 Startup Execution Backed by Experience
               </h2>
             </div>
@@ -85,7 +85,7 @@ export default function StatsSection() {
                 } ${i === 2 ? "border-gray-400 pl-6 lg:pl-8" : ""} ${i === 1 || i === 3 ? "border-gray-400 pl-6 lg:pl-8" : ""}`}
               >
                 <div className="flex flex-col gap-4">
-                  <span className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
+                  <span className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
                     {stat.value}
                   </span>
                   <div className="h-[1px] w-full bg-gray-400" />

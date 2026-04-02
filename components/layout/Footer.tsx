@@ -34,7 +34,7 @@ export default function Footer() {
               fill
               className="object-cover"
             />
-            <h3 className="absolute top-6 left-6 font-archivo font-bold italic text-white text-[24px] md:text-[28px] lg:text-[28px] min-[1800px]:text-[32px] leading-[1.2] max-w-[260px]">
+            <h3 className="absolute top-6 left-6 font-archivo font-bold italic text-white text-[24px] md:text-[28px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px] min-[1800px]:text-[32px] leading-[1.2] max-w-[260px]">
               Lorem Ipsum
               <br />
               Dolor Sit Amet
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Right — Quick Links */}
           <div className="flex-1 p-8 lg:p-10 xl:p-12">
-            <h2 className="font-archivo font-light text-white/40 text-[28px] md:text-[36px] lg:text-[42px] min-[1800px]:text-[48px] leading-[1.1] mb-6 md:mb-8 lg:mb-10">
+            <h2 className="font-archivo font-light text-white/40 text-[28px] md:text-[36px] lg:text-[36px] xl:text-[42px] 2xl:text-[46px] min-[1800px]:text-[48px] leading-[1.1] mb-6 md:mb-8 lg:mb-10">
               Quick Links
             </h2>
 

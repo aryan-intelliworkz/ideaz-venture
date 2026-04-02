@@ -11,14 +11,14 @@ export default function InsightsPreview() {
   const gridRef = useStaggerReveal({ threshold: 0.1 });
 
   return (
-    <section className="py-16 md:py-20 lg:py-28">
+    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div
           ref={headingRef}
           className="reveal-fade-up flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12"
         >
           <div>
-            <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Latest Insights
             </h2>
             <p className="mt-2 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] text-gray-400">
@@ -50,7 +50,7 @@ export default function InsightsPreview() {
                     className="text-white/40 group-hover:text-white transition-colors"
                   />
                 </div>
-                <h3 className="font-archivo font-normal text-[20px] md:text-[22px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.25] text-white capitalize">
+                <h3 className="font-archivo font-normal text-[20px] md:text-[22px] lg:text-[20px] xl:text-[22px] min-[1800px]:text-[24px] leading-[1.25] text-white capitalize">
                   {insight.title}
                 </h3>
                 <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.5] text-gray-400 line-clamp-3">

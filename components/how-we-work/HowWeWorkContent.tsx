@@ -122,7 +122,7 @@ export default function HowWeWorkContent() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] min-[1800px]:text-[40px] leading-[1.15] text-white">
+              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.15] text-white">
                 Built For Execution,
                 <br />
                 Not Guesswork.
@@ -173,7 +173,7 @@ export default function HowWeWorkContent() {
                         {step.tagline}
                       </p>
                       <div className="w-full h-px bg-white/[0.08] mb-6" />
-                      <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] min-[1800px]:text-[36px] leading-[1.1] text-white capitalize mb-5">
+                      <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.1] text-white capitalize mb-5">
                         {step.title}
                       </h3>
                       <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.75] text-white/50">

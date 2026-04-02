@@ -13,10 +13,10 @@ export default function StrategyValidationPage() {
       <section className="relative py-16 md:py-20 lg:py-28 overflow-hidden">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="max-w-[900px] mx-auto text-center">
-            <h1 className="font-archivo font-medium text-[28px] md:text-[48px] lg:text-[54px] min-[1800px]:text-[64px] leading-[1.1] text-white capitalize mb-6">
+            <h1 className="font-archivo font-medium text-[28px] md:text-[48px] lg:text-[46px] xl:text-[54px] 2xl:text-[60px] min-[1800px]:text-[64px] leading-[1.1] text-white capitalize mb-6">
               Validate, Structure, and De-Risk Your Vision.
             </h1>
-            <p className="font-bricolage text-[16px] md:text-[18px] lg:text-[22px] min-[1800px]:text-[24px] leading-[1.5] text-gray-400 mb-8 md:mb-10">
+            <p className="font-bricolage text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] min-[1800px]:text-[24px] leading-[1.5] text-gray-400 mb-8 md:mb-10">
               We help founders validate, structure, and de-risk their startup
               ideas before execution
             </p>
@@ -31,7 +31,7 @@ export default function StrategyValidationPage() {
       <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="max-w-[900px]">
-            <h2 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[46px] min-[1800px]:text-[54px] leading-[1.1] text-white capitalize mb-6 md:mb-8">
+            <h2 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[40px] xl:text-[46px] 2xl:text-[50px] min-[1800px]:text-[54px] leading-[1.1] text-white capitalize mb-6 md:mb-8">
               Execution Without Strategy is a Liability.
             </h2>
             <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.78] text-gray-400">
@@ -51,10 +51,10 @@ export default function StrategyValidationPage() {
       {/* Validation Framework */}
       <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <h2 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[46px] min-[1800px]:text-[54px] leading-[1.1] text-white capitalize mb-8 md:mb-12">
+          <h2 className="font-archivo font-medium text-[28px] md:text-[40px] lg:text-[40px] xl:text-[46px] 2xl:text-[50px] min-[1800px]:text-[54px] leading-[1.1] text-white capitalize mb-8 md:mb-12">
             Our Validation Framework
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 number: "01",

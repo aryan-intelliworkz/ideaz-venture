@@ -227,13 +227,11 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* ─── FAQ ─── */}
       <RevealSection className="reveal-fade-up">
-        <section className="py-12 md:py-16 lg:py-20">
+        <section className="py-12 md:py-16 lg:py-24">
           <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-            <div className="text-center mb-10 md:mb-14">
-              <h2 className="font-archivo font-medium text-[26px] md:text-[32px] lg:text-[36px] xl:text-[40px] leading-[1.1] text-white capitalize mb-3">
-                Frequently Asked Questions
-              </h2>
-            </div>
+            <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[42px] min-[1800px]:text-[48px] leading-[1.1] text-white capitalize mb-8 md:mb-10 lg:mb-14 text-center">
+              Frequently Asked Questions
+            </h2>
 
             <FAQAccordion faqs={service.faqs} />
           </div>

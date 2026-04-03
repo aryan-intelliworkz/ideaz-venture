@@ -37,7 +37,7 @@ export default function CaseStudiesPage() {
                   }
                   threshold={0.1}
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center border border-white/[0.08] rounded-[4px] overflow-hidden bg-[#0a0a0a]">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center corner-border overflow-hidden bg-[#0a0a0a]">
                     {/* Text Content */}
                     <div
                       className={`flex flex-col p-6 md:p-8 lg:p-10 ${

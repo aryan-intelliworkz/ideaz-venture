@@ -270,7 +270,7 @@ export default function ServicesSection() {
                 onClick={() => setExpandedIndex(index)}
                 onMouseEnter={() => setExpandedIndex(index)}
                 className={cn(
-                  "service-card relative cursor-pointer overflow-hidden border border-white/[0.08] transition-all duration-700 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
+                  "service-card relative cursor-pointer overflow-hidden corner-border transition-all duration-700 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
                   isExpanded
                     ? "service-card-expanded flex-[3.2]"
                     : "service-card-collapsed flex-1 hover:bg-white/[0.02]",
@@ -336,7 +336,7 @@ export default function ServicesSection() {
                 key={service.title}
                 onClick={() => setExpandedIndex(isExpanded ? -1 : index)}
                 className={cn(
-                  "service-card relative cursor-pointer overflow-hidden border border-white/[0.08] transition-all duration-500 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
+                  "service-card relative cursor-pointer overflow-hidden corner-border transition-all duration-500 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
                   isExpanded ? "service-card-expanded" : "",
                 )}
               >
@@ -381,7 +381,7 @@ export default function ServicesSection() {
               <div
                 key={service.title}
                 onClick={() => setExpandedIndex(isExpanded ? -1 : index)}
-                className="service-card relative cursor-pointer overflow-hidden border border-white/[0.08] transition-all duration-500"
+                className="service-card relative cursor-pointer overflow-hidden corner-border transition-all duration-500"
               >
                 <div className="p-5 flex flex-col gap-3">
                   <div className="flex items-start justify-between">

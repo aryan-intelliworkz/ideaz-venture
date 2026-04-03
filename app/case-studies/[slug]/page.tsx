@@ -218,7 +218,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             {cs.executionStrategy.steps.map((step, i) => (
               <div
                 key={i}
-                className="group border border-white/[0.08] rounded-[4px] bg-[#0a0a0a] p-6 md:p-7 lg:p-8 flex flex-col gap-4 hover:border-red/30 transition-colors"
+                className="group corner-border bg-[#0a0a0a] p-6 md:p-7 lg:p-8 flex flex-col gap-4 transition-colors"
               >
                 {/* Step icon placeholder */}
                 <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center">
@@ -243,7 +243,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       {/* ─── CTA Banner ─── */}
       <section className="py-8 md:py-12 lg:py-16">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="border border-white/[0.08] rounded-[4px] bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
+          <div className="corner-border bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
             <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col justify-center gap-5">
               <h3 className="font-archivo font-medium text-[26px] md:text-[30px] lg:text-[36px] xl:text-[40px] leading-[1.1] text-white capitalize">
                 Open the next chapter of your business.

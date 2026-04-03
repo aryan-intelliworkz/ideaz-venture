@@ -121,7 +121,7 @@ export default function GetInTouchPage() {
             {offices.map((office) => (
               <div
                 key={office.country}
-                className="border border-white/[0.08] rounded-[8px] overflow-hidden bg-[#0a0a0a] flex flex-col"
+                className="corner-border overflow-hidden bg-[#0a0a0a] flex flex-col"
               >
                 {/* Map Image */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden">

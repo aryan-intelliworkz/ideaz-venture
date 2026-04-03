@@ -35,7 +35,7 @@ export default function InsightsPage() {
               >
                 <Link
                   href={`/insights/${insight.slug}`}
-                  className="group flex flex-col border border-white/[0.08] hover:border-white/20 rounded-[8px] overflow-hidden bg-[#0a0a0a] transition-all duration-300 h-full"
+                  className="group flex flex-col corner-border overflow-hidden bg-[#0a0a0a] transition-all duration-300 h-full"
                 >
                   {/* Image */}
                   <div className="relative w-full aspect-[16/11] overflow-hidden">

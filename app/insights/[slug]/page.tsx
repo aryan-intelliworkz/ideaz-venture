@@ -165,7 +165,7 @@ export default async function InsightDetailPage({ params }: Props) {
 
                   {/* CTA Banner — placed before Conclusion */}
                   {isConclusion && (
-                    <div className="my-4 border border-white/[0.08] rounded-[4px] bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
+                    <div className="my-4 corner-border bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
                       <div className="flex-1 p-6 md:p-8 lg:p-10 flex flex-col justify-center gap-4">
                         <h3 className="font-archivo font-medium text-[20px] md:text-[24px] lg:text-[26px] leading-[1.15] text-white capitalize">
                           Lorem Ipsum Dolor Sit Amet Consectetur. Elit Dui

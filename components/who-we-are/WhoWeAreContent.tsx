@@ -393,7 +393,7 @@ export default function WhoWeAreContent() {
                   onClick={() => setExpandedIndex(index)}
                   onMouseEnter={() => setExpandedIndex(index)}
                   className={cn(
-                    "service-card relative cursor-pointer overflow-hidden border border-white/[0.08] transition-all duration-700 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
+                    "service-card relative cursor-pointer overflow-hidden corner-border transition-all duration-700 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
                     isExpanded
                       ? "service-card-expanded flex-[3.2]"
                       : "service-card-collapsed flex-1 hover:bg-white/[0.02]",
@@ -451,7 +451,7 @@ export default function WhoWeAreContent() {
                   key={item.title}
                   onClick={() => setExpandedIndex(isExpanded ? -1 : index)}
                   className={cn(
-                    "service-card relative cursor-pointer overflow-hidden border border-white/[0.08] transition-all duration-500 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
+                    "service-card relative cursor-pointer overflow-hidden corner-border transition-all duration-500 ease-[cubic-bezier(0.645,0.045,0.355,1)]",
                     isExpanded ? "service-card-expanded" : "",
                   )}
                 >
@@ -491,7 +491,7 @@ export default function WhoWeAreContent() {
                 <div
                   key={item.title}
                   onClick={() => setExpandedIndex(isExpanded ? -1 : index)}
-                  className="service-card relative cursor-pointer overflow-hidden border border-white/[0.08] transition-all duration-500"
+                  className="service-card relative cursor-pointer overflow-hidden corner-border transition-all duration-500"
                 >
                   <div className="p-5 flex flex-col gap-3">
                     <div className="flex items-start justify-between">
@@ -673,7 +673,7 @@ export default function WhoWeAreContent() {
             {corePrinciples.map((principle) => (
               <div
                 key={principle.title}
-                className="reveal-child border border-white/[0.08] rounded-[4px] overflow-hidden group hover:border-white/[0.15] transition-colors"
+                className="reveal-child corner-border overflow-hidden group transition-colors"
               >
                 <div className="relative h-[220px] lg:h-[260px] overflow-hidden">
                   <Image

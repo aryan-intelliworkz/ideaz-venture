@@ -25,7 +25,7 @@ export default function Footer() {
     <footer className="bg-[#050505]">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px] py-10 md:py-12 lg:py-16">
         {/* Top Card */}
-        <div className="border border-white/[0.08] rounded-[4px] flex flex-col lg:flex-row overflow-hidden">
+        <div className="corner-border flex flex-col lg:flex-row overflow-hidden">
           {/* Left — Image Block */}
           <div className="relative lg:w-[30%] min-h-[250px] lg:min-h-[320px] bg-[#0a0a0a] overflow-hidden">
             <Image

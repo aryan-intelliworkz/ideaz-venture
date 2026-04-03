@@ -9,7 +9,7 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
-  { label: "Services", href: "/" },
+  { label: "Services", href: "/services" },
   { label: "Who we are", href: "/who-we-are" },
   { label: "How we work", href: "/how-we-work" },
   { label: "Case Studies", href: "/case-studies" },

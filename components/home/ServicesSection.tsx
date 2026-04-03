@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const services = [
   {
+    slug: "startup-consulting",
     title: "Startup Consulting",
     description:
       "We help founders validate, structure, and de-risk their startup ideas before execution.\nOur consulting services include business strategy development, market positioning, competitive analysis, revenue model design, and growth planning. We work closely with founders to define a clear roadmap from concept to launch while minimizing risk and maximizing clarity",
@@ -24,6 +26,7 @@ const services = [
     ),
   },
   {
+    slug: "product-development",
     title: "Startup Product Development",
     description:
       "End-to-end product development from ideation to deployment. We build MVPs, iterate based on user feedback, and scale your product with robust, maintainable code and modern architecture.",
@@ -56,6 +59,7 @@ const services = [
     ),
   },
   {
+    slug: "branding-gtm",
     title: "Branding & GTM Support",
     description:
       "Strategic branding and go-to-market support that positions your venture for growth. From brand identity to launch strategy, we ensure your product enters the market with impact.",
@@ -80,6 +84,7 @@ const services = [
     ),
   },
   {
+    slug: "investor-readiness",
     title: "Investor Readiness Support",
     description:
       "Prepare your venture for funding with investor-ready metrics, pitch materials, financial modeling, and due diligence preparation that demonstrates operational maturity.",
@@ -114,6 +119,7 @@ const services = [
     ),
   },
   {
+    slug: "post-launch-support",
     title: "Post-Launch Support",
     description:
       "Ongoing technical and strategic support after launch. Bug fixes, performance optimization, feature iterations, and user analytics to keep your product growing.",
@@ -138,6 +144,7 @@ const services = [
     ),
   },
   {
+    slug: "managed-operations",
     title: "Managed Operations",
     description:
       "Full operational management including DevOps, infrastructure, monitoring, and technical support so you can focus on growth while we handle the engine room.",
@@ -283,7 +290,12 @@ export default function ServicesSection() {
                     <div className="w-[100px] h-[100px] rounded-full bg-white/[0.08] flex items-center justify-center">
                       {service.icon}
                     </div>
-                    <ArrowButton />
+                    <Link
+                      href={`/services/${service.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ArrowButton />
+                    </Link>
                   </div>
 
                   {/* Title + Description */}
@@ -333,7 +345,12 @@ export default function ServicesSection() {
                     <div className="w-[80px] h-[80px] rounded-full bg-white/[0.08] flex items-center justify-center">
                       {service.icon}
                     </div>
-                    <ArrowButton />
+                    <Link
+                      href={`/services/${service.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ArrowButton />
+                    </Link>
                   </div>
                   <h3 className="font-archivo font-normal text-[24px] leading-[1.09] text-white capitalize">
                     {service.title}
@@ -371,7 +388,12 @@ export default function ServicesSection() {
                     <div className="w-[64px] h-[64px] rounded-full bg-white/[0.08] flex items-center justify-center scale-[0.84]">
                       {service.icon}
                     </div>
-                    <ArrowButton />
+                    <Link
+                      href={`/services/${service.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ArrowButton />
+                    </Link>
                   </div>
                   <h3 className="font-archivo font-normal text-[22px] leading-[1.09] text-white capitalize">
                     {service.title}

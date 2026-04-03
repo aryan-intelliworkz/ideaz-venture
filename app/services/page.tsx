@@ -9,7 +9,7 @@ import WhoWeWorkWith from "@/components/shared/WhoWeWorkWith";
 export const metadata: Metadata = {
   title: "Services — Ideaz Ventures",
   description:
-    "Validate, Structure, And De-Risk Your Vision. We help founders validate, structure, and de-risk the full lifecycle of their startup, not just the code.",
+    "We help founders validate, structure, and de-risk their startup ideas before execution.",
 };
 
 /* ─── Data ─── */
@@ -49,19 +49,16 @@ export default function ServicesPage() {
         <div className="absolute top-0 right-[22%] w-[3px] h-[70px] bg-red/25" />
 
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px] pt-12 md:pt-16 lg:pt-20 pb-12 md:pb-16">
-          <p className="font-bricolage text-[13px] md:text-[14px] text-red tracking-wider uppercase mb-4">
-            Strategy & Validation
-          </p>
           <div className="max-w-[800px] mx-auto text-center">
             <h1 className="font-archivo font-medium text-[28px] sm:text-[36px] md:text-[44px] lg:text-[48px] xl:text-[52px] 2xl:text-[56px] leading-[1.08] text-white capitalize mb-5">
               Validate, Structure, And De-Risk Your Vision.
             </h1>
             <p className="font-bricolage text-[14px] md:text-[16px] lg:text-[17px] xl:text-[18px] leading-[1.5] text-white/60 max-w-[600px] mx-auto mb-8">
-              We help founders validate, structure, and de-risk the full
-              lifecycle of their startup, not just the code.
+              We help founders validate, structure, and de-risk their startup
+              ideas before execution
             </p>
             <PrimaryButton as="a" href="/get-in-touch">
-              Book a Free Discovery Call
+              Book an Idea Discovery Call
             </PrimaryButton>
           </div>
         </div>
@@ -71,9 +68,9 @@ export default function ServicesPage() {
       <RevealSection className="reveal-fade-up">
         <section className="py-12 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-            <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
               {/* Left: red arrow + heading */}
-              <div className="flex items-start gap-3">
+              <div className="lg:col-span-5 flex items-start gap-3">
                 <svg
                   width="40"
                   height="20"
@@ -95,7 +92,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Right: paragraph */}
-              <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60">
+              <p className="lg:col-span-7 font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60">
                 Too many startups rush into development based on assumptions,
                 leading to wasted capital and products the market doesn&apos;t
                 actually need. We take a different approach. We work closely

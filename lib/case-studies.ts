@@ -37,13 +37,11 @@ export const caseStudies: CaseStudy[] = [
     subtitle: "Enterprise ERP | ₹30+ Crore Revenue",
     tagline:
       "We are driven by a clear purpose — to help founders build meaningful products and scale them with confidence.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultricies sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget.",
+    description: "Enterprise-grade ERP platform built for scale.",
     stats: [
-      { label: "Revenue Generated", value: "₹30+ Crore" },
-      { label: "Active Global Users", value: "25,000+" },
-      { label: "Countries Deployed", value: "15+" },
-      { label: "Factories Running", value: "240+" },
+      { label: "Countries", value: "15+" },
+      { label: "Active Users", value: "25,000+" },
+      { label: "Revenue Impact", value: "₹30+ Crore" },
     ],
     vision: {
       heading: "The Vision",
@@ -113,13 +111,11 @@ export const caseStudies: CaseStudy[] = [
     subtitle: "AI & Manufacturing | Hiring Platform",
     tagline:
       "India's AI-enabled hiring platform for the manufacturing industry.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultricies sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut.",
+    description: "Scalable recruitment platform with structured workflows.",
     stats: [
-      { label: "Hires Facilitated", value: "10,000+" },
-      { label: "Partner Companies", value: "500+" },
-      { label: "Hiring Efficiency", value: "3x" },
-      { label: "Time-to-Hire Reduced", value: "65%" },
+      { label: "Countries", value: "15+" },
+      { label: "Active Users", value: "25,000+" },
+      { label: "Revenue Impact", value: "₹30+ Crore" },
     ],
     vision: {
       heading: "The Vision",
@@ -190,13 +186,11 @@ export const caseStudies: CaseStudy[] = [
     subtitle: "PropTech | Real Estate Marketplace",
     tagline:
       "Transforming India's real estate market with technology-driven property discovery and transactions.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultricies sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut.",
+    description: "Marketplace platform designed for high-volume transactions.",
     stats: [
-      { label: "Properties Listed", value: "25,000+" },
-      { label: "Active Users", value: "100K+" },
-      { label: "Cities Covered", value: "45+" },
-      { label: "Monthly Transactions", value: "2,500+" },
+      { label: "Countries", value: "15+" },
+      { label: "Active Users", value: "25,000+" },
+      { label: "Revenue Impact", value: "₹30+ Crore" },
     ],
     vision: {
       heading: "The Vision",
@@ -274,13 +268,11 @@ export const caseStudies: CaseStudy[] = [
     subtitle: "E-Commerce | ₹174 Crore Exit",
     tagline:
       "From bootstrapped marketplace to a ₹174 Crore strategic acquisition in three years.",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultricies sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut.",
+    description: "B2B commerce platform built for operational efficiency.",
     stats: [
-      { label: "Exit Valuation", value: "₹174 Crore" },
-      { label: "Monthly Orders", value: "100K+" },
-      { label: "Year-over-Year Growth", value: "10x" },
-      { label: "SKUs Managed", value: "50,000+" },
+      { label: "Countries", value: "15+" },
+      { label: "Active Users", value: "25,000+" },
+      { label: "Revenue Impact", value: "₹30+ Crore" },
     ],
     vision: {
       heading: "The Vision",

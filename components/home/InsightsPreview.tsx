@@ -11,7 +11,7 @@ export default function InsightsPreview() {
   const gridRef = useStaggerReveal({ threshold: 0.1 });
 
   return (
-    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28">
+    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div
           ref={headingRef}

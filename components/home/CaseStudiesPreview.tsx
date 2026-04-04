@@ -69,7 +69,7 @@ export default function CaseStudiesPreview() {
   const gridRef = useStaggerReveal({ threshold: 0.1 });
 
   return (
-    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28">
+    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-6 lg:items-stretch">
           {/* Left: Chess image + text block — matches total height of right grid */}
@@ -77,24 +77,24 @@ export default function CaseStudiesPreview() {
             ref={leftRef}
             className="reveal-slide-left flex flex-col lg:w-[35%] shrink-0"
           >
-            {/* Chess 3D image — fills available space above the text block */}
-            <div className="relative w-full flex-1 min-h-[300px] md:min-h-[350px]">
+            {/* Chess 3D image — fills available space, extends to frame edge */}
+            <div className="relative w-full flex-1 min-h-[320px] md:min-h-[380px] lg:min-h-[400px] -z-0">
               <Image
                 src="/assets/ChessImg.png"
                 alt="Execution Stories"
                 fill
-                className="object-contain object-center"
+                className="object-contain object-center drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
                 sizes="(max-width: 1024px) 100vw, 35vw"
               />
             </div>
 
             {/* Text block at bottom — bordered card */}
-            <div className="border border-gray-600 rounded-[20px] p-6 md:p-8 lg:p-10 bg-bg-card mt-4">
-              <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
-                Execution Stories
+            <div className="border border-gray-600 rounded-[3px] p-5 md:p-6 lg:p-8 bg-bg-card mt-2">
+              <h2 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[26px] xl:text-[28px] min-[1800px]:text-[32px] leading-[1.09] text-white capitalize">
+                Product Execution Stories
               </h2>
-              <p className="font-bricolage font-medium text-[18px] md:text-[22px] lg:text-[20px] xl:text-[22px] min-[1800px]:text-[24px] leading-[1.5] text-white mt-3">
-                Built. Launched. Validated.
+              <p className="font-bricolage font-medium text-[15px] md:text-[17px] lg:text-[16px] xl:text-[17px] min-[1800px]:text-[20px] leading-[1.5] text-white mt-2">
+                Built. Launched. Scaled.
               </p>
             </div>
           </div>

@@ -398,6 +398,17 @@ body {
   opacity: 1;
 }
 
+/* CTA mobile button — smaller size to fit inside circles */
+@media (max-width: 767px) {
+  .cta-mobile-btn .primary-btn-bg {
+    padding: 6px 24px;
+  }
+
+  .cta-mobile-btn .primary-btn-text {
+    font-size: 13px;
+  }
+}
+
 /* Spinning conic gradient that creates the animated border */
 .primary-btn-border-spin {
   position: absolute;
@@ -521,8 +532,7 @@ body {
   transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.service-arrow-btn:hover .service-arrow-glow,
-.service-card:hover .service-arrow-glow {
+.service-arrow-btn:hover .service-arrow-glow {
   opacity: 0.6;
 }
 
@@ -538,6 +548,72 @@ body {
       #050505 260deg);
   animation: primary-btn-spin 3s linear infinite;
   pointer-events: none;
+}
+
+/* ============================
+   Framework Step Number — spinning gradient on stroke edges only
+   ============================ */
+@property --step-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.step-number {
+  display: inline-block;
+  -webkit-text-stroke: 1px #666;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hide the default stroke on hover */
+.step-card:hover .step-number {
+  -webkit-text-stroke-color: transparent;
+}
+
+/* Shared pseudo-element base */
+.step-number::before,
+.step-number::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Gradient layer — fills entire text shape (stroke + fill area) */
+.step-number::before {
+  background: conic-gradient(from var(--step-angle) at 50% 50%,
+      #666 80deg,
+      #ec1c24 160deg,
+      #ff4444 200deg,
+      #666 280deg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2.5px transparent;
+  animation: step-number-spin 3s linear infinite;
+}
+
+/* Fill mask — covers the interior, leaving only the stroke edges visible */
+.step-number::after {
+  -webkit-text-fill-color: #111;
+  -webkit-text-stroke: 0;
+  z-index: 1;
+}
+
+.step-card:hover .step-number::before,
+.step-card:hover .step-number::after {
+  opacity: 1;
+}
+
+@keyframes step-number-spin {
+  to {
+    --step-angle: 360deg;
+  }
 }
 
 /* Service card hover background */

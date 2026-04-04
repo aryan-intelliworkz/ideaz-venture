@@ -10,7 +10,7 @@ const services = [
     slug: "startup-consulting",
     title: "Startup Consulting",
     description:
-      "We help founders validate, structure, and de-risk their startup ideas before execution.\nOur consulting services include business strategy development, market positioning, competitive analysis, revenue model design, and growth planning. We work closely with founders to define a clear roadmap from concept to launch while minimizing risk and maximizing clarity",
+      "We provide structured startup consulting services to help founders validate ideas, define product scope, and reduce execution risk before development begins. Our consulting approach covers market research, business model design, and roadmap planning, ensuring every decision is intentional and aligned with long-term growth.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -29,7 +29,7 @@ const services = [
     slug: "product-development",
     title: "Startup Product Development",
     description:
-      "End-to-end product development from ideation to deployment. We build MVPs, iterate based on user feedback, and scale your product with robust, maintainable code and modern architecture.",
+      "Our startup product development services focus on building real, scalable products, not just features. From MVP development to full-scale platforms, we handle design, engineering, and deployment with a strong focus on performance, usability, and long-term maintainability.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -62,7 +62,7 @@ const services = [
     slug: "branding-gtm",
     title: "Branding & GTM Support",
     description:
-      "Strategic branding and go-to-market support that positions your venture for growth. From brand identity to launch strategy, we ensure your product enters the market with impact.",
+      "Through our startup branding services and go-to-market strategy services, we help you position your product clearly and launch with confidence. We align messaging, customer targeting, and product value so your offering is understood, adopted, and ready to grow.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -87,7 +87,7 @@ const services = [
     slug: "investor-readiness",
     title: "Investor Readiness Support",
     description:
-      "Prepare your venture for funding with investor-ready metrics, pitch materials, financial modeling, and due diligence preparation that demonstrates operational maturity.",
+      "Our investor readiness consulting prepares startups for serious funding conversations. We help define your product narrative, validate your roadmap, and align your execution strategy, so investors see clarity, scalability, and real potential.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -122,7 +122,7 @@ const services = [
     slug: "post-launch-support",
     title: "Post-Launch Support",
     description:
-      "Ongoing technical and strategic support after launch. Bug fixes, performance optimization, feature iterations, and user analytics to keep your product growing.",
+      "We provide post-launch support services focused on improving product performance, stability, and user experience after release. From feature enhancements to optimization strategies, we help startups scale efficiently and sustainably.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -147,7 +147,7 @@ const services = [
     slug: "managed-operations",
     title: "Managed Operations",
     description:
-      "Full operational management including DevOps, infrastructure, monitoring, and technical support so you can focus on growth while we handle the engine room.",
+      "Our managed operations services and startup operations consulting ensure your business runs smoothly as it grows. We streamline processes, improve execution efficiency, and build operational systems that support long-term scalability.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -240,7 +240,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28"
+      className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24"
     >
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section heading */}
@@ -249,18 +249,22 @@ export default function ServicesSection() {
           className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
         >
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] xl:text-[38px] 2xl:text-[40px] leading-[1.2] text-white capitalize text-center">
-            We Partner With Founders From Idea Validation to Scale.
+            End-to-End Startup Consulting & Execution Services
           </h2>
           <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
-            Our services cover the entire startup journey — from strategy and
-            product development to launch and operational growth.
+            As a business consulting company and technology consulting company,
+            we support founders and businesses across the entire journey — from
+            idea validation and product development to launch, funding, and
+            growth. Our approach combines business consulting solutions with
+            real execution, ensuring every stage is clear, structured, and built
+            to scale.
           </p>
         </div>
 
         {/* Desktop: accordion row */}
         <div
           ref={cardsRef}
-          className="reveal-fade-up hidden lg:flex gap-4 h-[340px] xl:h-[400px] 2xl:h-[450px]"
+          className="reveal-fade-up hidden lg:flex gap-4 h-[340px] xl:h-[400px] 2xl:h-[400px]"
         >
           {services.map((service, index) => {
             const isExpanded = expandedIndex === index;

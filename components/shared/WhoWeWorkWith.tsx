@@ -69,7 +69,7 @@ export default function WhoWeWorkWith() {
         </div>
 
         {/* Desktop Layout: dots left, image center, info right */}
-        <div className="hidden lg:flex items-stretch corner-border overflow-hidden min-h-[320px]">
+        <div className="hidden lg:flex items-stretch overflow-hidden min-h-[320px]">
           {/* Left — dot navigation + labels */}
           <div className="w-[300px] shrink-0 p-10 flex flex-col justify-center gap-6 border-r border-white/[0.08]">
             {workWithData.map((item, index) => (
@@ -144,7 +144,7 @@ export default function WhoWeWorkWith() {
               key={item.title}
               onClick={() => handleWorkWithClick(index)}
               className={cn(
-                "corner-border overflow-hidden cursor-pointer transition-all duration-300",
+                "overflow-hidden cursor-pointer transition-all duration-300",
                 activeWorkWith === index ? "ring-1 ring-[#EC1C24]/30" : "",
               )}
             >

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -8,7 +9,7 @@ export default function CTASection() {
   const circlesRef = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28 overflow-hidden">
+    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24 overflow-hidden">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section Header */}
         <div
@@ -19,7 +20,7 @@ export default function CTASection() {
             Choose Your Path
           </h2>
           <p className="mt-3 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
-            Built for Founders. Trusted by Enterprises.
+            Built for founders. Trusted for execution.
           </p>
         </div>
 
@@ -30,7 +31,7 @@ export default function CTASection() {
           className="reveal-scale hidden md:flex justify-center items-center relative"
         >
           {/* Left Circle */}
-          <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[600px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
+          <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[520px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[520px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
             <div className="flex flex-col items-center gap-4 px-10 lg:px-12 xl:px-14 -translate-x-4 lg:-translate-x-6">
               <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                 Build A Venture
@@ -38,9 +39,9 @@ export default function CTASection() {
               <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.5] text-gray-100 max-w-[280px]">
                 Validate your idea.
                 <br />
-                Architect it correctly.
+                Structure it correctly.
                 <br />
-                Launch with confidence.
+                Launch with clarity.
               </p>
               <PrimaryButton as="a" href="/get-in-touch" className="mt-2">
                 Start the Execution Journey
@@ -50,32 +51,17 @@ export default function CTASection() {
 
           {/* Center Logo at intersection */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <svg
-              width="40"
-              height="48"
-              viewBox="0 0 40 48"
-              fill="none"
-              className="w-[30px] lg:w-[40px] h-auto"
-            >
-              <path
-                d="M8 4L20 44M20 44L32 4"
-                stroke="white"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14 24L20 38L26 24"
-                stroke="white"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <Image
+              src="/assets/cricleLogo.png"
+              alt="Ideaz Ventures"
+              width={60}
+              height={60}
+              className="w-[40px] lg:w-[50px] xl:w-[60px] h-auto"
+            />
           </div>
 
           {/* Right Circle — overlaps left by translating leftward */}
-          <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[600px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[600px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -ml-[80px] lg:-ml-[80px] xl:-ml-[100px] 2xl:-ml-[120px] z-10">
+          <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[520px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[520px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -ml-[80px] lg:-ml-[80px] xl:-ml-[100px] 2xl:-ml-[100px] z-10">
             <div className="flex flex-col items-center gap-4 px-10 lg:px-12 xl:px-14 translate-x-4 lg:translate-x-6">
               <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                 Build Your
@@ -83,7 +69,8 @@ export default function CTASection() {
                 Engineering Team
               </h3>
               <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.5] text-gray-100 max-w-[280px]">
-                Deploy experienced startup-ready engineers — fast.
+                Hire experienced, product-focused engineers. Scale execution
+                without hiring overhead.
               </p>
               <PrimaryButton as="a" href="/get-in-touch" className="mt-2">
                 Hire Dedicated Teams
@@ -103,11 +90,15 @@ export default function CTASection() {
               <p className="font-bricolage text-[14px] leading-[1.5] text-gray-100 max-w-[220px]">
                 Validate your idea.
                 <br />
-                Architect it correctly.
+                Structure it correctly.
                 <br />
-                Launch with confidence.
+                Launch with clarity.
               </p>
-              <PrimaryButton as="a" href="/get-in-touch" className="mt-1">
+              <PrimaryButton
+                as="a"
+                href="/get-in-touch"
+                className="mt-1 cta-mobile-btn"
+              >
                 Start the Execution Journey
               </PrimaryButton>
             </div>
@@ -115,22 +106,13 @@ export default function CTASection() {
 
           {/* Center Logo */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <svg width="30" height="36" viewBox="0 0 40 48" fill="none">
-              <path
-                d="M8 4L20 44M20 44L32 4"
-                stroke="white"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M14 24L20 38L26 24"
-                stroke="white"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <Image
+              src="/assets/cricleLogo.png"
+              alt="Ideaz Ventures"
+              width={40}
+              height={40}
+              className="w-[35px] h-auto"
+            />
           </div>
 
           {/* Bottom Circle — overlaps top */}
@@ -142,9 +124,14 @@ export default function CTASection() {
                 Engineering Team
               </h3>
               <p className="font-bricolage text-[14px] leading-[1.5] text-gray-100 max-w-[220px]">
-                Deploy experienced startup-ready engineers — fast.
+                Hire experienced, product-focused engineers. Scale execution
+                without hiring overhead.
               </p>
-              <PrimaryButton as="a" href="/get-in-touch" className="mt-1">
+              <PrimaryButton
+                as="a"
+                href="/get-in-touch"
+                className="mt-1 cta-mobile-btn"
+              >
                 Hire Dedicated Teams
               </PrimaryButton>
             </div>

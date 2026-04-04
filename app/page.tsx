@@ -24,7 +24,7 @@ export default function HomePage() {
       <DigitalProducts />
       <ExecutionFramework />
       <CaseStudiesPreview />
-      <InsightsPreview />
+      {/* <InsightsPreview /> */}
       <CTASection />
     </div>
   );

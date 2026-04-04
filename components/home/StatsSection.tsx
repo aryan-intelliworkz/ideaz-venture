@@ -4,10 +4,10 @@ import PrimaryButton from "@/components/ui/PrimaryButton";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
-  { value: "₹174 Crore", label: "Strategic Exit Achieved." },
+  { value: "₹174 Crore", label: "Strategic Value Delivered." },
   { value: "25,000+", label: "Active Global Users." },
-  { value: "15+", label: "Countries Deployed." },
-  { value: "500,000+", label: "Industrial Products Managed." },
+  { value: "15+", label: "Countries Reached." },
+  { value: "500,000+", label: "Products & Operations Supported." },
 ];
 
 export default function StatsSection() {
@@ -16,7 +16,7 @@ export default function StatsSection() {
   const statsRef = useStaggerReveal();
 
   return (
-    <section className="relative py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28">
+    <section className="relative py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div className="flex flex-col gap-10 lg:gap-12 xl:gap-[60px]">
           {/* Top row: Arrow + Title | Paragraphs + Button */}
@@ -44,7 +44,7 @@ export default function StatsSection() {
                 />
               </svg>
               <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize max-w-[510px]">
-                Startup Execution Backed by Experience
+                Execution That Turns Ideas Into Real Businesses
               </h2>
             </div>
 
@@ -55,19 +55,24 @@ export default function StatsSection() {
             >
               <div className="flex flex-col gap-[14px]">
                 <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
-                  strategic clarity, reliable technology, and disciplined
-                  execution.
+                  Building a startup takes more than vision. It requires
+                  structured thinking, the right technology decisions, and
+                  disciplined execution at every stage.
                 </p>
                 <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
-                  into market-ready products and scalable platforms.
+                  As a business consulting and services company, Ideaz Ventures
+                  works with founders and businesses to turn early-stage ideas
+                  into scalable, market-ready products.
                 </p>
                 <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
-                  and operational execution to ensure every venture is built on
-                  a strong foundation.
+                  We combine management consulting solutions with hands-on
+                  product execution, covering strategy, development, branding,
+                  and operational readiness, so every product is built to
+                  perform, scale, and sustain growth.
                 </p>
               </div>
               <PrimaryButton as="a" href="/get-in-touch" className="w-fit">
-                Let&apos;s Grow Together
+                Let&apos;s Build What Matters
               </PrimaryButton>
             </div>
           </div>

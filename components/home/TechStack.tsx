@@ -55,7 +55,7 @@ export default function TechStack() {
                 {[...technologies, ...technologies].map((tech, i) => (
                   <div
                     key={`${tech.name}-${i}`}
-                    className="tech-icon-wrapper group flex items-center justify-center w-[100px] h-[100px] md:w-[110px] md:h-[110px] lg:w-[110px] lg:h-[110px] xl:w-[120px] xl:h-[120px] 2xl:w-[130px] 2xl:h-[130px] rounded-full border border-gray-600 bg-[#111111] shrink-0 transition-all duration-500 hover:border-gray-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)]"
+                    className="tech-icon-wrapper group flex items-center justify-center w-[100px] h-[100px] md:w-[110px] md:h-[110px] lg:w-[110px] lg:h-[110px] xl:w-[120px] xl:h-[120px] 2xl:w-[120px] 2xl:h-[120px] rounded-full border border-gray-600 bg-[#111111] shrink-0 transition-all duration-500 hover:border-gray-400 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)]"
                   >
                     <span
                       className="tech-icon text-[36px] md:text-[40px] lg:text-[44px] transition-all duration-500 group-hover:scale-110"

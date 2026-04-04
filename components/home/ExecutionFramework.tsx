@@ -7,45 +7,44 @@ const steps = [
   {
     number: "01",
     title: "Validate",
-    description: "Clarify your idea. Derisk your roadmap.",
+    description: "Validate real market demand. No early assumptions.",
   },
   {
     number: "02",
     title: "Architect",
-    description: "Design scalable systems from day one.",
+    description: "Design scalable product systems. Define core architecture.",
   },
   {
     number: "03",
     title: "Build",
-    description: "Ship secure, performance-driven products.",
+    description:
+      "Develop reliable digital products. Ensure usability and performance.",
   },
   {
     number: "04",
     title: "Launch",
-    description: "Enter the market with structure and precision.",
+    description: "Enter the market with clarity. Execute structured launch.",
   },
   {
     number: "05",
     title: "Fund",
-    description: "Prepare for capital with investor-ready systems.",
+    description:
+      "Prepare for investor conversations. Align product and growth.",
   },
   {
     number: "06",
     title: "Operate",
-    description: "Scale with operational stability and growth.",
+    description: "Scale operations with control. Improve systems seamlessly.",
   },
 ];
 
 function StepCard({ step }: { step: (typeof steps)[number] }) {
   return (
-    <div className="relative h-[200px] md:h-[240px] lg:h-[220px] xl:h-[250px] 2xl:h-[280px] bg-[rgba(17,17,17,0.2)] border border-gray-600 -ml-px -mt-px overflow-hidden">
-      {/* Large number — top right */}
+    <div className="step-card group relative h-[200px] md:h-[240px] lg:h-[220px] xl:h-[250px] 2xl:h-[250px] bg-[rgba(17,17,17,0.2)] border border-gray-600 -ml-px -mt-px overflow-hidden">
+      {/* Large number — top right with spinning gradient on edges on hover */}
       <span
-        className="absolute top-3 lg:top-4 right-4 lg:right-5 font-archivo font-medium text-[60px] md:text-[80px] lg:text-[80px] xl:text-[100px] 2xl:text-[120px] leading-none text-red select-none pointer-events-none"
-        style={{
-          WebkitTextStroke: "1px #666",
-          WebkitTextFillColor: "transparent",
-        }}
+        className="step-number absolute top-3 lg:top-4 right-4 lg:right-5 font-archivo font-medium text-[60px] md:text-[80px] lg:text-[80px] xl:text-[100px] 2xl:text-[100px] leading-none select-none pointer-events-none"
+        data-text={step.number}
       >
         {step.number}
       </span>
@@ -69,7 +68,7 @@ export default function ExecutionFramework() {
   const row2Ref = useStaggerReveal({ threshold: 0.1 });
 
   return (
-    <section className="relative h-auto xl:h-[700px] 2xl:h-[750px] overflow-hidden">
+    <section className="relative h-auto xl:h-[700px] 2xl:h-[700px] overflow-hidden">
       {/* Background image with gradient overlays */}
       <div className="absolute inset-0">
         <Image
@@ -107,8 +106,8 @@ export default function ExecutionFramework() {
             The Ideaz Execution Framework™
           </h2>
           <p className="font-bricolage font-normal text-[16px] md:text-[18px] leading-[1.44] text-gray-400">
-            A structured approach designed to reduce startup risk and accelerate
-            product growth.
+            A structured approach to building scalable products from idea
+            validation to long-term execution.
           </p>
         </div>
 

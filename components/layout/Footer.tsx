@@ -25,7 +25,7 @@ export default function Footer() {
     <footer className="bg-[#050505]">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px] py-10 md:py-12 lg:py-16">
         {/* Top Card */}
-        <div className="corner-border flex flex-col lg:flex-row overflow-hidden">
+        <div className="flex flex-col lg:flex-row overflow-hidden">
           {/* Left — Image Block */}
           <div className="relative lg:w-[30%] min-h-[250px] lg:min-h-[320px] bg-[#0a0a0a] overflow-hidden">
             <Image
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Right — Quick Links */}
           <div className="flex-1 p-8 lg:p-10 xl:p-12">
-            <h2 className="font-archivo font-light text-white/40 text-[28px] md:text-[36px] lg:text-[36px] xl:text-[42px] 2xl:text-[46px] min-[1800px]:text-[48px] leading-[1.1] mb-6 md:mb-8 lg:mb-10">
+            <h2 className="font-archivo font-light text-white/40 text-[28px] md:text-[36px] lg:text-[36px] xl:text-[42px] 2xl:text-[42px] min-[1800px]:text-[48px] leading-[1.1] mb-6 md:mb-8 lg:mb-10">
               Quick Links
             </h2>
 

@@ -13,74 +13,56 @@ const products = [
   {
     title: "AI-Powered Products & Automation",
     descriptionOne:
-      "We build intelligent products that leverage AI and machine learning to automate workflows, generate insights, and deliver personalized user experiences at scale. From natural language processing to predictive analytics, our AI solutions help businesses stay ahead of the curve.",
+      "We build intelligent, AI-powered applications that automate workflows, improve decision-making, and enhance user experiences. From predictive analytics to intelligent assistants, our solutions are designed to deliver measurable impact in real-world environments.",
     descriptionTwo:
-      "Our AI expertise spans computer vision, recommendation engines, conversational AI, and process automation. We integrate these capabilities into existing products or build standalone AI-first platforms that transform how businesses operate.",
+      "Our AI product development approach focuses on practical implementation, integrating machine learning, data processing, and automation into scalable systems that grow with your business.",
     image:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80",
   },
   {
-    title: "SaaS Platforms & Dashboards",
+    title: "Web Platforms & SaaS Products",
     descriptionOne:
-      "End-to-end SaaS product development with multi-tenant architecture, subscription billing, analytics dashboards, and scalable cloud infrastructure. We design systems that handle thousands of concurrent users with ease.",
+      "We develop scalable web platforms and SaaS products designed for performance, security, and long-term growth. From business dashboards to subscription-based platforms, every solution is built with clean architecture and user-focused design.",
     descriptionTwo:
-      "From user onboarding flows to admin panels and real-time analytics, we build every layer of your SaaS product with performance, security, and scalability at its core. Our platforms are designed to grow with your business.",
+      "Our SaaS product development services ensure your platform is ready to handle users, data, and evolving business needs without compromising speed or stability.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80",
   },
   {
-    title: "E-Commerce & Marketplace Solutions",
+    title: "Marketplace & Platform Solutions",
     descriptionOne:
-      "Custom e-commerce platforms and multi-vendor marketplaces with seamless payment integrations, inventory management, and conversion-optimized UX. We build shopping experiences that drive revenue and customer loyalty.",
+      "We build robust marketplace platforms that seamlessly manage users, transactions, and multi-sided interactions. Whether B2B or B2C, our solutions are designed for scalability, trust, and operational efficiency.",
     descriptionTwo:
-      "Our marketplace solutions include vendor onboarding, commission management, dispute resolution, and advanced search with filtering. Every feature is optimized for conversion and designed to scale across geographies.",
+      "Our platform development solutions focus on creating structured ecosystems that enable vendors, customers, and businesses to interact smoothly at scale.",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80",
   },
   {
-    title: "HealthTech & Telemedicine Platforms",
+    title: "Mobile App Development",
     descriptionOne:
-      "HIPAA-compliant health platforms with real-time video consultations, EHR integrations, patient portals, and AI-assisted diagnostics. We build secure, reliable systems that healthcare providers and patients can trust.",
+      "We create high-performance mobile applications designed for usability, speed, and scalability. From consumer-facing apps to enterprise tools, our mobile solutions are built for real-world usage and long-term growth.",
     descriptionTwo:
-      "Our telemedicine solutions include appointment scheduling, prescription management, lab result integration, and remote patient monitoring. We ensure regulatory compliance while delivering exceptional user experiences.",
+      "Our mobile app development services ensure seamless user experiences across devices while maintaining strong backend integration and performance.",
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80",
   },
   {
-    title: "FinTech & Payment Solutions",
+    title: "ERP & CRM Systems",
     descriptionOne:
-      "Secure financial platforms with real-time transaction processing, KYC/AML compliance, digital wallets, and blockchain integrations. We engineer systems that handle sensitive financial data with bank-grade security.",
+      "We build customized ERP and CRM systems that streamline operations, manage data, and improve business efficiency. These systems are tailored to your workflows, ensuring better control, visibility, and decision-making.",
     descriptionTwo:
-      "From payment gateways to lending platforms and investment dashboards, we build FinTech products that meet regulatory requirements while delivering seamless user experiences across web and mobile.",
+      "Our enterprise solution development approach ensures your systems scale alongside your business while remaining structured and easy to manage.",
     image:
       "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=900&q=80",
   },
   {
-    title: "EdTech & Learning Management Systems",
+    title: "EAP (Enterprise Application Platforms)",
     descriptionOne:
-      "Interactive learning platforms with live classrooms, progress tracking, gamification, content management, and certification workflows. We create engaging educational experiences for learners of all ages.",
+      "We develop advanced enterprise application platforms (EAP) designed to support complex business processes and integrations. These systems act as the backbone for operations, automation, and large-scale workflows.",
     descriptionTwo:
-      "Our LMS solutions support video streaming, quiz engines, peer collaboration, instructor tools, and detailed analytics. We build platforms that make learning accessible, measurable, and enjoyable.",
+      "Our enterprise application development services focus on building flexible, scalable platforms that connect multiple systems and support long-term digital transformation.",
     image:
       "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=900&q=80",
-  },
-  {
-    title: "IoT Dashboards & Real-Time Monitoring",
-    descriptionOne:
-      "Connected device platforms with real-time data visualization, alerting systems, predictive maintenance, and edge computing capabilities. We turn raw sensor data into actionable business intelligence.",
-    descriptionTwo:
-      "Our IoT solutions include device management, over-the-air updates, time-series databases, and custom dashboards. We build systems that process millions of data points reliably and in real time.",
-    image:
-      "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=900&q=80",
-  },
-  {
-    title: "Social & Community Platforms",
-    descriptionOne:
-      "Scalable social platforms with real-time messaging, content feeds, moderation tools, recommendation engines, and engagement analytics. We build digital communities that connect people meaningfully.",
-    descriptionTwo:
-      "From user profiles and activity feeds to group management and notifications, we architect social platforms that handle viral growth while maintaining performance and a safe community environment.",
-    image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80",
   },
 ];
 
@@ -128,7 +110,7 @@ export default function DigitalProducts() {
   const sliderRef = useScrollReveal({ threshold: 0.05 });
 
   return (
-    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-28">
+    <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         {/* Section heading */}
         <div
@@ -136,11 +118,12 @@ export default function DigitalProducts() {
           className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
         >
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
-            Digital Products & Platforms We Build
+            Digital Products & Platforms Built for Scale
           </h2>
           <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] text-center">
-            We engineer modern digital products and platforms designed to scale
-            across industries and markets.
+            As a technology consulting company, we design and build scalable
+            digital solutions that solve real business problems, combining
+            engineering, product thinking, and long-term execution.
           </p>
         </div>
 
@@ -165,7 +148,7 @@ export default function DigitalProducts() {
                 {/* Desktop / Tablet: side-by-side */}
                 <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 md:gap-8 lg:gap-12 xl:gap-16">
                   {/* Image — 50% width on desktop, exactly 550px tall */}
-                  <div className="relative w-full lg:w-1/2 h-[280px] md:h-[380px] lg:h-[380px] xl:h-[460px] 2xl:h-[550px] shrink-0 overflow-hidden">
+                  <div className="relative w-full lg:w-1/2 h-[280px] md:h-[380px] lg:h-[380px] xl:h-[460px] 2xl:h-[460px] shrink-0 overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.title}
@@ -176,7 +159,7 @@ export default function DigitalProducts() {
                   </div>
 
                   {/* Content — 50% width, 550px tall, padding 24px */}
-                  <div className="flex flex-col lg:w-1/2 lg:h-[380px] xl:h-[460px] 2xl:h-[550px] lg:py-6 pt-6 gap-8">
+                  <div className="flex flex-col lg:w-1/2 lg:h-[380px] xl:h-[460px] 2xl:h-[460px] lg:py-6 pt-6 gap-8">
                     <div className="flex flex-col gap-[19px]">
                       <h3 className="font-archivo font-normal text-[24px] md:text-[28px] lg:text-[24px] xl:text-[27px] 2xl:text-[28px] min-[1800px]:text-[30px] leading-[1.09] text-white capitalize">
                         {product.title}

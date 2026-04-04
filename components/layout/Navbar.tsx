@@ -51,7 +51,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 nav-bg backdrop-blur-md">
-      <div className="mx-auto max-w-[1920px] flex items-center justify-between px-6 md:px-8 lg:px-[160px] h-[80px] xl:h-[90px] 2xl:h-[100px]">
+      <div className="mx-auto max-w-[1920px] flex items-center justify-between px-6 md:px-8 lg:px-[160px] h-[80px] xl:h-[90px] 2xl:h-[90px]">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}

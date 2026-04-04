@@ -1,14 +1,112 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
-  { value: "₹174 Crore", label: "Strategic Value Delivered." },
-  { value: "25,000+", label: "Active Global Users." },
-  { value: "15+", label: "Countries Reached." },
-  { value: "500,000+", label: "Products & Operations Supported." },
+  {
+    numericValue: 174,
+    prefix: "₹",
+    suffix: " Crore",
+    label: "Strategic Value Delivered.",
+  },
+  {
+    numericValue: 25000,
+    prefix: "",
+    suffix: "+",
+    label: "Active Global Users.",
+    format: true,
+  },
+  { numericValue: 15, prefix: "", suffix: "+", label: "Countries Reached." },
+  {
+    numericValue: 500000,
+    prefix: "",
+    suffix: "+",
+    label: "Products & Operations Supported.",
+    format: true,
+  },
 ];
+
+function useCountUp(end: number, duration = 2000) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const startTime = performance.now();
+
+          const animate = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(end);
+            }
+          };
+
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return { count, ref };
+}
+
+function formatNumber(n: number) {
+  return n.toLocaleString("en-IN");
+}
+
+function StatItem({
+  stat,
+  index,
+}: {
+  stat: (typeof stats)[number];
+  index: number;
+}) {
+  const { count, ref } = useCountUp(
+    stat.numericValue,
+    stat.numericValue > 10000 ? 2500 : 2000,
+  );
+  const display = `${stat.prefix}${stat.format ? formatNumber(count) : count}${stat.suffix}`;
+
+  return (
+    <div
+      className={`reveal-child flex flex-col gap-6 ${
+        index !== 0 ? "lg:border-gray-400 lg:pl-8" : ""
+      } ${index === 2 ? "border-gray-400 pl-6 lg:pl-8" : ""} ${index === 1 || index === 3 ? "border-gray-400 pl-6 lg:pl-8" : ""}`}
+    >
+      <div className="flex flex-col gap-4">
+        <span
+          ref={ref}
+          className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize"
+        >
+          {display}
+        </span>
+        <div className="h-[1px] w-full bg-gray-400" />
+      </div>
+      <p className="font-bricolage text-[14px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-100">
+        {stat.label}
+      </p>
+    </div>
+  );
+}
 
 export default function StatsSection() {
   const headingRef = useScrollReveal();
@@ -83,22 +181,7 @@ export default function StatsSection() {
             className="grid grid-cols-2 lg:grid-cols-4 gap-y-10"
           >
             {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`reveal-child flex flex-col gap-6 ${
-                  i !== 0 ? "lg:border-gray-400 lg:pl-8" : ""
-                } ${i === 2 ? "border-gray-400 pl-6 lg:pl-8" : ""} ${i === 1 || i === 3 ? "border-gray-400 pl-6 lg:pl-8" : ""}`}
-              >
-                <div className="flex flex-col gap-4">
-                  <span className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
-                    {stat.value}
-                  </span>
-                  <div className="h-[1px] w-full bg-gray-400" />
-                </div>
-                <p className="font-bricolage text-[14px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-100">
-                  {stat.label}
-                </p>
-              </div>
+              <StatItem key={stat.label} stat={stat} index={i} />
             ))}
           </div>
         </div>

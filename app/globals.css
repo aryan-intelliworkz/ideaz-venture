@@ -625,7 +625,7 @@ body {
 }
 
 .service-card-expanded {
-  background: rgba(255, 255, 255, 0.02);
+  background: transparent;
 }
 
 /* ============================
@@ -634,10 +634,11 @@ body {
    Horizontal: 25% of width, Vertical: 25% of height
    ============================ */
 .corner-border {
-  --cb-color: #fafafa;
+  --cb-color: rgba(255, 255, 255, 0.35);
   position: relative;
   border: none !important;
   border-radius: 0 !important;
+  background: transparent !important;
 }
 
 .corner-border::before,
@@ -652,21 +653,21 @@ body {
 .corner-border::before {
   background:
     /* ── Top-left corner ── */
-    linear-gradient(var(--cb-color), var(--cb-color)) 0 0 / 25% 1px no-repeat,
-    linear-gradient(var(--cb-color), var(--cb-color)) 0 0 / 1px 25% no-repeat,
+    linear-gradient(var(--cb-color), var(--cb-color)) 0 0 / 40px 1px no-repeat,
+    linear-gradient(var(--cb-color), var(--cb-color)) 0 0 / 1px 40px no-repeat,
     /* ── Top-right corner ── */
-    linear-gradient(var(--cb-color), var(--cb-color)) 100% 0 / 25% 1px no-repeat,
-    linear-gradient(var(--cb-color), var(--cb-color)) 100% 0 / 1px 25% no-repeat;
+    linear-gradient(var(--cb-color), var(--cb-color)) 100% 0 / 40px 1px no-repeat,
+    linear-gradient(var(--cb-color), var(--cb-color)) 100% 0 / 1px 40px no-repeat;
 }
 
 .corner-border::after {
   background:
     /* ── Bottom-left corner ── */
-    linear-gradient(var(--cb-color), var(--cb-color)) 0 100% / 25% 1px no-repeat,
-    linear-gradient(var(--cb-color), var(--cb-color)) 0 100% / 1px 25% no-repeat,
+    linear-gradient(var(--cb-color), var(--cb-color)) 0 100% / 40px 1px no-repeat,
+    linear-gradient(var(--cb-color), var(--cb-color)) 0 100% / 1px 40px no-repeat,
     /* ── Bottom-right corner ── */
-    linear-gradient(var(--cb-color), var(--cb-color)) 100% 100% / 25% 1px no-repeat,
-    linear-gradient(var(--cb-color), var(--cb-color)) 100% 100% / 1px 25% no-repeat;
+    linear-gradient(var(--cb-color), var(--cb-color)) 100% 100% / 40px 1px no-repeat,
+    linear-gradient(var(--cb-color), var(--cb-color)) 100% 100% / 1px 40px no-repeat;
 }
 
 /* ============================

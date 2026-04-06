@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { caseStudies } from "@/lib/case-studies";
 import { notFound } from "next/navigation";
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import ExecutionStrategy from "@/components/case-studies/ExecutionStrategy";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -73,61 +74,66 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* ─── The Vision (two-column) ─── */}
+      {/* ─── The Vision + Stats (like home stats section) ─── */}
       <section className="py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-12 items-start">
-            {/* Left: red arrow + heading */}
-            <div className="flex items-start gap-3">
-              <svg
-                width="40"
-                height="20"
-                viewBox="0 0 40 20"
-                fill="none"
-                className="mt-2 shrink-0"
-              >
-                <path
-                  d="M0 10H36M36 10L28 2M36 10L28 18"
-                  stroke="#EC1C24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <h2 className="font-archivo font-medium text-[28px] md:text-[34px] lg:text-[38px] xl:text-[42px] leading-[1.1] text-white whitespace-nowrap">
-                {cs.vision.heading}
-              </h2>
+          <div className="flex flex-col gap-10 lg:gap-12 xl:gap-[60px]">
+            {/* Top row: Arrow + Title | Paragraphs */}
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-6 xl:gap-[32px]">
+              {/* Left: Arrow + Title */}
+              <div className="flex items-start gap-4 shrink-0">
+                <svg
+                  width="69"
+                  height="63"
+                  viewBox="0 0 69 63"
+                  fill="none"
+                  className="shrink-0 mt-1"
+                >
+                  <path
+                    d="M0 31.25H55M55 31.25L38 14M55 31.25L38 48.5"
+                    stroke="#EC1C24"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize max-w-[510px]">
+                  {cs.vision.heading}
+                </h2>
+              </div>
+
+              {/* Right: Paragraphs */}
+              <div className="flex flex-col gap-[14px] flex-1">
+                {cs.vision.paragraphs.map((p, i) => (
+                  <p
+                    key={i}
+                    className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
             </div>
 
-            {/* Right: paragraphs */}
-            <div className="flex flex-col gap-4">
-              {cs.vision.paragraphs.map((p, i) => (
-                <p
-                  key={i}
-                  className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60"
+            {/* Stats row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
+              {cs.stats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`flex flex-col gap-6 ${i > 0 ? "border-gray-400 pl-6 lg:pl-8" : ""}`}
                 >
-                  {p}
-                </p>
+                  <div className="flex flex-col gap-4">
+                    <span className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.09] text-white capitalize">
+                      {stat.value}
+                    </span>
+                    <div className="h-[1px] w-full bg-gray-400" />
+                  </div>
+                  <p className="font-bricolage text-[14px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-100">
+                    {stat.label}
+                  </p>
+                </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Stats Bar ─── */}
-      <section className="py-6 md:py-8 border-y border-white/10">
-        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10">
-            {cs.stats.map((stat) => (
-              <div key={stat.label}>
-                <span className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] text-white">
-                  {stat.value}
-                </span>
-                <p className="font-bricolage text-[12px] md:text-[13px] lg:text-[14px] text-white/40 mt-1">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -135,7 +141,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       {/* ─── Image after Vision ─── */}
       <section className="py-8 md:py-12">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="relative w-full aspect-[2.4/1] rounded-[4px] overflow-hidden">
+          <div className="relative w-full aspect-[2.2/1] rounded-[4px] overflow-hidden">
             <Image
               src={cs.images.afterVision}
               alt=""
@@ -150,45 +156,41 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       {/* ─── The Challenge ─── */}
       <section className="py-8 md:py-12 lg:py-16">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="max-w-[900px]">
-            <h2 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[32px] xl:text-[34px] leading-[1.1] text-white capitalize mb-6">
-              {cs.challenge.heading}
-            </h2>
-            {cs.challenge.paragraphs.map((p, i) => (
-              <p
-                key={i}
-                className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60 mb-4"
-              >
-                {p}
-              </p>
-            ))}
-          </div>
+          <h2 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[32px] xl:text-[34px] leading-[1.1] text-white capitalize mb-6">
+            {cs.challenge.heading}
+          </h2>
+          {cs.challenge.paragraphs.map((p, i) => (
+            <p
+              key={i}
+              className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60 mb-4"
+            >
+              {p}
+            </p>
+          ))}
         </div>
       </section>
 
       {/* ─── Our Role ─── */}
       <section className="py-8 md:py-12 lg:py-16">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="max-w-[900px]">
-            <h2 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[32px] xl:text-[34px] leading-[1.1] text-white capitalize mb-6">
-              {cs.role.heading}
-            </h2>
-            {cs.role.paragraphs.map((p, i) => (
-              <p
-                key={i}
-                className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60 mb-4"
-              >
-                {p}
-              </p>
-            ))}
-          </div>
+          <h2 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[32px] xl:text-[34px] leading-[1.1] text-white capitalize mb-6">
+            {cs.role.heading}
+          </h2>
+          {cs.role.paragraphs.map((p, i) => (
+            <p
+              key={i}
+              className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60 mb-4"
+            >
+              {p}
+            </p>
+          ))}
         </div>
       </section>
 
       {/* ─── Image after Role ─── */}
       <section className="py-8 md:py-12">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="relative w-full aspect-[2.4/1] rounded-[4px] overflow-hidden">
+          <div className="relative w-full aspect-[2.2/1] rounded-[4px] overflow-hidden">
             <Image
               src={cs.images.afterRole}
               alt=""
@@ -201,49 +203,16 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       </section>
 
       {/* ─── Execution Strategy ─── */}
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          {/* Heading */}
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="font-archivo font-medium text-[26px] md:text-[32px] lg:text-[36px] xl:text-[40px] leading-[1.1] text-white capitalize mb-3">
-              {cs.executionStrategy.heading}
-            </h2>
-            <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] text-white/50">
-              {cs.executionStrategy.subtitle}
-            </p>
-          </div>
-
-          {/* Steps grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            {cs.executionStrategy.steps.map((step, i) => (
-              <div
-                key={i}
-                className="group corner-border bg-[#0a0a0a] p-6 md:p-7 lg:p-8 flex flex-col gap-4 transition-colors"
-              >
-                {/* Step icon placeholder */}
-                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center">
-                  <span className="font-archivo text-[14px] text-red font-medium">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-
-                <h3 className="font-archivo font-medium text-[16px] md:text-[18px] lg:text-[19px] text-white leading-[1.2]">
-                  {step.title}
-                </h3>
-
-                <p className="font-bricolage text-[13px] md:text-[14px] lg:text-[14px] leading-[1.65] text-white/50">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ExecutionStrategy
+        heading={cs.executionStrategy.heading}
+        subtitle={cs.executionStrategy.subtitle}
+        steps={cs.executionStrategy.steps}
+      />
 
       {/* ─── CTA Banner ─── */}
       <section className="py-8 md:py-12 lg:py-16">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="corner-border bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
+          <div className="bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
             <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col justify-center gap-5">
               <h3 className="font-archivo font-medium text-[26px] md:text-[30px] lg:text-[36px] xl:text-[40px] leading-[1.1] text-white capitalize">
                 Open the next chapter of your business.

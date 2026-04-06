@@ -327,7 +327,7 @@ export default function ContactForm() {
             key={tab}
             onClick={() => handleTabChange(tab)}
             className={cn(
-              "px-4 md:px-6 py-3 font-archivo text-[13px] md:text-[15px] lg:text-[16px] leading-[1.3] transition-colors whitespace-nowrap cursor-pointer",
+              "px-4 md:px-6 py-3 font-archivo text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] leading-[1.3] transition-colors whitespace-nowrap cursor-pointer",
               activeTab === tab
                 ? "text-[#EC1C24] border-b-2 border-[#EC1C24] -mb-px"
                 : "text-white/40 hover:text-white/70",

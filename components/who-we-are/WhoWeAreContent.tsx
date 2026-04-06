@@ -306,11 +306,13 @@ export default function WhoWeAreContent() {
   const [expandedIndex, setExpandedIndex] = useState(0);
   const executionSwiperRef = useRef<SwiperType | null>(null);
   const [executionIndex, setExecutionIndex] = useState(0);
+  const [leavingIndex, setLeavingIndex] = useState<number | null>(null);
 
   const introLeftRef = useScrollReveal();
   const introRightRef = useScrollReveal();
   const diffHeadingRef = useScrollReveal();
   const vennRef = useScrollReveal({ threshold: 0.1 });
+  const circlesRef = useScrollReveal({ threshold: 0.1 });
   const principlesRef = useStaggerReveal({ threshold: 0.1 });
   const execRef = useScrollReveal();
 
@@ -524,31 +526,34 @@ export default function WhoWeAreContent() {
       </section>
 
       {/* ── Mission & Vision (Venn Diagram) ── */}
-      <section className="py-16 md:py-20 lg:py-28 overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24 overflow-hidden">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
           <div
             ref={vennRef}
-            className="reveal-fade-up text-center mb-10 md:mb-12 lg:mb-16"
+            className="reveal-fade-up text-center mb-12 lg:mb-16"
           >
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
               Mission & Vision
             </h2>
-            <p className="mt-3 font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
+            <p className="mt-3 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
               We are driven by a clear purpose — to help founders build
               meaningful products and scale them with confidence.
             </p>
           </div>
 
           {/* Desktop Venn */}
-          <div className="hidden md:flex justify-center items-center relative">
+          <div
+            ref={circlesRef}
+            className="reveal-scale hidden md:flex justify-center items-center relative"
+          >
             {/* Left Circle — Our Mission */}
-            <div className="relative w-[380px] lg:w-[460px] xl:w-[520px] h-[380px] lg:h-[460px] xl:h-[520px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center z-10">
-              <div className="flex flex-col items-center gap-4 px-10 lg:px-14 -translate-x-4 lg:-translate-x-6">
-                <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[28px] min-[1800px]:text-[32px] leading-[1.09] text-white capitalize">
+            <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[520px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[520px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
+              <div className="flex flex-col items-center gap-4 px-10 lg:px-12 xl:px-14 -translate-x-4 lg:-translate-x-6">
+                <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                   Our Mission
                 </h3>
-                <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.6] text-white/70 max-w-[260px]">
+                <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.5] text-gray-100 max-w-[280px]">
                   To help founders build the right product faster — with
                   clarity, structure, and execution that reduces risk and
                   accelerates growth.
@@ -558,37 +563,22 @@ export default function WhoWeAreContent() {
 
             {/* Center Logo */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-              <svg
-                width="40"
-                height="48"
-                viewBox="0 0 40 48"
-                fill="none"
-                className="w-[30px] lg:w-[40px] h-auto"
-              >
-                <path
-                  d="M8 4L20 44M20 44L32 4"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14 24L20 38L26 24"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Image
+                src="/assets/cricleLogo.png"
+                alt="Ideaz Ventures"
+                width={60}
+                height={60}
+                className="w-[40px] lg:w-[50px] xl:w-[60px] h-auto"
+              />
             </div>
 
             {/* Right Circle — Our Vision */}
-            <div className="relative w-[380px] lg:w-[460px] xl:w-[520px] h-[380px] lg:h-[460px] xl:h-[520px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center -ml-[70px] lg:-ml-[90px] xl:-ml-[100px] z-10">
-              <div className="flex flex-col items-center gap-4 px-10 lg:px-14 translate-x-4 lg:translate-x-6">
-                <h3 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[28px] min-[1800px]:text-[32px] leading-[1.09] text-white capitalize">
+            <div className="relative w-[420px] lg:w-[440px] xl:w-[520px] 2xl:w-[520px] h-[420px] lg:h-[440px] xl:h-[520px] 2xl:h-[520px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -ml-[80px] lg:-ml-[80px] xl:-ml-[100px] 2xl:-ml-[100px] z-10">
+              <div className="flex flex-col items-center gap-4 px-10 lg:px-12 xl:px-14 translate-x-4 lg:translate-x-6">
+                <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.09] text-white capitalize">
                   Our Vision
                 </h3>
-                <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.6] text-white/70 max-w-[260px]">
+                <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.5] text-gray-100 max-w-[280px]">
                   To become the long-term execution partner startups trust to
                   build, launch, and scale technology products globally.
                 </p>
@@ -599,12 +589,12 @@ export default function WhoWeAreContent() {
           {/* Mobile Venn */}
           <div className="flex md:hidden flex-col items-center relative">
             {/* Top Circle */}
-            <div className="relative w-[300px] h-[300px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center z-10">
+            <div className="relative w-[320px] h-[320px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center z-10">
               <div className="flex flex-col items-center gap-3 px-8 -translate-y-3">
-                <h3 className="font-archivo font-medium text-[22px] leading-[1.09] text-white capitalize">
+                <h3 className="font-archivo font-medium text-[24px] leading-[1.09] text-white capitalize">
                   Our Mission
                 </h3>
-                <p className="font-bricolage text-[13px] leading-[1.6] text-white/70 max-w-[200px]">
+                <p className="font-bricolage text-[14px] leading-[1.5] text-gray-100 max-w-[220px]">
                   To help founders build the right product faster — with
                   clarity, structure, and execution that reduces risk and
                   accelerates growth.
@@ -614,31 +604,22 @@ export default function WhoWeAreContent() {
 
             {/* Center Logo */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-              <svg width="30" height="36" viewBox="0 0 40 48" fill="none">
-                <path
-                  d="M8 4L20 44M20 44L32 4"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14 24L20 38L26 24"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <Image
+                src="/assets/cricleLogo.png"
+                alt="Ideaz Ventures"
+                width={40}
+                height={40}
+                className="w-[35px] h-auto"
+              />
             </div>
 
             {/* Bottom Circle */}
-            <div className="relative w-[300px] h-[300px] rounded-full border border-white/[0.12] flex flex-col items-center justify-center text-center -mt-[50px] z-10">
+            <div className="relative w-[320px] h-[320px] rounded-full border border-white/[0.25] flex flex-col items-center justify-center text-center -mt-[60px] z-10">
               <div className="flex flex-col items-center gap-3 px-8 translate-y-3">
-                <h3 className="font-archivo font-medium text-[22px] leading-[1.09] text-white capitalize">
+                <h3 className="font-archivo font-medium text-[24px] leading-[1.09] text-white capitalize">
                   Our Vision
                 </h3>
-                <p className="font-bricolage text-[13px] leading-[1.6] text-white/70 max-w-[200px]">
+                <p className="font-bricolage text-[14px] leading-[1.5] text-gray-100 max-w-[220px]">
                   To become the long-term execution partner startups trust to
                   build, launch, and scale technology products globally.
                 </p>
@@ -699,7 +680,7 @@ export default function WhoWeAreContent() {
 
       {/* ── How We Approach Execution ── */}
       <section className="py-12 md:py-16 lg:py-24">
-        <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
+        <div className="relative mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           {/* Section Header */}
           <div
             ref={execRef}
@@ -715,13 +696,18 @@ export default function WhoWeAreContent() {
             </p>
           </div>
 
-          {/* Swiper — content left + polaroid card right */}
+          {/* Swiper — content left + stacked card gallery right */}
           <Swiper
             modules={[Navigation, EffectFade]}
             onSwiper={(swiper) => {
               executionSwiperRef.current = swiper;
             }}
-            onSlideChange={(swiper) => setExecutionIndex(swiper.realIndex)}
+            onSlideChange={(swiper) => {
+              const newIndex = swiper.realIndex;
+              setLeavingIndex(executionIndex);
+              setExecutionIndex(newIndex);
+              setTimeout(() => setLeavingIndex(null), 600);
+            }}
             slidesPerView={1}
             effect="fade"
             fadeEffect={{ crossFade: true }}
@@ -757,39 +743,55 @@ export default function WhoWeAreContent() {
                     </div>
                   </div>
 
-                  {/* Right — Polaroid card stack */}
-                  <div className="lg:w-[45%] flex justify-center items-center">
-                    <div className="relative w-[320px] sm:w-[380px] lg:w-[420px] h-[380px] sm:h-[420px] lg:h-[460px]">
-                      {/* Background stacked cards */}
-                      <div className="absolute inset-0 translate-x-4 translate-y-4 rotate-[4deg] rounded-[12px] border border-white/[0.06] bg-[#0f0f0f]" />
-                      <div className="absolute inset-0 translate-x-2 translate-y-2 rotate-[2deg] rounded-[12px] border border-white/[0.08] bg-[#111]" />
-
-                      {/* Front card */}
-                      <div className="relative w-full h-full rounded-[12px] border border-white/[0.1] bg-[#141414] p-4 flex flex-col overflow-hidden shadow-2xl">
-                        <div className="relative flex-1 rounded-[8px] overflow-hidden">
-                          <Image
-                            src={step.image}
-                            alt={step.title}
-                            fill
-                            className="object-cover"
-                            unoptimized
-                          />
-                        </div>
-                        <div className="pt-4 pb-1">
-                          <h4 className="font-archivo font-medium text-[16px] md:text-[17px] lg:text-[18px] leading-[1.3] text-white mb-1.5">
-                            {step.title}
-                          </h4>
-                          <p className="font-bricolage text-[12px] md:text-[13px] leading-[1.5] text-white/50">
-                            {step.cardDesc}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Right — placeholder to reserve space for card stack */}
+                  <div className="lg:w-[45%]" />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+
+          {/* Stacked card gallery — positioned over the right side */}
+          <div className="flex justify-center lg:justify-end lg:absolute lg:right-[160px] lg:top-[180px] mt-6 lg:mt-0">
+            <div className="exec-card-stack">
+              {executionApproach.map((step, i) => {
+                const n = executionApproach.length;
+                let cardClass = "exec-stack-card";
+                if (i === leavingIndex) {
+                  cardClass += " leaving";
+                } else if (i === executionIndex) {
+                  cardClass += " active";
+                } else {
+                  const diff = (i - executionIndex + n) % n;
+                  if (diff === 1) cardClass += " behind-1";
+                  else if (diff === 2) cardClass += " behind-2";
+                  else cardClass += " behind-rest";
+                }
+                return (
+                  <div key={step.title} className={cardClass}>
+                    <div className="rounded-[12px] border border-white/[0.1] bg-[#141414] p-4 flex flex-col overflow-hidden shadow-2xl">
+                      <div className="relative w-full aspect-[3/2] rounded-[8px] overflow-hidden">
+                        <Image
+                          src={step.image}
+                          alt={step.title}
+                          fill
+                          className="object-cover"
+                          unoptimized
+                        />
+                      </div>
+                      <div className="pt-4 pb-1">
+                        <h4 className="font-archivo font-medium text-[16px] md:text-[17px] lg:text-[18px] leading-[1.3] text-white mb-1.5">
+                          {step.title}
+                        </h4>
+                        <p className="font-bricolage text-[12px] md:text-[13px] leading-[1.5] text-white/50">
+                          {step.cardDesc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
     </>

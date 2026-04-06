@@ -38,14 +38,16 @@ export default function InsightsPage() {
                   className="group flex flex-col corner-border overflow-hidden bg-[#0a0a0a] transition-all duration-300 h-full"
                 >
                   {/* Image */}
-                  <div className="relative w-full aspect-[16/11] overflow-hidden">
-                    <Image
-                      src={insight.thumbnail}
-                      alt={insight.title}
-                      fill
-                      className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+                  <div className="p-4 md:p-5">
+                    <div className="relative w-full aspect-[16/11] rounded-[6px] overflow-hidden">
+                      <Image
+                        src={insight.thumbnail}
+                        alt={insight.title}
+                        fill
+                        className="object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
                   </div>
 
                   {/* Content */}

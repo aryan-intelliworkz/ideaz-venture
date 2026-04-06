@@ -39,9 +39,10 @@ export const caseStudies: CaseStudy[] = [
       "We are driven by a clear purpose — to help founders build meaningful products and scale them with confidence.",
     description: "Enterprise-grade ERP platform built for scale.",
     stats: [
-      { label: "Countries", value: "15+" },
-      { label: "Active Users", value: "25,000+" },
-      { label: "Revenue Impact", value: "₹30+ Crore" },
+      { label: "Revenue Generated", value: "₹30+ Crore" },
+      { label: "Active Global Users.", value: "25,000+" },
+      { label: "Countries Deployed.", value: "15+" },
+      { label: "Factories Running", value: "240+" },
     ],
     vision: {
       heading: "The Vision",

@@ -17,7 +17,7 @@ export default function MasterLayout({
   ctaHref = "/get-in-touch",
 }: MasterLayoutProps) {
   return (
-    <section className="relative w-full min-h-[360px] md:min-h-[420px] lg:min-h-[440px] xl:min-h-[480px] 2xl:min-h-[520px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[65vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
         src={backgroundImage}

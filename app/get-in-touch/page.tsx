@@ -50,27 +50,31 @@ export default function GetInTouchPage() {
       {/* Arrow Section + Form */}
       <section className="py-12 md:py-16 lg:py-24">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          {/* Arrow heading + description row */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start mb-10 md:mb-12 lg:mb-16">
-            {/* Left — arrow + heading */}
-            <RevealSection className="reveal-slide-left" threshold={0.1}>
-              <div className="flex items-start gap-4 lg:w-[40%] shrink-0">
+          {/* Arrow heading + description row — matches home StatsSection */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 xl:gap-[32px] mb-10 md:mb-12 lg:mb-16">
+            {/* Left: Arrow + Title — 5 cols */}
+            <RevealSection
+              className="reveal-slide-left lg:col-span-5"
+              threshold={0.1}
+            >
+              <div className="flex items-start gap-4">
                 <svg
-                  width="40"
-                  height="20"
-                  viewBox="0 0 40 20"
+                  width="69"
+                  height="63"
+                  viewBox="0 0 69 63"
                   fill="none"
-                  className="mt-2 shrink-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="shrink-0 mt-1"
                 >
                   <path
-                    d="M0 10H36M36 10L28 2M36 10L28 18"
+                    d="M0 31.25H55M55 31.25L38 14M55 31.25L38 48.5"
                     stroke="#EC1C24"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
-                <h2 className="font-archivo font-medium text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] leading-[1.15] text-white">
+                <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
                   Let&apos;s Start Building
                   <br />
                   Something That Scales.
@@ -78,21 +82,26 @@ export default function GetInTouchPage() {
               </div>
             </RevealSection>
 
-            {/* Right — description */}
-            <RevealSection className="reveal-slide-right" threshold={0.1}>
-              <div className="lg:w-[60%]">
-                <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.7] text-white/50">
-                  Lorem ipsum dolor sit amet consectetur. Nisl arcu sit
-                  ultricies lacus eget. Ullamcorper sit enim in ultricies
-                  sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu
-                  magna posuere odio auctor. Odio feugiat maecenas sed risus
-                  sapien et lectus velit. Faucibus ac ut faucibus id sit.
-                  Fermentum orci eu diam at purus consequat egestas mauris ut.
-                </p>
-                <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.7] text-white/50 mt-3">
-                  Choose the option that best fits your goal — we&apos;ll
-                  connect you with the right team.
-                </p>
+            {/* Right: Paragraphs — 7 cols */}
+            <RevealSection
+              className="reveal-slide-right lg:col-span-7"
+              threshold={0.1}
+            >
+              <div className="flex flex-col gap-[25px]">
+                <div className="flex flex-col gap-[14px]">
+                  <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
+                    Lorem ipsum dolor sit amet consectetur. Nisl arcu sit
+                    ultricies lacus eget. Ullamcorper sit enim in ultricies
+                    sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu
+                    magna posuere odio auctor. Odio feugiat maecenas sed risus
+                    sapien et lectus velit. Faucibus ac ut faucibus id sit.
+                    Fermentum orci eu diam at purus consequat egestas mauris ut.
+                  </p>
+                  <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
+                    Choose the option that best fits your goal — we&apos;ll
+                    connect you with the right team.
+                  </p>
+                </div>
               </div>
             </RevealSection>
           </div>

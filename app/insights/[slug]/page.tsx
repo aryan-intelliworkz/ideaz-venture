@@ -81,9 +81,9 @@ export default async function InsightDetailPage({ params }: Props) {
       {/* ─── Sections ─── */}
       <article id="content" className="py-12 md:py-16 lg:py-20">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-          <div className="max-w-[820px] mx-auto flex flex-col gap-12 md:gap-16">
+          <div className="flex flex-col gap-12 md:gap-16">
             {insight.sections.map((section, i) => {
-              /* Image-only block */
+              /* Image-only block — full width */
               if (section.image) {
                 return (
                   <div
@@ -95,7 +95,7 @@ export default async function InsightDetailPage({ params }: Props) {
                       alt=""
                       fill
                       className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 820px"
+                      sizes="(max-width: 1024px) 100vw, 1200px"
                     />
                   </div>
                 );
@@ -104,94 +104,112 @@ export default async function InsightDetailPage({ params }: Props) {
               const isIntro = section.heading === "Introduction";
               const isConclusion = section.heading === "Conclusion";
 
-              return (
-                <div key={i} className="flex flex-col gap-5">
-                  {/* Heading */}
-                  {section.heading && (
-                    <div className="flex items-start gap-3">
-                      {/* Red arrow for Introduction */}
-                      {isIntro && (
-                        <svg
-                          width="40"
-                          height="20"
-                          viewBox="0 0 40 20"
-                          fill="none"
-                          className="mt-2 shrink-0"
-                        >
-                          <path
-                            d="M0 10H36M36 10L28 2M36 10L28 18"
-                            stroke="#EC1C24"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      )}
-                      <h2
-                        className={
-                          isIntro
-                            ? "font-archivo font-medium text-[24px] md:text-[30px] lg:text-[34px] xl:text-[36px] leading-[1.15] text-red capitalize"
-                            : "font-archivo font-medium text-[22px] md:text-[26px] lg:text-[28px] xl:text-[30px] leading-[1.15] text-white capitalize"
-                        }
+              /* Introduction — StatsSection-style layout */
+              if (isIntro) {
+                return (
+                  <div
+                    key={i}
+                    className="flex flex-col lg:flex-row gap-8 lg:gap-6 xl:gap-[32px]"
+                  >
+                    {/* Left: Arrow + Heading */}
+                    <div className="flex items-start gap-4 shrink-0">
+                      <svg
+                        width="69"
+                        height="63"
+                        viewBox="0 0 69 63"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="shrink-0 mt-1"
                       >
+                        <path
+                          d="M0 31.25H55M55 31.25L38 14M55 31.25L38 48.5"
+                          stroke="#EC1C24"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <h2 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] leading-[1.2] text-white capitalize max-w-[510px]">
                         {section.heading}
                       </h2>
                     </div>
-                  )}
 
-                  {/* Paragraphs */}
-                  {section.paragraphs.map((p, j) => (
-                    <p
-                      key={j}
-                      className="font-bricolage text-[15px] md:text-[16px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60"
-                    >
-                      {p}
-                    </p>
-                  ))}
-
-                  {/* Bullet list */}
-                  {section.bullets && section.bullets.length > 0 && (
-                    <ul className="flex flex-col gap-3 pl-1">
-                      {section.bullets.map((bullet, k) => (
-                        <li key={k} className="flex items-start gap-3">
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-red shrink-0" />
-                          <span className="font-bricolage text-[15px] md:text-[16px] lg:text-[16px] xl:text-[17px] leading-[1.65] text-white/60">
-                            {bullet}
-                          </span>
-                        </li>
+                    {/* Right: Paragraphs */}
+                    <div className="flex flex-col gap-[14px] flex-1">
+                      {section.paragraphs.map((p, j) => (
+                        <p
+                          key={j}
+                          className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400"
+                        >
+                          {p}
+                        </p>
                       ))}
-                    </ul>
-                  )}
+                    </div>
+                  </div>
+                );
+              }
 
+              return (
+                <div key={i}>
                   {/* CTA Banner — placed before Conclusion */}
                   {isConclusion && (
-                    <div className="my-4 corner-border bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
-                      <div className="flex-1 p-6 md:p-8 lg:p-10 flex flex-col justify-center gap-4">
-                        <h3 className="font-archivo font-medium text-[20px] md:text-[24px] lg:text-[26px] leading-[1.15] text-white capitalize">
+                    <div className="relative w-full overflow-hidden rounded-[4px] mb-12 md:mb-16">
+                      <Image
+                        src="/assets/insightDetailBg.png"
+                        alt=""
+                        fill
+                        className="object-cover grayscale"
+                      />
+                      <div className="absolute inset-0 bg-black/60" />
+                      <div className="relative z-10 flex flex-col items-start text-left px-6 md:px-12 lg:px-20 py-14 md:py-20 lg:py-24 gap-5">
+                        <h3 className="font-archivo font-medium text-[22px] md:text-[28px] lg:text-[32px] xl:text-[36px] leading-[1.15] text-white capitalize max-w-[700px]">
                           Lorem Ipsum Dolor Sit Amet Consectetur. Elit Dui
                           Ridiculus.
                         </h3>
-                        <p className="font-bricolage text-[14px] md:text-[15px] leading-[1.6] text-white/50">
+                        <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.6] text-white/60 max-w-[560px]">
                           Lorem ipsum dolor sit amet consectetur. Tristique non
                           eu amet scelerisque. Sapien risus posuere nulla risus
                           diam. Vitae sit facilisis ut in.
                         </p>
-                        <div>
-                          <PrimaryButton as="a" href="/get-in-touch">
-                            See Our Impact
-                          </PrimaryButton>
-                        </div>
-                      </div>
-                      <div className="relative w-full md:w-[260px] lg:w-[300px] min-h-[200px] md:min-h-0 shrink-0">
-                        <Image
-                          src="https://picsum.photos/seed/insight-cta/400/400"
-                          alt=""
-                          fill
-                          className="object-cover"
-                        />
+                        <PrimaryButton as="a" href="/case-studies">
+                          See Our Impact
+                        </PrimaryButton>
                       </div>
                     </div>
                   )}
+
+                  <div className="flex flex-col gap-5 max-w-[820px] mx-auto w-full">
+                    {/* Heading */}
+                    {section.heading && (
+                      <h2 className="font-archivo font-medium text-[22px] md:text-[26px] lg:text-[28px] xl:text-[30px] leading-[1.15] text-white capitalize">
+                        {section.heading}
+                      </h2>
+                    )}
+
+                    {/* Paragraphs */}
+                    {section.paragraphs.map((p, j) => (
+                      <p
+                        key={j}
+                        className="font-bricolage text-[15px] md:text-[16px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60"
+                      >
+                        {p}
+                      </p>
+                    ))}
+
+                    {/* Bullet list */}
+                    {section.bullets && section.bullets.length > 0 && (
+                      <ul className="flex flex-col gap-3 pl-1">
+                        {section.bullets.map((bullet, k) => (
+                          <li key={k} className="flex items-start gap-3">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-red shrink-0" />
+                            <span className="font-bricolage text-[15px] md:text-[16px] lg:text-[16px] xl:text-[17px] leading-[1.65] text-white/60">
+                              {bullet}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
               );
             })}

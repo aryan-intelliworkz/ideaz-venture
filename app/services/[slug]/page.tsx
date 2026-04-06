@@ -124,18 +124,20 @@ export default async function ServiceDetailPage({ params }: Props) {
               {service.engagementModels.items.map((model, i) => (
                 <div
                   key={i}
-                  className="group corner-border bg-[#0a0a0a] overflow-hidden transition-colors"
+                  className="group bg-[#0a0a0a] overflow-hidden transition-colors"
                 >
-                  <div className="relative w-full aspect-[1.5/1]">
-                    <Image
-                      src={model.image}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                    />
+                  <div className="p-4 md:p-5">
+                    <div className="relative w-full aspect-[1.5/1] overflow-hidden rounded-[2px]">
+                      <Image
+                        src={model.image}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                      />
+                    </div>
                   </div>
-                  <div className="p-5 md:p-6 flex flex-col gap-3">
+                  <div className="px-5 pb-5 md:px-6 md:pb-6 flex flex-col gap-3">
                     <h3 className="font-archivo font-medium text-[16px] md:text-[18px] lg:text-[19px] text-white leading-[1.2]">
                       {model.title}
                     </h3>
@@ -198,7 +200,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       <RevealSection className="reveal-fade-up">
         <section className="py-8 md:py-12 lg:py-16">
           <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-            <div className="corner-border bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
+            <div className="bg-[#0a0a0a] overflow-hidden flex flex-col md:flex-row">
               <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col justify-center gap-5">
                 <h3 className="font-archivo font-medium text-[26px] md:text-[30px] lg:text-[36px] xl:text-[40px] leading-[1.1] text-white capitalize">
                   {service.finalCta.heading}

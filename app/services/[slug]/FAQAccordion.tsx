@@ -8,7 +8,7 @@ export default function FAQAccordion({ faqs }: { faqs: ServiceFAQ[] }) {
   const [openFaq, setOpenFaq] = useState<number>(0);
 
   return (
-    <div className="max-w-[900px] mx-auto">
+    <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
       {faqs.map((faq, i) => {
         const isOpen = openFaq === i;
         return (
@@ -34,38 +34,57 @@ export default function FAQAccordion({ faqs }: { faqs: ServiceFAQ[] }) {
                 {faq.question}
               </span>
 
-              {/* Plus / Minus icon */}
-              <span
-                className={cn(
-                  "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300",
-                  isOpen
-                    ? "border-[#EC1C24] bg-[#EC1C24]/10 rotate-0"
-                    : "border-white/20 rotate-0",
-                )}
-              >
+              {/* Plus / Cross icon */}
+              <span className="flex items-center justify-center w-8 h-8 shrink-0">
                 <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
                   fill="none"
                   className="transition-transform duration-300"
+                  aria-hidden="true"
                 >
-                  <path
-                    d="M2 7H12"
-                    stroke={isOpen ? "#EC1C24" : "white"}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
+                  {/* Horizontal line (always visible) */}
+                  <rect
+                    x="3"
+                    y="8.25"
+                    width="12"
+                    height="1.5"
+                    rx="0.75"
+                    fill="white"
                   />
-                  <path
-                    d="M7 2V12"
-                    stroke={isOpen ? "#EC1C24" : "white"}
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    className={cn(
-                      "transition-all duration-300 origin-center",
-                      isOpen ? "opacity-0 scale-0" : "opacity-100 scale-100",
-                    )}
+                  {/* Vertical/cross line (cross when open) */}
+                  <rect
+                    x="8.25"
+                    y="3"
+                    width="1.5"
+                    height="12"
+                    rx="0.75"
+                    fill="white"
+                    style={{
+                      opacity: isOpen ? 1 : 1,
+                      transform: isOpen ? "rotate(45deg)" : "scale(1)",
+                      transition: "all 0.3s",
+                      transformOrigin: "center",
+                    }}
                   />
+                  {/* When open, rotate vertical to make a cross (×) */}
+                  {isOpen && (
+                    <rect
+                      x="8.25"
+                      y="3"
+                      width="1.5"
+                      height="12"
+                      rx="0.75"
+                      fill="white"
+                      style={{
+                        opacity: 1,
+                        transform: "rotate(-45deg)",
+                        transition: "all 0.3s",
+                        transformOrigin: "center",
+                      }}
+                    />
+                  )}
                 </svg>
               </span>
             </button>

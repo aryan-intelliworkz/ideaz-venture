@@ -169,10 +169,11 @@ export default function HowWeWorkContent() {
                         !isEven && "lg:order-2",
                       )}
                     >
-                      <p className="font-bricolage text-[13px] lg:text-[14px] leading-[1.6] text-[#EC1C24] italic mb-4">
-                        {step.tagline}
+                      <p className="font-bricolage text-[12px] md:text-[13px] text-[#888888] tracking-wider mb-4">
+                        <span className="border-b border-[#EC1C24] pb-1">
+                          {step.tagline}
+                        </span>
                       </p>
-                      <div className="w-full h-px bg-white/[0.08] mb-6" />
                       <h3 className="font-archivo font-medium text-[24px] md:text-[30px] lg:text-[28px] xl:text-[32px] 2xl:text-[34px] min-[1800px]:text-[36px] leading-[1.1] text-white capitalize mb-5">
                         {step.title}
                       </h3>
@@ -212,7 +213,7 @@ export default function HowWeWorkContent() {
             Frequently Asked Questions
           </h2>
 
-          <div className="max-w-[900px] mx-auto">
+          <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
             {faqs.map((faq, i) => {
               const isOpen = openFaq === i;
               return (
@@ -239,40 +240,38 @@ export default function HowWeWorkContent() {
                     </span>
 
                     {/* Plus / Minus icon */}
-                    <span
-                      className={cn(
-                        "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300",
-                        isOpen
-                          ? "border-[#EC1C24] bg-[#EC1C24]/10 rotate-0"
-                          : "border-white/20 rotate-0",
-                      )}
-                    >
+                    <span className="flex items-center justify-center w-8 h-8 shrink-0">
                       <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
                         fill="none"
                         className="transition-transform duration-300"
+                        aria-hidden="true"
                       >
                         {/* Horizontal line (always visible) */}
-                        <path
-                          d="M2 7H12"
-                          stroke={isOpen ? "#EC1C24" : "white"}
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
+                        <rect
+                          x="3"
+                          y="8.25"
+                          width="12"
+                          height="1.5"
+                          rx="0.75"
+                          fill="white"
                         />
                         {/* Vertical line (hidden when open) */}
-                        <path
-                          d="M7 2V12"
-                          stroke={isOpen ? "#EC1C24" : "white"}
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          className={cn(
-                            "transition-all duration-300 origin-center",
-                            isOpen
-                              ? "opacity-0 scale-0"
-                              : "opacity-100 scale-100",
-                          )}
+                        <rect
+                          x="8.25"
+                          y="3"
+                          width="1.5"
+                          height="12"
+                          rx="0.75"
+                          fill="white"
+                          style={{
+                            opacity: isOpen ? 0 : 1,
+                            transform: isOpen ? "scale(0)" : "scale(1)",
+                            transition: "all 0.3s",
+                            transformOrigin: "center",
+                          }}
                         />
                       </svg>
                     </span>

@@ -3,10 +3,11 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade } from "swiper/modules";
+import { Navigation, EffectFade, EffectCards } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import "swiper/css/effect-cards";
 import { cn } from "@/lib/utils";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 import WhoWeWorkWith from "@/components/shared/WhoWeWorkWith";
@@ -305,8 +306,9 @@ function NavArrow({
 export default function WhoWeAreContent() {
   const [expandedIndex, setExpandedIndex] = useState(0);
   const executionSwiperRef = useRef<SwiperType | null>(null);
+  const cardsSwiperRef = useRef<SwiperType | null>(null);
+  const isSyncing = useRef(false);
   const [executionIndex, setExecutionIndex] = useState(0);
-  const [leavingIndex, setLeavingIndex] = useState<number | null>(null);
 
   const introLeftRef = useScrollReveal();
   const introRightRef = useScrollReveal();
@@ -703,10 +705,14 @@ export default function WhoWeAreContent() {
               executionSwiperRef.current = swiper;
             }}
             onSlideChange={(swiper) => {
+              if (isSyncing.current) return;
+              isSyncing.current = true;
               const newIndex = swiper.realIndex;
-              setLeavingIndex(executionIndex);
               setExecutionIndex(newIndex);
-              setTimeout(() => setLeavingIndex(null), 600);
+              if (cardsSwiperRef.current) {
+                cardsSwiperRef.current.slideTo(newIndex);
+              }
+              isSyncing.current = false;
             }}
             slidesPerView={1}
             effect="fade"
@@ -750,24 +756,30 @@ export default function WhoWeAreContent() {
             ))}
           </Swiper>
 
-          {/* Stacked card gallery — positioned over the right side */}
+          {/* Swiper Cards effect — positioned over the right side */}
           <div className="flex justify-center lg:justify-end lg:absolute lg:right-[160px] lg:top-[180px] mt-6 lg:mt-0">
-            <div className="exec-card-stack">
-              {executionApproach.map((step, i) => {
-                const n = executionApproach.length;
-                let cardClass = "exec-stack-card";
-                if (i === leavingIndex) {
-                  cardClass += " leaving";
-                } else if (i === executionIndex) {
-                  cardClass += " active";
-                } else {
-                  const diff = (i - executionIndex + n) % n;
-                  if (diff === 1) cardClass += " behind-1";
-                  else if (diff === 2) cardClass += " behind-2";
-                  else cardClass += " behind-rest";
-                }
-                return (
-                  <div key={step.title} className={cardClass}>
+            <div className="w-[320px] md:w-[380px] lg:w-[420px]">
+              <Swiper
+                modules={[EffectCards]}
+                effect="cards"
+                grabCursor={true}
+                onSwiper={(swiper) => {
+                  cardsSwiperRef.current = swiper;
+                }}
+                onSlideChange={(swiper) => {
+                  if (isSyncing.current) return;
+                  isSyncing.current = true;
+                  const newIndex = swiper.realIndex;
+                  setExecutionIndex(newIndex);
+                  if (executionSwiperRef.current) {
+                    executionSwiperRef.current.slideTo(newIndex);
+                  }
+                  isSyncing.current = false;
+                }}
+                className="exec-cards-swiper"
+              >
+                {executionApproach.map((step) => (
+                  <SwiperSlide key={step.title}>
                     <div className="rounded-[12px] border border-white/[0.1] bg-[#141414] p-4 flex flex-col overflow-hidden shadow-2xl">
                       <div className="relative w-full aspect-[3/2] rounded-[8px] overflow-hidden">
                         <Image
@@ -787,9 +799,9 @@ export default function WhoWeAreContent() {
                         </p>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

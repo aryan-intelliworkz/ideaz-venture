@@ -42,8 +42,10 @@ export default function CaseStudiesPage() {
                     }`}
                   >
                     {/* Tag */}
-                    <p className="font-bricolage text-[12px] md:text-[13px] text-[#EC1C24] tracking-wider mb-4">
-                      {cs.subtitle}
+                    <p className="font-bricolage text-[12px] md:text-[13px] text-[#888888] tracking-wider mb-4">
+                      <span className="border-b border-[#EC1C24] pb-1">
+                        {cs.subtitle}
+                      </span>
                     </p>
 
                     {/* Title */}

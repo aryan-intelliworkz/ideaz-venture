@@ -237,12 +237,13 @@ export default function ServicesPage() {
                   </PrimaryButton>
                 </div>
               </div>
-              <div className="relative w-full md:w-[300px] lg:w-[380px] min-h-[220px] md:min-h-0 shrink-0">
+              <div className="relative w-full md:w-[300px] lg:w-[380px] min-h-[220px] md:min-h-0 shrink-0 flex items-center justify-center">
                 <Image
-                  src="/assets/sections/footer-image.png"
-                  alt=""
+                  src="/assets/Mail.jpg"
+                  alt="Mail"
                   fill
-                  className="object-cover"
+                  className="object-contain"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </div>

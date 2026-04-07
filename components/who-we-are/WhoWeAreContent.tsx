@@ -745,9 +745,6 @@ export default function WhoWeAreContent() {
                     <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/50 mb-5">
                       {step.descriptionOne}
                     </p>
-                    <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/50">
-                      {step.descriptionTwo}
-                    </p>
 
                     {/* Navigation arrows */}
                     <div className="flex items-center gap-[14px] mt-8">

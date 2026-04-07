@@ -14,24 +14,24 @@ const offices = [
   {
     country: "USA",
     image: "/assets/OurCore1.png",
-    address: "531, Manitior Street, Lorem Center 465125.",
-    phone: "+1 814 990 2395",
+    address: "5511, Mercier Street, Lewis Center, Ohio 43035",
+    phone: "+1 614 999 2286",
     email: "usa@ideaz.ventures",
   },
   {
     country: "UAE",
     image: "/assets/OurCore2.png",
     address:
-      "Office No.25, 12th Floor, Al Saqar Business Tower, Hall of Museum of the Future, Sheikh Zayed Road, Dubai, UAE.",
-    phone: "+971 56 345 1362",
+      "Office No. 25, 13th Floor, Al Saqar Business Tower, Near Museum of the Future, Sheikh Zayed Road, Dubai, UAE",
+    phone: "+971 56 343 5362",
     email: "",
   },
   {
     country: "India",
     image: "/assets/OurCore3.png",
     address:
-      "Block-B, B90-A, World Trade Tower, Near SMM Showroom, SG Highway, Ahmedabad – 380015, Gujarat, India.",
-    phone: "+91 01570 45087",
+      "Block-B, B912-A, World Trade Tower, Near BMW Showroom, SG Highway, Ahmedabad – 380051, Gujarat, India",
+    phone: "+91 97370 45567",
     email: "hello@ideaz.ventures",
   },
 ];
@@ -43,7 +43,7 @@ export default function GetInTouchPage() {
       <MasterLayout
         backgroundImage="/assets/whoWeAreBg.png"
         heading="Get In Touch"
-        description="Whether you're validating an idea, building a product, or scaling a team — we're here to help you move forward with clarity and execution."
+        description="Whether you're validating an idea, building a product, or looking to hire a business consultant, we help founders and businesses move forward with clarity, structure, and execution."
         ctaText=""
       />
 
@@ -75,9 +75,7 @@ export default function GetInTouchPage() {
                   />
                 </svg>
                 <h2 className="font-archivo font-medium text-[28px] md:text-[32px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
-                  Let&apos;s Start Building
-                  <br />
-                  Something That Scales.
+                  Build With The Right Business Consultant
                 </h2>
               </div>
             </RevealSection>
@@ -90,16 +88,16 @@ export default function GetInTouchPage() {
               <div className="flex flex-col gap-[25px]">
                 <div className="flex flex-col gap-[14px]">
                   <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
-                    Lorem ipsum dolor sit amet consectetur. Nisl arcu sit
-                    ultricies lacus eget. Ullamcorper sit enim in ultricies
-                    sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu
-                    magna posuere odio auctor. Odio feugiat maecenas sed risus
-                    sapien et lectus velit. Faucibus ac ut faucibus id sit.
-                    Fermentum orci eu diam at purus consequat egestas mauris ut.
+                    Working with the right business consultant for startups can
+                    define how efficiently you move from idea to execution. At
+                    Ideaz Ventures, we don’t just advise, we partner with you to
+                    bring clarity, structure, and momentum to your journey.
                   </p>
                   <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400">
-                    Choose the option that best fits your goal — we&apos;ll
-                    connect you with the right team.
+                    Whether you’re looking to hire a business consultant to
+                    validate your idea, shape your product, or scale your
+                    operations, our team aligns strategy with execution so you
+                    can build with confidence and direction.
                   </p>
                 </div>
               </div>
@@ -117,11 +115,12 @@ export default function GetInTouchPage() {
           {/* Section heading */}
           <div className="text-center mb-8 md:mb-10 lg:mb-14">
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[36px] xl:text-[40px] leading-[1.15] text-white capitalize mb-4">
-              Our Global Offices
+              Our Global Presence
             </h2>
             <p className="font-bricolage text-[14px] md:text-[16px] leading-[1.6] text-white/40 max-w-[700px] mx-auto">
-              These principles guide how we think, build, and collaborate —
-              ensuring consistency in every product we deliver.
+              With teams across key global hubs, we collaborate with founders
+              and businesses to deliver consulting, product development, and
+              execution support — wherever you operate.
             </p>
           </div>
 

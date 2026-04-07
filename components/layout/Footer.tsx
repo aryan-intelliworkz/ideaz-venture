@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
           {/* Right: Text + Contact */}
           <div className="flex-1 w-full flex flex-col items-start">
-            <p className="text-[0.98rem] md:text-[1.05rem] text-white/50 mb-4 max-w-2xl">
+            <p className="text-[0.98rem] md:text-[1.05rem] text-white/50 mb-4 w-full max-w-none">
               Ideaz Ventures is an execution partner for founders and businesses
               building scalable digital products. We combine strategy,
               engineering, and operational clarity to help you move from idea to

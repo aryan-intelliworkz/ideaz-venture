@@ -143,7 +143,7 @@ const inputClasses =
   "w-full px-4 py-3 bg-transparent border-b border-white/[0.12] text-white font-bricolage text-[14px] md:text-[15px] focus:outline-none focus:border-[#EC1C24] transition-colors placeholder:text-white/25";
 
 export default function ContactForm() {
-  const [activeTab, setActiveTab] = useState<TabKey>("Build a Venture");
+  const [activeTab, setActiveTab] = useState<TabKey>("General Inquiry");
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
 

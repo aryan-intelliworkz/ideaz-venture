@@ -12,38 +12,51 @@ import { cn } from "@/lib/utils";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 import WhoWeWorkWith from "@/components/shared/WhoWeWorkWith";
 
-/* ─── Data ─── */
+// All new content and structure will be implemented here as per your provided data.
 
+// ...existing imports...
+
+// 5-step Execution Approach (from user content)
 const executionApproach = [
   {
     title: "Think Before We Build",
     descriptionOne:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget.",
-    descriptionTwo:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget.",
-    image: "https://picsum.photos/seed/think-build/600/400",
+      "We begin by understanding the problem, users, and business context, not just the feature or idea. This helps define what should be built and why it matters. By aligning early on product direction and execution priorities, we reduce uncertainty and ensure every step forward is intentional.",
     cardDesc:
-      "We invest time in understanding the problem, users, and business goals before execution begins.",
+      "Think Before We Build\n Understand the problem before writing a single line.",
+    image: "/assets/execution-1.png",
   },
   {
-    title: "Design With Purpose",
+    title: "Structure The Foundation",
     descriptionOne:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget.",
-    descriptionTwo:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget.",
-    image: "https://picsum.photos/seed/design-purpose/600/400",
+      "Before development begins, we define architecture, workflows, and execution plans, creating a stable foundation for speed and clarity. This ensures teams move forward with direction, avoiding confusion and unnecessary rework.",
     cardDesc:
-      "Every interface and interaction is intentionally crafted to serve the user and strengthen the product.",
+      "Structure The Foundation\n Build clarity into systems before execution begins.",
+    image: "/assets/execution-2.png",
   },
   {
-    title: "Ship & Iterate Fast",
+    title: "Build With Discipline",
     descriptionOne:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget.",
-    descriptionTwo:
-      "Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam tristique diam nisi quis metus. Mi arcu magna posuere odio auctor. Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus ac ut faucibus id sit. Fermentum orci eu diam at purus consequat egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies lacus eget.",
-    image: "https://picsum.photos/seed/ship-iterate/600/400",
+      "We approach development with engineering discipline, focusing on performance, scalability, and clean execution rather than shortcuts. Every decision is made with long-term impact in mind, ensuring the product remains stable as it evolves.",
     cardDesc:
-      "We launch early, gather real feedback, and continuously improve — speed and quality go hand in hand.",
+      "Build With Discipline\n Develop with precision, not shortcuts or assumptions.",
+    image: "/assets/execution-3.png",
+  },
+  {
+    title: "Launch With Direction",
+    descriptionOne:
+      "Launch is treated as a structured step toward validation and growth, not just completion. Each release is aligned with clear goals, ensuring the product enters the market with purpose and direction.",
+    cardDesc:
+      "Launch With Direction\n Enter the market with purpose and defined outcomes.",
+    image: "/assets/execution-4.png",
+  },
+  {
+    title: "Scale With Systems",
+    descriptionOne:
+      "As products grow, we strengthen systems, processes, and infrastructure to support scale without instability. This allows businesses to expand confidently without rebuilding or slowing down.",
+    cardDesc:
+      "Scale With Systems\n Strengthen systems to support growth without disruption.",
+    image: "/assets/execution-5.png",
   },
 ];
 

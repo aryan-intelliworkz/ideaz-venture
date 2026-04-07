@@ -19,16 +19,14 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] font-sans text-white">
-      <div className="mx-auto max-w-[1600px] px-4 md:px-10 py-10 md:py-14">
+    <footer className="bg-[#0a0a0a] font-bricolage text-white">
+      <div className="mx-auto max-w-[1600px]">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row gap-0 md:gap-0 border border-white/10 rounded-none overflow-hidden bg-[#111]">
+        <div className="flex flex-col md:flex-row gap-0 md:gap-0 border-t border-b border-white/10 rounded-none overflow-hidden">
           {/* Left: Heading + Image */}
-          <div className="flex flex-col items-center md:items-start justify-center bg-[#111] md:w-[38%] p-8 md:p-10 lg:p-14 border-b md:border-b-0 md:border-r border-white/10">
-            <h3 className="font-archivo italic font-semibold text-white text-[2.1rem] md:text-[2.3rem] lg:text-[2.5rem] leading-tight mb-6 md:mb-8 text-left w-full">
-              Lorem Ipsum
-              <br />
-              Dolor Sit Amet
+          <div className="flex flex-col items-center md:items-start justify-center md:w-[30%] p-8 md:p-8 lg:p-8 border-r border-white/10">
+            <h3 className="font-archivo font-semibold text-white text-[2.1rem] md:text-[2.3rem] lg:text-[2.5rem] leading-tight mb-6 md:mb-8 text-left w-full">
+              Build right. Launch strong. Scale smart.
             </h3>
             <div className="w-full flex justify-center md:justify-start">
               <Image
@@ -42,7 +40,7 @@ export default function Footer() {
             </div>
           </div>
           {/* Right: Quick Links */}
-          <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col justify-center">
+          <div className="flex-1 p-8 md:p-8 lg:p-8 flex flex-col justify-center">
             <h2 className="font-archivo font-light text-gray-300 text-[2.1rem] md:text-[2.3rem] lg:text-[2.5rem] leading-tight mb-8 text-left">
               Quick Links
             </h2>
@@ -51,7 +49,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="group flex items-center gap-2 pb-1 border-b border-white/15 hover:border-white/40 font-sans text-[1rem] md:text-[1.08rem] text-white/80 hover:text-white transition-colors"
+                  className="group flex items-center gap-2 pb-1 border-b border-white/15 hover:border-white/40 font-bricolage text-[1rem] md:text-[1.08rem] text-white/80 hover:text-white transition-colors"
                 >
                   <span>{link.label}</span>
                   <span className="text-[1rem] ml-1 group-hover:text-white/90 transition-colors">
@@ -63,28 +61,27 @@ export default function Footer() {
           </div>
         </div>
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-center border-t border-white/10 mt-10 pt-8">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-0 justify-between items-start border-white/10 pt-8 px-0 md:px-8">
           {/* Left: Logo */}
           <div className="mb-6 md:mb-0 md:mr-10 flex-shrink-0 opacity-60">
             <Image
               src="/assets/FooterLogo.png"
               alt="Ideaz Ventures Logo"
-              width={200}
-              height={80}
-              className="h-[60px] md:h-[80px] w-auto"
+              height={180}
+              width={400}
+              className="w-100 h-auto"
               priority
             />
           </div>
           {/* Right: Text + Contact */}
-          <div className="flex-1 w-full flex flex-col items-center md:items-end">
-            <p className="text-[0.98rem] md:text-[1.05rem] text-white/50 mb-4 max-w-2xl text-center md:text-right">
-              Lorem ipsum dolor sit amet consectetur. Nisl arcu sit ultricies
-              lacus eget. Ullamcorper sit enim in ultrices sollicitudin. Etiam
-              tristique diam nisi quis metus. Mi arcu magna posuere odio auctor.
-              Odio feugiat maecenas sed risus sapien et lectus velit. Faucibus
-              ac ut faucibus id sit. Fermentum orci eu diam at purus consequat
-              egestas mauris ut. Lorem ipsum dolor sit amet consectetur. Nisl
-              arcu sit ultricies lacus eget.
+          <div className="flex-1 w-full flex flex-col items-start">
+            <p className="text-[0.98rem] md:text-[1.05rem] text-white/50 mb-4 max-w-2xl">
+              Ideaz Ventures is an execution partner for founders and businesses
+              building scalable digital products. We combine strategy,
+              engineering, and operational clarity to help you move from idea to
+              launch and beyond. From early validation to post-launch growth,
+              our focus remains on building systems that perform, scale, and
+              deliver real business outcomes.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-8">
               <a

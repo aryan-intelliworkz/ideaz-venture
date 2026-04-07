@@ -10,84 +10,89 @@ import RevealSection from "@/components/ui/RevealSection";
 const steps = [
   {
     number: "01",
-    tagline:
-      "Building the right product starts before writing a single line of code",
-    title: "Idea Understanding & Discovery",
+    tagline: "Clarifying your vision and business goals",
+    title: "Consultation & Discovery",
     description:
-      "We begin by diving deep into the core problem you are solving. By understanding your target users and aligning with your overarching business goals, we establish a solid foundation. This meticulous discovery phase ensures that every technical decision moving forward serves a distinct market need and business objective.",
-    image: "https://picsum.photos/seed/idea-discovery/900/700?grayscale",
+      "We start with a deep-dive consultation to understand your business, market, and vision. Together, we clarify your objectives, target audience, and the unique value your product will deliver. This ensures every next step is rooted in your real business needs.",
+    image: "/assets/sections/how-we-work/consultation.jpg",
   },
   {
     number: "02",
-    tagline: "Turning abstract ideas into an actionable execution roadmap.",
-    title: "Validation & Planning",
+    tagline: "Validating ideas with real market insights",
+    title: "Research & Validation",
     description:
-      "We rigorously validate your core assumptions to reduce market risk and define a precise product scope. From there, we prioritize critical features and design a clear, comprehensive roadmap detailing timelines, foundational architecture decisions, and key developmental milestones.",
-    image: "https://picsum.photos/seed/validation-plan/900/700?grayscale",
+      "We conduct market research, competitor analysis, and user interviews to validate your core assumptions. This phase reduces risk and ensures we’re building something the market actually wants.",
+    image: "/assets/sections/how-we-work/research.jpg",
   },
   {
     number: "03",
-    tagline: "Visualizing the product to align expectations early.",
-    title: "Conceptualization & Wireframing",
+    tagline: "Turning strategy into a clear execution plan",
+    title: "Strategy & Roadmapping",
     description:
-      "Before heavy engineering begins, we map out comprehensive user flows and structural wireframes. This step establishes the UI direction and allows all stakeholders to visualize the product\u2019s architecture, ensuring complete alignment on the user experience and interface functionality.",
-    image: "https://picsum.photos/seed/wireframing/900/700?grayscale",
+      "We define the product strategy, prioritize features, and create a clear roadmap. You’ll know exactly what will be built, when, and why—ensuring alignment across all stakeholders.",
+    image: "/assets/sections/how-we-work/roadmap.jpg",
   },
   {
     number: "04",
-    tagline: "Proving the concept with a functional, market-ready build.",
-    title: "POC / MVP Development",
+    tagline: "Designing experiences that delight and convert",
+    title: "UX/UI Design & Prototyping",
     description:
-      "We develop a working version of your product strictly focused on its core features. This Minimum Viable Product (MVP) or Proof of Concept (POC) is fully tested, highly usable, and explicitly designed for early user onboarding, live demos, and critical investor validation.",
-    image: "https://picsum.photos/seed/mvp-dev/900/700?grayscale",
+      "Our designers craft intuitive user flows, wireframes, and high-fidelity prototypes. You’ll see and test the product experience before a single line of code is written.",
+    image: "/assets/sections/how-we-work/design.jpg",
   },
   {
     number: "05",
-    tagline: "Expanding the foundation into an enterprise-grade platform.",
-    title: "Full-Scale Product Development",
+    tagline: "Building robust, scalable digital products",
+    title: "Agile Development",
     description:
-      "With the core concept validated, we scale the technology. The product is rapidly expanded with robust, scalable architecture, complex third-party integrations, enterprise-grade security measures, and deep performance optimizations to handle increasing user loads seamlessly.",
-    image: "https://picsum.photos/seed/full-scale/900/700?grayscale",
+      "Our engineering team brings your product to life using agile sprints. We focus on rapid, transparent development with regular demos and feedback loops—so you’re always in control.",
+    image: "/assets/sections/how-we-work/development.jpg",
   },
   {
     number: "06",
-    tagline: "Ensuring absolute stability for real-world market usage.",
-    title: "Testing, Deployment & Launch",
+    tagline: "Ensuring quality, security, and launch-readiness",
+    title: "Testing & Launch",
     description:
-      "We subject the product to rigorous Quality Assurance (QA) and staging environment tests. Once cleared, we manage the production deployment and orchestrate the launch readiness protocol, guaranteeing that the product performs flawlessly when it hits the live market.",
-    image: "https://picsum.photos/seed/testing-launch/900/700?grayscale",
+      "We rigorously test your product for quality, security, and performance. Once ready, we manage the deployment and support your go-to-market launch for maximum impact.",
+    image: "/assets/sections/how-we-work/launch.jpg",
   },
   {
     number: "07",
-    tagline: "Supporting your evolution from launch to market dominance.",
-    title: "Post-Launch Growth & Scaling",
+    tagline: "Supporting growth and continuous improvement",
+    title: "Post-Launch Partnership",
     description:
-      "Our partnership does not end at deployment. We provide continuous product improvements, advanced performance optimization, and managed operations. As your user base expands, we also support team scaling, including deploying dedicated developers to accelerate your ongoing feature roadmap.",
-    image: "https://picsum.photos/seed/post-launch/900/700?grayscale",
+      "After launch, we remain your strategic partner—monitoring performance, iterating on features, and supporting your growth with ongoing enhancements and team scaling as needed.",
+    image: "/assets/sections/how-we-work/growth.jpg",
   },
 ];
 
 /* ─── FAQ Data ─── */
 const faqs = [
   {
-    question: "What Is The Product Development Process At Ideaz Ventures?",
+    question:
+      "How long does the consulting and product development process take?",
     answer:
-      "Our process is an end-to-end idea execution journey designed to take founders from an initial concept to a scalable reality. It spans comprehensive phases including Idea Discovery & Nurturing, Concept to Proof of Concept (POC), MVP Build, Full Scale Development, GTM Launch Support, and ongoing Post Launch Support.",
+      "Timelines vary based on project scope and complexity. A typical end-to-end engagement (from discovery to launch) ranges from 3 to 9 months. We provide a detailed roadmap and timeline after the initial consultation phase.",
   },
   {
-    question: "Why Is A Structured Product Development Process Important?",
+    question: "Can you help if I only have an idea and no technical team?",
     answer:
-      "A structured process reduces risk, prevents scope creep, and ensures every phase of development is aligned with your business goals. It provides clarity for all stakeholders and maximizes the chances of building a product that the market actually needs.",
+      "Absolutely. We specialize in working with founders at all stages, including those with just an idea. Our team handles everything from strategy and design to development and launch, acting as your product and technical partner.",
   },
   {
-    question: "Do You Follow Agile Or Waterfall Development?",
+    question: "What if I already have an MVP or existing product?",
     answer:
-      "We follow an agile-first approach with structured sprint cycles, but adapt our methodology based on project needs. This hybrid approach gives us the flexibility of agile with the predictability that founders and investors need.",
+      "We can step in at any stage—whether you need a product audit, help with scaling, or a full redesign and rebuild. Our process is modular and adapts to your current needs.",
   },
   {
-    question: "Can The Process Be Adjusted For Early-Stage Startups?",
+    question: "How do you ensure my product will succeed in the market?",
     answer:
-      "Absolutely. Our process is designed to be modular. Early-stage startups can begin with discovery and validation phases, then progressively move into development as their idea matures and funding becomes available.",
+      "We combine deep market research, user validation, and agile execution. Our process is designed to minimize risk, maximize market fit, and ensure you’re building something users actually want.",
+  },
+  {
+    question: "What happens after launch?",
+    answer:
+      "We offer ongoing partnership options for growth, support, and team scaling. Whether you need continuous feature development, performance optimization, or help hiring and managing your own team, we’re here to help.",
   },
 ];
 

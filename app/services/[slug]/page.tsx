@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import { servicePages } from "@/lib/services-data";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import RevealSection from "@/components/ui/RevealSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import WhoWeWorkWith from "@/components/shared/WhoWeWorkWith";
+import WhatWeDoSection from "@/components/home/WhatWeDoSection";
+import CoreCapabilitiesSection from "@/components/home/CoreCapabilitiesSection";
+// import WhoWeWorkWith from "@/components/shared/WhoWeWorkWith";
 import FAQAccordion from "./FAQAccordion";
 import MasterLayout from "@/components/layout/MasterLayout";
 import Image from "next/image";
@@ -36,21 +37,19 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <>
-      {/* ─── MasterLayout as Hero ─── */}
+      {/* ─── Hero ─── */}
       <MasterLayout
         backgroundImage="/assets/whoWeAreBg.png"
         heading={service.title}
-        description={service.tagline} // ← tagline use kiya
-        ctaText={service.hero.cta} // ← hero se cta le rahe hain
-        // ctaLink prop agar MasterLayout mein nahi hai toh remove kar do
+        description={service.tagline}
+        ctaText={service.hero.cta}
       />
 
-      {/* ─── Problem Framing (same layout as "Execution Without Strategy") ─── */}
+      {/* ─── Problem Framing ─── */}
       <RevealSection className="reveal-fade-up">
         <section className="py-12 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
-              {/* Left: red arrow + heading */}
               <div className="lg:col-span-5 flex items-start gap-3">
                 <svg
                   width="40"
@@ -71,8 +70,6 @@ export default async function ServiceDetailPage({ params }: Props) {
                   {service.problemFraming.heading}
                 </h2>
               </div>
-
-              {/* Right: paragraph(s) */}
               <div className="lg:col-span-7 flex flex-col gap-4">
                 {service.problemFraming.paragraphs.map((p, i) => (
                   <p
@@ -88,18 +85,39 @@ export default async function ServiceDetailPage({ params }: Props) {
         </section>
       </RevealSection>
 
-      {/* ─── What We Do (reused from home) ─── */}
-      <ServicesSection />
+      {/* ─── What We Do ─── */}
+      <WhatWeDoSection
+        subtitle={service.whatWeDo.subtitle}
+        items={service.whatWeDo.items}
+      />
 
-      {/* ─── Who We Work With (reused from who-we-are) ─── */}
-      <WhoWeWorkWith />
+      {/* ─── Core Capabilities ─── */}
+      {/*
+        Images add karne ke liye:
+        1. Import per-slug images at the top of this file
+        2. Create a map like:
+              const capabilityImages: Record<string, string[]> = {
+                "startup-consulting": [img1, img2, img3, img4, img5],
+                "product-development": [...],
+                ...
+              };
+        3. Pass as: images={capabilityImages[service.slug] ?? []}
 
-      {/* ─── Engagement Models ─── */}
+        Jab tak images ready nahi hain, component automatically
+        numbered placeholder dikhayega.
+      */}
+      <CoreCapabilitiesSection
+        subtitle={service.coreCapabilities.subtitle}
+        items={service.coreCapabilities.items}
+      />
+
+      {/* ─── Who We Work With ─── */}
+      {/* <WhoWeWorkWith /> */}
+
       {/* ─── Engagement Models ─── */}
       <RevealSection className="reveal-fade-up">
         <section className="py-12 md:py-16 lg:py-24">
           <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
-            {/* Section Header - Matched with Core Principles */}
             <div className="text-center mb-8 md:mb-10 lg:mb-14">
               <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
                 Engagement Models
@@ -109,7 +127,6 @@ export default async function ServiceDetailPage({ params }: Props) {
               </p>
             </div>
 
-            {/* Cards - Now matching Core Principles design */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {service.engagementModels.items.map((model, i) => (
                 <div
@@ -154,18 +171,16 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Left: image */}
               <div className="relative w-full aspect-[1.3/1] rounded-[4px] overflow-hidden">
                 <Image
-                  src={`https://picsum.photos/seed/${service.slug}/700/540`}
-                  alt=""
+                  src={service.whyChooseUs.image}
+                  alt={service.whyChooseUs.heading}
                   fill
                   className="object-cover"
                   sizes="(max-width:1024px) 100vw, 700px"
+                  priority
                 />
               </div>
-
-              {/* Right: content */}
               <div className="flex flex-col gap-5">
                 <h3 className="font-archivo font-medium text-[22px] md:text-[26px] lg:text-[28px] xl:text-[30px] leading-[1.15] text-white capitalize">
                   {service.whyChooseUs.heading}
@@ -173,6 +188,19 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <p className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] xl:text-[17px] leading-[1.75] text-white/60">
                   {service.whyChooseUs.content}
                 </p>
+
+                {/* Pointers */}
+                <ul className="flex flex-col gap-3">
+                  {service.whyChooseUs.pointers.map((pointer, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="mt-[6px] w-1.5 h-1.5 rounded-full bg-[#EC1C24] shrink-0" />
+                      <span className="font-bricolage text-[14px] md:text-[15px] lg:text-[16px] leading-[1.6] text-white/60">
+                        {pointer}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
                 <div>
                   <PrimaryButton as="a" href="/get-in-touch">
                     Book Strategy Call
@@ -222,7 +250,6 @@ export default async function ServiceDetailPage({ params }: Props) {
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[42px] min-[1800px]:text-[48px] leading-[1.1] text-white capitalize mb-8 md:mb-10 lg:mb-14 text-center">
               Frequently Asked Questions
             </h2>
-
             <FAQAccordion faqs={service.faqs} />
           </div>
         </section>

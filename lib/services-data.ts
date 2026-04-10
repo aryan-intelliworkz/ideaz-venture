@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface ServiceFAQ {
   question: string;
   answer: string;
@@ -12,20 +14,20 @@ export interface ServiceCapability {
   number: string;
   title: string;
   description: string;
+  image: string | StaticImageData;
 }
 
 export interface ServiceEngagementModel {
   title: string;
   description: string;
-  image: string;
+  image: string | StaticImageData;
 }
 
 export interface ServicePage {
   slug: string;
-  title: string; // ← Added
-  tagline: string; // ← Added (hero ke liye best)
+  title: string;
+  tagline: string;
   hero: {
-    // purana hero bhi rakh sakte ho backup ke liye
     title: string;
     subtitle: string;
     cta: string;
@@ -39,10 +41,106 @@ export interface ServicePage {
     heading: string;
     content: string;
     pointers: string[];
+    image: string | StaticImageData;
   };
   finalCta: { heading: string; subtitle: string; cta: string };
   faqs: ServiceFAQ[];
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     1. STARTUP CONSULTING IMAGES
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+import startupConsultCore1 from "./startup consulting/Idea Validation.webp";
+import startupConsultCore2 from "./startup consulting/Market & User Clarity.webp";
+import startupConsultCore3 from "./startup consulting/Product Scope & MVP Definition.webp";
+import startupConsultCore4 from "./startup consulting/Business Model & Cost Planning.webp";
+import startupConsultCore5 from "./startup consulting/Roadmap & Execution Planning.webp";
+
+import startupConsultEngagement1 from "./startup consulting/Fixed-Cost Development.webp";
+import startupConsultEngagement2 from "./startup consulting/Dedicated Teams.webp";
+import startupConsultEngagement3 from "./startup consulting/Sprint-Based Execution.webp";
+
+import startupConsultWhy1 from "./startup consulting/Why Founders Choose Ideaz Ventures.webp";
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     2. STARTUP PRODUCT DEVELOPMENT
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+import productDevCore1 from "./startup product development/MVP Development.webp";
+import productDevCore2 from "./startup product development/Product Architecture.webp";
+import productDevCore3 from "./startup product development/Full-Scale Product Development.webp";
+import productDevCore4 from "./startup product development/SaaS & Platform Development.webp";
+import productDevCore5 from "./startup product development/Performance & Optimization.webp";
+
+import productDevEngagement1 from "./startup product development/Fixed-Cost Development.webp";
+import productDevEngagement2 from "./startup product development/Dedicated Teams.webp";
+import productDevEngagement3 from "./startup product development/Sprint-Based Execution.webp";
+
+import productDevWhy1 from "./startup product development/Why Founders Choose Ideaz Ventures.webp";
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     3. BRANDING & GTM SUPPORT
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+import brandingGtmCore1 from "./BRANDING & GTM SUPPORT/Product Positioning.webp";
+import brandingGtmCore2 from "./BRANDING & GTM SUPPORT/Messaging Framework.webp";
+import brandingGtmCore3 from "./BRANDING & GTM SUPPORT/Go-To-Market Planning.webp";
+import brandingGtmCore4 from "./BRANDING & GTM SUPPORT/Customer Acquisition Strategy.webp";
+import brandingGtmCore5 from "./BRANDING & GTM SUPPORT/Launch Readiness.webp";
+
+import brandingGtmEngagement1 from "./BRANDING & GTM SUPPORT/Fixed-Cost Development.webp";
+import brandingGtmEngagement2 from "./BRANDING & GTM SUPPORT/Dedicated Teams.webp";
+import brandingGtmEngagement3 from "./BRANDING & GTM SUPPORT/Sprint-Based Execution.webp";
+
+import brandingGtmWhy1 from "./BRANDING & GTM SUPPORT/Why Founders Choose Ideaz Ventures.webp";
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     4. INVESTOR READINESS SUPPORT  ← FIXED SLUG
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+import investorReadinessCore1 from "./investor readiness consulting/Investor Narrative Structuring.webp";
+import investorReadinessCore2 from "./investor readiness consulting/Pitch Deck Support.webp";
+import investorReadinessCore3 from "./investor readiness consulting/Fundraising Strategy.webp";
+import investorReadinessCore4 from "./investor readiness consulting/Financial & Growth Planning.webp";
+import investorReadinessCore5 from "./investor readiness consulting/Investor Readiness Preparation.webp";
+
+import investorReadinessEngagement1 from "./investor readiness consulting/Fixed-Cost Development.webp";
+import investorReadinessEngagement2 from "./investor readiness consulting/Dedicated Teams.webp";
+import investorReadinessEngagement3 from "./investor readiness consulting/Sprint-Based Execution.webp";
+
+import investorReadinessWhy1 from "./investor readiness consulting/Preparation That Goes Beyond The Pitch Deck.webp";
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     5. POST-LAUNCH SUPPORT  ← FIXED SLUG
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+import postLaunchCore1 from "./post-launch support services/Performance Optimization.webp";
+import postLaunchCore2 from "./post-launch support services/User Behavior Analysis.webp";
+import postLaunchCore3 from "./post-launch support services/Growth Strategy Planning.webp";
+import postLaunchCore4 from "./post-launch support services/Product Scaling.webp";
+import postLaunchCore5 from "./post-launch support services/Metrics & KPI Strategy.webp";
+
+import postLaunchEngagement1 from "./post-launch support services/Fixed-Cost Development.webp";
+import postLaunchEngagement2 from "./post-launch support services/Dedicated Teams.webp";
+import postLaunchEngagement3 from "./post-launch support services/Sprint-Based Execution.webp";
+
+import postLaunchWhy1 from "./post-launch support services/Growth Thats Structured_Not Reactive.webp";
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     6. MANAGED OPERATIONS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+import managedOpsCore1 from "./managed operations services/Operations Management.webp";
+import managedOpsCore2 from "./managed operations services/Process Optimization.webp";
+import managedOpsCore3 from "./managed operations services/Execution Oversight.webp";
+import managedOpsCore4 from "./managed operations services/Operational Strategy.webp";
+import managedOpsCore5 from "./managed operations services/Outsourced Operations Support.webp";
+
+import managedOpsEngagement1 from "./managed operations services/Fixed-Cost Development.webp";
+import managedOpsEngagement2 from "./managed operations services/Dedicated Teams.webp";
+import managedOpsEngagement3 from "./managed operations services/Sprint-Based Execution.webp";
+
+import managedOpsWhy1 from "./managed operations services/Execution That Stays Consistent As You Scale.webp";
 
 export const servicePages: ServicePage[] = [
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -63,7 +161,7 @@ export const servicePages: ServicePage[] = [
       heading: "Most Startup Mistakes Start Before Development",
       paragraphs: [
         "Most startups move into development based on assumptions, leading to wasted time, misaligned products, and avoidable costs. Without structured startup consulting services, ideas often lack validation, direction, and a clear execution path.",
-        "At Ideaz Ventures, our startup consulting services focus on validating ideas, defining product direction, and creating a structured roadmap before development begins. This ensures you’re building something users actually need, not just something you assume will work.",
+        "At Ideaz Ventures, our startup consulting services focus on validating ideas, defining product direction, and creating a structured roadmap before development begins. This ensures you're building something users actually need, not just something you assume will work.",
       ],
     },
     whatWeDo: {
@@ -99,37 +197,40 @@ export const servicePages: ServicePage[] = [
     },
     coreCapabilities: {
       subtitle:
-        "Our startup consulting services focus on building clarity before execution\u2014helping founders make the right decisions early and avoid costly mistakes later.",
+        "Our startup consulting services focus on building clarity before execution...",
       items: [
         {
           number: "01",
           title: "Idea Validation",
           description:
-            "We assess whether your idea solves a real problem, for the right users, in the right market. This startup idea validation consulting removes assumptions and ensures you\u2019re building something worth executing.",
+            "We assess whether your idea solves a real problem, for the right users, in the right market...",
+          image: startupConsultCore1,
         },
         {
           number: "02",
           title: "Market & User Clarity",
           description:
-            "We define your target users, use cases, and market positioning. Through structured startup market research consulting, we ensure your product direction is grounded in real demand\u2014not guesswork.",
+            "We define your target users, use cases, and market positioning...",
+          image: startupConsultCore2,
         },
         {
           number: "03",
           title: "Product Scope & MVP Definition",
           description:
-            "We help you decide what to build first\u2014and what not to. Our startup strategy consulting focuses on prioritization, ensuring your MVP is lean, relevant, and aligned with business goals.",
+            "We help you decide what to build first—and what not to...",
+          image: startupConsultCore3,
         },
         {
           number: "04",
           title: "Business Model & Cost Planning",
-          description:
-            "We define how your product will generate value and what it will take to build it. This includes pricing logic, revenue models, and startup business model consulting for execution clarity.",
+          description: "We define how your product will generate value...",
+          image: startupConsultCore4,
         },
         {
           number: "05",
           title: "Roadmap & Execution Planning",
-          description:
-            "We translate strategy into a clear execution plan with milestones, timelines, and technical direction. Our startup roadmap planning ensures you move into development with confidence.",
+          description: "We translate strategy into a clear execution plan...",
+          image: startupConsultCore5,
         },
       ],
     },
@@ -140,41 +241,42 @@ export const servicePages: ServicePage[] = [
         {
           title: "Fixed-Cost Development",
           description:
-            "Best suited for clearly defined requirements, this model ensures predictable timelines, controlled budgets, and structured delivery\u2014ideal when your startup consulting services phase has already defined the scope.",
-          image: "https://picsum.photos/seed/consult-fixed/600/400",
+            "Best suited for clearly defined requirements, this model ensures predictable timelines, controlled budgets, and structured delivery—ideal when your startup consulting services phase has already defined the scope.",
+          image: startupConsultEngagement1,
         },
         {
           title: "Dedicated Teams",
           description:
             "A fully aligned team working on your product continuously. This model supports long-term startup product development, giving you flexibility to scale while maintaining consistency, ownership, and execution speed.",
-          image: "https://picsum.photos/seed/consult-dedicated/600/400",
+          image: startupConsultEngagement2,
         },
         {
           title: "Sprint-Based Execution",
           description:
             "Short, focused development cycles designed for rapid progress. Ideal for validation, feature builds, or accelerating delivery without long-term commitment, especially in early-stage startup consulting and development phases.",
-          image: "https://picsum.photos/seed/consult-sprint/600/400",
+          image: startupConsultEngagement3,
         },
       ],
     },
     whyChooseUs: {
       subtitle:
-        "Startup consulting only works when it leads to clear decisions and confident execution. That\u2019s where we focus.",
+        "Startup consulting only works when it leads to clear decisions and confident execution. That's where we focus.",
       heading: "Clarity Before You Build",
       content:
         "Our startup consulting services are designed to remove guesswork before development begins. We work closely with founders to validate ideas, define product direction, and build a structured execution plan, so every decision is backed by logic, not assumptions.",
       pointers: [
         "Clear direction through startup idea validation consulting, not assumptions",
         "Structured roadmap with practical startup strategy consulting",
-        "Product and business thinking combined\u2014not isolated advice",
+        "Product and business thinking combined—not isolated advice",
         "Early-stage clarity to reduce cost, rework, and execution risk",
         "The same team can transition into development without disconnect",
       ],
+      image: startupConsultWhy1,
     },
     finalCta: {
       heading: "Start With Clarity. Build With Confidence.",
       subtitle:
-        "Tell us what you\u2019re building or planning. Our startup consulting services help you validate ideas, define direction, and move forward with a clear execution plan.",
+        "Tell us what you're building or planning. Our startup consulting services help you validate ideas, define direction, and move forward with a clear execution plan.",
       cta: "Book an Idea Discovery Call",
     },
     faqs: [
@@ -254,7 +356,7 @@ export const servicePages: ServicePage[] = [
         {
           title: "Full-Stack Development",
           description:
-            "We handle frontend, backend, and core system architecture to deliver reliable, scalable products. As a startup product development company, we build systems that perform under growth\u2014not just at launch.",
+            "We handle frontend, backend, and core system architecture to deliver reliable, scalable products. As a startup product development company, we build systems that perform under growth—not just at launch.",
         },
         {
           title: "QA, Testing & Deployment",
@@ -272,30 +374,35 @@ export const servicePages: ServicePage[] = [
           title: "MVP Development",
           description:
             "We build lean, functional MVPs that allow you to test your idea quickly. Our approach to MVP development for startups focuses on speed, usability, and real user feedback.",
+          image: productDevCore1,
         },
         {
           number: "02",
           title: "Product Architecture",
           description:
             "We design scalable systems that support growth from the start. Clean architecture ensures your product remains stable as users, features, and complexity increase.",
+          image: productDevCore2,
         },
         {
           number: "03",
           title: "Full-Scale Product Development",
           description:
             "We expand validated products into production-ready platforms. Our end-to-end product development startup approach ensures consistency from early builds to full deployment.",
+          image: productDevCore3,
         },
         {
           number: "04",
           title: "SaaS & Platform Development",
           description:
             "We build SaaS products and multi-user platforms with strong backend systems and scalable infrastructure, designed for long-term growth.",
+          image: productDevCore4,
         },
         {
           number: "05",
           title: "Performance & Optimization",
           description:
             "We continuously improve performance, stability, and user experience. This ensures your product evolves as your users and business grow.",
+          image: productDevCore5,
         },
       ],
     },
@@ -307,28 +414,28 @@ export const servicePages: ServicePage[] = [
           title: "Fixed-Cost Development",
           description:
             "Best for clearly defined scopes, this model ensures predictable timelines and outcomes. Ideal when your MVP or feature set is well-structured and ready for execution.",
-          image: "https://picsum.photos/seed/product-fixed/600/400",
+          image: productDevEngagement1,
         },
         {
           title: "Dedicated Teams",
           description:
             "A fully aligned team working exclusively on your product. This model supports long-term product development for startups, giving you flexibility to scale and iterate continuously.",
-          image: "https://picsum.photos/seed/product-dedicated/600/400",
+          image: productDevEngagement2,
         },
         {
           title: "Sprint-Based Execution",
           description:
             "Short, focused cycles designed for rapid delivery. Ideal for MVP builds, feature releases, or accelerating specific parts of your product development journey.",
-          image: "https://picsum.photos/seed/product-sprint/600/400",
+          image: productDevEngagement3,
         },
       ],
     },
     whyChooseUs: {
       subtitle:
-        "Startup product development isn\u2019t just about writing code, it\u2019s about building something that works in the real world.",
+        "Startup product development isn't just about writing code, it's about building something that works in the real world.",
       heading: "Built For Real-World Execution",
       content:
-        "Our startup product development services focus on building products that are usable, scalable, and ready for growth. We combine product thinking with engineering discipline to ensure your product doesn\u2019t just launch\u2014but continues to evolve.",
+        "Our startup product development services focus on building products that are usable, scalable, and ready for growth. We combine product thinking with engineering discipline to ensure your product doesn't just launch—but continues to evolve.",
       pointers: [
         "Product-first approach, not just feature delivery",
         "MVPs built for validation, not just speed",
@@ -336,11 +443,12 @@ export const servicePages: ServicePage[] = [
         "Clear ownership from development to deployment",
         "Ability to extend teams as your product grows",
       ],
+      image: productDevWhy1,
     },
     finalCta: {
       heading: "Ready To Build Your Product?",
       subtitle:
-        "Tell us what you\u2019re building. As a startup product development company, we\u2019ll help you move from idea to launch with a clear, structured execution plan.",
+        "Tell us what you're building. As a startup product development company, we'll help you move from idea to launch with a clear, structured execution plan.",
       cta: "Book an Idea Discovery Call",
     },
     faqs: [
@@ -358,7 +466,7 @@ export const servicePages: ServicePage[] = [
         question:
           "How is product development for startups different from traditional development?",
         answer:
-          "It focuses on speed, validation, and scalability\u2014prioritizing essential features and evolving based on user feedback.",
+          "It focuses on speed, validation, and scalability—prioritizing essential features and evolving based on user feedback.",
       },
       {
         question:
@@ -394,9 +502,9 @@ export const servicePages: ServicePage[] = [
       cta: "Book an Idea Discovery Call",
     },
     problemFraming: {
-      heading: "If Users Don\u2019t Understand It, They Won\u2019t Use It",
+      heading: "If Users Don't Understand It, They Won't Use It",
       paragraphs: [
-        "Many startups struggle not because of weak products, but because of unclear positioning and messaging. When users don\u2019t immediately understand what your product does or why it matters, adoption slows down. Our GTM consulting services focus on clarity, ensuring your product is positioned, communicated, and introduced in a way that connects with the right audience.",
+        "Many startups struggle not because of weak products, but because of unclear positioning and messaging. When users don't immediately understand what your product does or why it matters, adoption slows down. Our GTM consulting services focus on clarity, ensuring your product is positioned, communicated, and introduced in a way that connects with the right audience.",
       ],
     },
     whatWeDo: {
@@ -406,7 +514,7 @@ export const servicePages: ServicePage[] = [
         {
           title: "Product Positioning",
           description:
-            "We define how your product should be perceived in the market, what it stands for, who it\u2019s for, and how it differentiates. Our startup positioning consulting ensures your product has a clear and focused identity.",
+            "We define how your product should be perceived in the market, what it stands for, who it's for, and how it differentiates. Our startup positioning consulting ensures your product has a clear and focused identity.",
         },
         {
           title: "Messaging & Communication",
@@ -438,31 +546,36 @@ export const servicePages: ServicePage[] = [
           number: "01",
           title: "Product Positioning",
           description:
-            "We define your product\u2019s role in the market and how it stands out. Our brand strategy consulting ensures clarity in what you offer and why it matters.",
+            "We define your product's role in the market and how it stands out. Our brand strategy consulting ensures clarity in what you offer and why it matters.",
+          image: brandingGtmCore1,
         },
         {
           number: "02",
           title: "Messaging Framework",
           description:
             "We create a consistent way to explain your product across all channels. This helps users quickly understand your value without confusion.",
+          image: brandingGtmCore2,
         },
         {
           number: "03",
           title: "Go-To-Market Planning",
           description:
             "We design launch strategies that align product readiness with communication and timing. Our go-to-market strategy services focus on clarity and execution.",
+          image: brandingGtmCore3,
         },
         {
           number: "04",
           title: "Customer Acquisition Strategy",
           description:
             "We define practical approaches to attract and engage early users. Our strategies focus on real traction, not assumptions.",
+          image: brandingGtmCore4,
         },
         {
           number: "05",
           title: "Launch Readiness",
           description:
-            "We ensure everything is aligned before launch\u2014product, messaging, and presentation\u2014so your product enters the market clearly and confidently.",
+            "We ensure everything is aligned before launch—product, messaging, and presentation—so your product enters the market clearly and confidently.",
+          image: brandingGtmCore5,
         },
       ],
     },
@@ -474,25 +587,25 @@ export const servicePages: ServicePage[] = [
           title: "Fixed-Cost Engagement",
           description:
             "Best for clearly defined branding or GTM requirements such as positioning, messaging, or launch strategy. Ideal when you need structured outputs with defined timelines.",
-          image: "https://picsum.photos/seed/branding-fixed/600/400",
+          image: brandingGtmEngagement1,
         },
         {
           title: "Dedicated Teams",
           description:
             "Work with a focused team that continuously refines your positioning, messaging, and go-to-market strategy as your product evolves.",
-          image: "https://picsum.photos/seed/branding-dedicated/600/400",
+          image: brandingGtmEngagement2,
         },
         {
           title: "Sprint-Based Execution",
           description:
-            "Short, focused engagements designed to quickly solve specific challenges\u2014such as refining messaging, fixing positioning gaps, or preparing for launch.",
-          image: "https://picsum.photos/seed/branding-sprint/600/400",
+            "Short, focused engagements designed to quickly solve specific challenges—such as refining messaging, fixing positioning gaps, or preparing for launch.",
+          image: brandingGtmEngagement3,
         },
       ],
     },
     whyChooseUs: {
       subtitle:
-        "We don\u2019t create branding for the sake of aesthetics\u2014we create clarity that drives adoption.",
+        "We don't create branding for the sake of aesthetics—we create clarity that drives adoption.",
       heading: "Positioning That Makes Sense",
       content:
         "Our startup branding services are grounded in how your product actually works. We help founders simplify complex ideas, communicate value clearly, and align their product with market expectations, so users understand and adopt it faster.",
@@ -503,11 +616,12 @@ export const servicePages: ServicePage[] = [
         "Practical startup marketing strategy consulting, not theory",
         "Strong alignment between product, brand, and launch",
       ],
+      image: brandingGtmWhy1,
     },
     finalCta: {
       heading: "Ready To Launch With Clarity?",
       subtitle:
-        "Let\u2019s make sure your product is positioned, communicated, and introduced in a way that drives understanding and adoption.",
+        "Let's make sure your product is positioned, communicated, and introduced in a way that drives understanding and adoption.",
       cta: "Book an Idea Discovery Call",
     },
     faqs: [
@@ -545,44 +659,43 @@ export const servicePages: ServicePage[] = [
   },
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     4. INVESTOR READINESS SUPPORT
+     4. INVESTOR READINESS SUPPORT  ← FIXED SLUG
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
-    slug: "post-launch-support",
-    title: "Scale What You’ve Built. Improve What Matters.",
+    slug: "investor-readiness",
+    title: "Be Ready When Investors Start Asking Questions",
     tagline:
-      "Our post-launch support services and startup growth consulting help you improve performance, scale your product, and make data-driven decisions after launch.",
+      "Our investor readiness consulting helps founders prepare for real investor conversations with clarity and confidence.",
     hero: {
-      title: "Scale What You’ve Built. Improve What Matters.",
+      title: "Be Ready When Investors Start Asking Questions",
       subtitle:
-        "Our post-launch support services and startup growth consulting help you improve performance, scale your product, and make data-driven decisions after launch, so your product continues to grow, not stall.",
+        "Our investor readiness consulting helps founders prepare for real investor conversations—covering product clarity, growth strategy, and structured presentation so you're ready to raise with confidence.",
       cta: "Book an Idea Discovery Call",
     },
     problemFraming: {
-      heading:
-        "Investors Don\u2019t Fund Ideas. They Fund Clarity And Execution",
+      heading: "Investors Don't Fund Ideas. They Fund Clarity And Execution",
       paragraphs: [
-        "Many startups approach fundraising with incomplete preparation\u2014unclear product positioning, weak narratives, or unrealistic growth plans. This leads to missed opportunities and difficult investor conversations. Our investment readiness services focus on preparing you for how investors actually evaluate startups\u2014so you walk in with clarity, confidence, and a structured story.",
+        "Many startups approach fundraising with incomplete preparation—unclear product positioning, weak narratives, or unrealistic growth plans. This leads to missed opportunities and difficult investor conversations. Our investment readiness services focus on preparing you for how investors actually evaluate startups—so you walk in with clarity, confidence, and a structured story.",
       ],
     },
     whatWeDo: {
       subtitle:
-        "Our startup fundraising consulting focuses on preparing founders for meaningful, structured investor conversations\u2014not just presentations.",
+        "Our startup fundraising consulting focuses on preparing founders for meaningful, structured investor conversations—not just presentations.",
       items: [
         {
           title: "Product & Business Clarity",
           description:
-            "We help you clearly articulate what you\u2019re building, who it\u2019s for, and why it matters. This ensures your product story is easy to understand and aligned with market opportunity.",
+            "We help you clearly articulate what you're building, who it's for, and why it matters. This ensures your product story is easy to understand and aligned with market opportunity.",
         },
         {
           title: "Investor Narrative & Pitch Structure",
           description:
-            "We structure how your product, business model, and growth story are presented. Our pitch deck consulting services focus on clarity, flow, and investor expectations\u2014not just slide design.",
+            "We structure how your product, business model, and growth story are presented. Our pitch deck consulting services focus on clarity, flow, and investor expectations—not just slide design.",
         },
         {
           title: "Fundraising Strategy Planning",
           description:
-            "We help define how you approach fundraising\u2014target investors, timelines, and positioning. Our fundraising strategy consulting ensures your approach is structured and realistic.",
+            "We help define how you approach fundraising—target investors, timelines, and positioning. Our fundraising strategy consulting ensures your approach is structured and realistic.",
         },
         {
           title: "Financial & Growth Alignment",
@@ -592,43 +705,48 @@ export const servicePages: ServicePage[] = [
         {
           title: "Investor Preparation & Practice",
           description:
-            "We help founders prepare for real investor interactions\u2014questions, objections, and discussions. Our investor pitch preparation ensures you\u2019re confident, clear, and ready.",
+            "We help founders prepare for real investor interactions—questions, objections, and discussions. Our investor pitch preparation ensures you're confident, clear, and ready.",
         },
       ],
     },
     coreCapabilities: {
       subtitle:
-        "Our investment readiness services ensure you\u2019re prepared across every aspect of investor evaluation.",
+        "Our investment readiness services ensure you're prepared across every aspect of investor evaluation.",
       items: [
         {
           number: "01",
           title: "Investor Narrative Structuring",
           description:
             "We help you build a clear, compelling story around your product, market, and opportunity. This ensures your pitch is easy to follow and aligned with investor expectations.",
+          image: investorReadinessCore1,
         },
         {
           number: "02",
           title: "Pitch Deck Support",
           description:
             "We guide the structure and content of your pitch deck to ensure clarity, flow, and impact. Our startup pitch deck consultant approach focuses on substance, not just design.",
+          image: investorReadinessCore2,
         },
         {
           number: "03",
           title: "Fundraising Strategy",
           description:
             "We help you define how to approach investors, which stage to target, and how to position your startup effectively in funding conversations.",
+          image: investorReadinessCore3,
         },
         {
           number: "04",
           title: "Financial & Growth Planning",
           description:
             "We align your financial projections and growth expectations with realistic product and market dynamics.",
+          image: investorReadinessCore4,
         },
         {
           number: "05",
           title: "Investor Readiness Preparation",
           description:
-            "We prepare you for investor meetings\u2014questions, discussions, and expectations\u2014so you enter conversations with confidence and clarity.",
+            "We prepare you for investor meetings—questions, discussions, and expectations—so you enter conversations with confidence and clarity.",
+          image: investorReadinessCore5,
         },
       ],
     },
@@ -639,29 +757,29 @@ export const servicePages: ServicePage[] = [
         {
           title: "Fixed-Cost Engagement",
           description:
-            "Best for structured investor readiness support\u2014pitch preparation, narrative structuring, and fundraising strategy. Ideal when you have a defined goal and timeline.",
-          image: "https://picsum.photos/seed/investor-fixed/600/400",
+            "Best for structured investor readiness support—pitch preparation, narrative structuring, and fundraising strategy. Ideal when you have a defined goal and timeline.",
+          image: investorReadinessEngagement1,
         },
         {
           title: "Dedicated Teams",
           description:
-            "Work closely with a team that supports you throughout your fundraising journey\u2014refining your narrative, materials, and strategy as conversations progress.",
-          image: "https://picsum.photos/seed/investor-dedicated/600/400",
+            "Work closely with a team that supports you throughout your fundraising journey—refining your narrative, materials, and strategy as conversations progress.",
+          image: investorReadinessEngagement2,
         },
         {
           title: "Sprint-Based Execution",
           description:
-            "Short, focused engagements designed to quickly prepare you for investor meetings\u2014ideal for refining pitch decks, narratives, or key funding discussions.",
-          image: "https://picsum.photos/seed/investor-sprint/600/400",
+            "Short, focused engagements designed to quickly prepare you for investor meetings—ideal for refining pitch decks, narratives, or key funding discussions.",
+          image: investorReadinessEngagement3,
         },
       ],
     },
     whyChooseUs: {
       subtitle:
-        "We prepare founders for real investor conversations\u2014not just presentations.",
+        "We prepare founders for real investor conversations—not just presentations.",
       heading: "Preparation That Goes Beyond The Pitch Deck",
       content:
-        "Our investor readiness consulting focuses on how your product, business, and growth story come together. We help founders build credibility, align their narrative with reality, and approach fundraising with clarity\u2014not assumptions.",
+        "Our investor readiness consulting focuses on how your product, business, and growth story come together. We help founders build credibility, align their narrative with reality, and approach fundraising with clarity—not assumptions.",
       pointers: [
         "Investor preparation grounded in real product and business logic",
         "Clear, structured startup funding strategy consulting",
@@ -669,11 +787,12 @@ export const servicePages: ServicePage[] = [
         "Focus on credibility, not just presentation",
         "Practical guidance for real investor conversations",
       ],
+      image: investorReadinessWhy1,
     },
     finalCta: {
       heading: "Preparing For Investor Conversations?",
       subtitle:
-        "Let\u2019s make sure your product, narrative, and strategy are aligned so you can approach investors with confidence and clarity.",
+        "Let's make sure your product, narrative, and strategy are aligned so you can approach investors with confidence and clarity.",
       cta: "Book an Idea Discovery Call",
     },
     faqs: [
@@ -711,17 +830,17 @@ export const servicePages: ServicePage[] = [
   },
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     5. POST-LAUNCH SUPPORT
+     5. POST-LAUNCH SUPPORT  ← FIXED SLUG
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
-    slug: "investor-readiness",
-    title: "Be Ready When Investors Start Asking Questions",
+    slug: "post-launch-support",
+    title: "Scale What You've Built. Improve What Matters.",
     tagline:
-      "Our investor readiness consulting helps founders prepare for real investor conversations with clarity and confidence.",
+      "Our post-launch support services and startup growth consulting help you improve performance, scale your product, and make data-driven decisions after launch.",
     hero: {
-      title: "Be Ready When Investors Start Asking Questions",
+      title: "Scale What You've Built. Improve What Matters.",
       subtitle:
-        "Our investor readiness consulting helps founders prepare for real investor conversations—covering product clarity, growth strategy, and structured presentation so you’re ready to raise with confidence.",
+        "Our post-launch support services and startup growth consulting help you improve performance, scale your product, and make data-driven decisions after launch, so your product continues to grow, not stall.",
       cta: "Book an Idea Discovery Call",
     },
     problemFraming: {
@@ -742,7 +861,7 @@ export const servicePages: ServicePage[] = [
         {
           title: "User Behavior & Traction Analysis",
           description:
-            "We help you understand how users interact with your product, what works, what doesn\u2019t, and where improvements are needed. Our startup traction consulting focuses on real user insights.",
+            "We help you understand how users interact with your product, what works, what doesn't, and where improvements are needed. Our startup traction consulting focuses on real user insights.",
         },
         {
           title: "Growth Strategy & Scaling",
@@ -770,30 +889,35 @@ export const servicePages: ServicePage[] = [
           title: "Performance Optimization",
           description:
             "We identify and fix performance issues to improve speed, reliability, and usability across your product.",
+          image: postLaunchCore1,
         },
         {
           number: "02",
           title: "User Behavior Analysis",
           description:
             "We analyze how users interact with your product to uncover insights that drive meaningful improvements.",
+          image: postLaunchCore2,
         },
         {
           number: "03",
           title: "Growth Strategy Planning",
           description:
             "We define structured growth paths based on user data, market conditions, and product readiness.",
+          image: postLaunchCore3,
         },
         {
           number: "04",
           title: "Product Scaling",
           description:
-            "We guide how your product expands, features, users, and infrastructure, without compromising performance.",
+            "We guide how your product expands—features, users, and infrastructure—without compromising performance.",
+          image: postLaunchCore4,
         },
         {
           number: "05",
           title: "Metrics & KPI Strategy",
           description:
             "We define clear success metrics and tracking systems to guide ongoing product decisions and growth.",
+          image: postLaunchCore5,
         },
       ],
     },
@@ -805,26 +929,26 @@ export const servicePages: ServicePage[] = [
           title: "Fixed-Cost Engagement",
           description:
             "Best for clearly defined improvements, performance optimization, feature enhancements, or specific growth initiatives with defined scope and timelines.",
-          image: "https://picsum.photos/seed/postlaunch-fixed/600/400",
+          image: postLaunchEngagement1,
         },
         {
           title: "Dedicated Teams",
           description:
             "A continuous support model where a team works alongside you to improve, iterate, and scale your product over time.",
-          image: "https://picsum.photos/seed/postlaunch-dedicated/600/400",
+          image: postLaunchEngagement2,
         },
         {
           title: "Sprint-Based Execution",
           description:
             "Short, focused cycles designed to deliver rapid improvements, ideal for testing changes, optimizing features, and accelerating growth.",
-          image: "https://picsum.photos/seed/postlaunch-sprint/600/400",
+          image: postLaunchEngagement3,
         },
       ],
     },
     whyChooseUs: {
       subtitle:
-        "We focus on growth that\u2019s measurable, practical, and aligned with your product.",
-      heading: "Growth That\u2019s Structured, Not Reactive",
+        "We focus on growth that's measurable, practical, and aligned with your product.",
+      heading: "Growth That's Structured, Not Reactive",
       content:
         "Our post-launch support services go beyond quick fixes. We help founders understand performance, prioritize improvements, and scale products with clarity, so growth decisions are intentional, not reactive.",
       pointers: [
@@ -834,11 +958,12 @@ export const servicePages: ServicePage[] = [
         "Clear metrics and measurable outcomes",
         "Continuous improvement aligned with business goals",
       ],
+      image: postLaunchWhy1,
     },
     finalCta: {
       heading: "Ready To Scale Your Product?",
       subtitle:
-        "Let\u2019s improve performance, refine your product, and build a clear path for sustainable growth after launch.",
+        "Let's improve performance, refine your product, and build a clear path for sustainable growth after launch.",
       cta: "Book an Idea Discovery Call",
     },
     faqs: [
@@ -890,7 +1015,7 @@ export const servicePages: ServicePage[] = [
       cta: "Book an Idea Discovery Call",
     },
     problemFraming: {
-      heading: "Growth Breaks Systems That Aren\u2019t Structured",
+      heading: "Growth Breaks Systems That Aren't Structured",
       paragraphs: [
         "As startups grow, operations become more complex, workflows break, teams lose alignment, and execution slows down. Without structured IT operations management services, businesses struggle to maintain consistency and control. Our approach focuses on building reliable systems and processes that support growth without chaos.",
       ],
@@ -935,30 +1060,35 @@ export const servicePages: ServicePage[] = [
           title: "Operations Management",
           description:
             "We help structure and manage day-to-day operations to ensure consistency, efficiency, and alignment across teams.",
+          image: managedOpsCore1,
         },
         {
           number: "02",
           title: "Process Optimization",
           description:
             "We identify inefficiencies and improve workflows to enhance speed and execution quality.",
+          image: managedOpsCore2,
         },
         {
           number: "03",
           title: "Execution Oversight",
           description:
             "We ensure plans are implemented effectively with clear accountability and structured execution.",
+          image: managedOpsCore3,
         },
         {
           number: "04",
           title: "Operational Strategy",
           description:
             "We define how your operations evolve as your business grows, ensuring scalability and sustainability.",
+          image: managedOpsCore4,
         },
         {
           number: "05",
           title: "Outsourced Operations Support",
           description:
             "We provide ongoing support through outsourced operations management, allowing you to focus on growth while we manage execution.",
+          image: managedOpsCore5,
         },
       ],
     },
@@ -970,19 +1100,19 @@ export const servicePages: ServicePage[] = [
           title: "Fixed-Cost Engagement",
           description:
             "Best for clearly defined operational improvements, process setup, workflow design, or system optimization with defined scope and timelines.",
-          image: "https://picsum.photos/seed/ops-fixed/600/400",
+          image: managedOpsEngagement1,
         },
         {
           title: "Dedicated Teams",
           description:
             "A continuous support model where a team works with you to manage, optimize, and improve operations over time.",
-          image: "https://picsum.photos/seed/ops-dedicated/600/400",
+          image: managedOpsEngagement2,
         },
         {
           title: "Sprint-Based Execution",
           description:
             "Short, focused engagements designed to solve specific operational challenges quickly, ideal for process fixes or execution bottlenecks.",
-          image: "https://picsum.photos/seed/ops-sprint/600/400",
+          image: managedOpsEngagement3,
         },
       ],
     },
@@ -998,11 +1128,12 @@ export const servicePages: ServicePage[] = [
         "Practical operational excellence consulting, not theory",
         "Systems designed for long-term reliability",
       ],
+      image: managedOpsWhy1,
     },
     finalCta: {
       heading: "Need Better Operational Control?",
       subtitle:
-        "Let\u2019s build structured systems and processes that help your business run smoothly as it grows.",
+        "Let's build structured systems and processes that help your business run smoothly as it grows.",
       cta: "Book an Idea Discovery Call",
     },
     faqs: [

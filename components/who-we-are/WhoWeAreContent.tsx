@@ -14,7 +14,12 @@ import WhoWeWorkWith from "@/components/shared/WhoWeWorkWith";
 
 // All new content and structure will be implemented here as per your provided data.
 
-// ...existing imports...
+// Importing all the new images for the "Who We Are" page
+import execution1 from "./How we work_Section-6/Think Before We Build.webp";
+import execution2 from "./How we work_Section-6/Structure The Foundation.webp";
+import execution3 from "./How we work_Section-6/Build With Discipline.webp";
+import execution4 from "./How we work_Section-6/Launch With Direction.webp";
+import execution5 from "./How we work_Section-6/Scale With Systems.webp";
 
 // 5-step Execution Approach (from user content)
 const executionApproach = [
@@ -24,7 +29,7 @@ const executionApproach = [
       "We begin by understanding the problem, users, and business context, not just the feature or idea. This helps define what should be built and why it matters.\n\nBy aligning early on product direction and execution priorities, we reduce uncertainty and ensure every step forward is intentional.",
     cardDesc:
       "Think Before We Build\n Understand the problem before writing a single line.",
-    image: "/assets/execution-1.png",
+    image: execution1,
   },
   {
     title: "Structure The Foundation",
@@ -32,7 +37,7 @@ const executionApproach = [
       "Before development begins, we define architecture, workflows, and execution plans, creating a stable foundation for speed and clarity.\n\nThis ensures teams move forward with direction, avoiding confusion and unnecessary rework.",
     cardDesc:
       "Structure The Foundation\n Build clarity into systems before execution begins.",
-    image: "/assets/execution-2.png",
+    image: execution2,
   },
   {
     title: "Build With Discipline",
@@ -40,7 +45,7 @@ const executionApproach = [
       "We approach development with engineering discipline, focusing on performance, scalability, and clean execution rather than shortcuts.\n\nEvery decision is made with long-term impact in mind, ensuring the product remains stable as it evolves.",
     cardDesc:
       "Build With Discipline\n Develop with precision, not shortcuts or assumptions.",
-    image: "/assets/execution-3.png",
+    image: execution3,
   },
   {
     title: "Launch With Direction",
@@ -48,7 +53,7 @@ const executionApproach = [
       "Launch is treated as a structured step toward validation and growth, not just completion.\n\nEach release is aligned with clear goals, ensuring the product enters the market with purpose and direction.",
     cardDesc:
       "Launch With Direction\n Enter the market with purpose and defined outcomes.",
-    image: "/assets/execution-4.png",
+    image: execution4,
   },
   {
     title: "Scale With Systems",
@@ -56,7 +61,7 @@ const executionApproach = [
       "As products grow, we strengthen systems, processes, and infrastructure to support scale without instability.\n\nThis allows businesses to expand confidently without rebuilding or slowing down.",
     cardDesc:
       "Scale With Systems\n Strengthen systems to support growth without disruption.",
-    image: "/assets/execution-5.png",
+    image: execution5,
   },
 ];
 

@@ -108,7 +108,10 @@ export default async function ServiceDetailPage({ params }: Props) {
       */}
       <CoreCapabilitiesSection
         subtitle={service.coreCapabilities.subtitle}
-        items={service.coreCapabilities.items}
+        items={service.coreCapabilities.items.map((item) => ({
+          ...item,
+          image: typeof item.image === "string" ? item.image : item.image.src,
+        }))}
       />
 
       {/* ─── Who We Work With ─── */}

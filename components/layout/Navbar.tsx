@@ -165,7 +165,8 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
 
         {/* Desktop: Theme toggle + CTA */}
         <div className="hidden lg:flex items-center gap-4">
-          {/* Theme Toggle */}
+          {/* Theme Toggle commented out for now */}
+          {/**
           <button
             onClick={toggleTheme}
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center theme-toggle-btn transition-colors cursor-pointer"
@@ -177,7 +178,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               <Moon size={18} className="text-gray-700" />
             )}
           </button>
-
+          */}
           <PrimaryButton onClick={onOpenModal}>
             Book Strategy Call
           </PrimaryButton>
@@ -185,6 +186,8 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
 
         {/* Mobile: Theme toggle + Hamburger */}
         <div className="flex lg:hidden items-center gap-3">
+          {/* Theme Toggle commented out for now */}
+          {/**
           <button
             onClick={toggleTheme}
             className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center theme-toggle-btn transition-colors cursor-pointer"
@@ -196,6 +199,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               <Moon size={16} className="text-gray-700" />
             )}
           </button>
+          */}
           <button
             onClick={toggleMobile}
             className="text-current p-2"

@@ -23,32 +23,15 @@ export default function ThemeProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
-
+  // Always dark theme, toggler disabled
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("ideaz-theme") as Theme | null;
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored);
-      document.documentElement.setAttribute("data-theme", stored);
-    }
+    document.documentElement.setAttribute("data-theme", "dark");
   }, []);
 
-  const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
-    setTheme(next);
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("ideaz-theme", next);
-  };
-
-  // Prevent flash by not rendering until mounted
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  const toggleTheme = () => {};
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme: "dark", toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

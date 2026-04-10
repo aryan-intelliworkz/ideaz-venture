@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: service
       ? `${service.title} — Ideaz Ventures`
       : "Services — Ideaz Ventures",
-    description: service?.tagline || service?.subtitle,
+    description: service?.tagline,
   };
 }
 

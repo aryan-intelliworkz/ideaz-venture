@@ -5,15 +5,20 @@ import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
-/* Company logo names matching screenshot */
+// Imported logo images
+import DatanoteLogo from "./Homepage/Datanote.svg";
+import TalentwaleLogo from "./Homepage/talentwale-logo.svg";
+import RealtymartLogo from "./Homepage/realtymart.svg";
+import AtcoMaartLogo from "./Homepage/Atcomaart.svg"; // Fixed
+
+/* Company logo images - Now using actual images */
 const companyLogos = [
-  { name: "DATANOTE", superscript: "®", subtitle: "OpenLogic ERP" },
-  { name: "talentwale", suffix: ".com", superscript: "®" },
-  { name: "realty", suffix: "mart.com", superscript: "®" },
-  { name: "ATCO MAART", superscript: "" },
+  DatanoteLogo,
+  TalentwaleLogo,
+  RealtymartLogo,
+  AtcoMaartLogo,
 ];
 
-/* Arrow button with spinning gradient border — same as services section */
 function ArrowButton() {
   return (
     <div className="service-arrow-btn shrink-0">
@@ -42,23 +47,15 @@ function ArrowButton() {
 
 function CompanyLogo({ logo }: { logo: (typeof companyLogos)[number] }) {
   return (
-    <div className="flex items-baseline gap-0">
-      <span className="font-archivo font-bold text-[18px] md:text-[20px] text-white tracking-wide">
-        {logo.name}
-      </span>
-      {logo.suffix && (
-        <span className="font-archivo font-normal text-[18px] md:text-[20px] text-white">
-          {logo.suffix}
-        </span>
-      )}
-      {logo.superscript && (
-        <sup className="text-[10px] text-white ml-0.5">{logo.superscript}</sup>
-      )}
-      {logo.subtitle && (
-        <span className="ml-2 font-bricolage text-[10px] text-white/60 tracking-wider uppercase">
-          {logo.subtitle}
-        </span>
-      )}
+    <div className="relative w-44 h-12 md:w-52 md:h-14">
+      <Image
+        src={logo}
+        alt="Company Logo"
+        fill
+        className="object-contain object-left"
+        sizes="(max-width: 768px) 176px, 208px"
+        priority
+      />
     </div>
   );
 }
@@ -72,12 +69,11 @@ export default function CaseStudiesPreview() {
     <section className="py-16 md:py-20 lg:py-20 xl:py-24 2xl:py-24">
       <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-6 lg:items-stretch">
-          {/* Left: Chess image + text block — matches total height of right grid */}
+          {/* Left: Chess image + text block */}
           <div
             ref={leftRef}
             className="reveal-slide-left flex flex-col lg:w-[35%] shrink-0"
           >
-            {/* Chess 3D image — fills available space, extends to frame edge */}
             <div className="relative w-full flex-1 min-h-[320px] md:min-h-[380px] lg:min-h-[400px] -z-0">
               <Image
                 src="/assets/ChessImg.png"
@@ -88,7 +84,6 @@ export default function CaseStudiesPreview() {
               />
             </div>
 
-            {/* Text block at bottom — bordered card */}
             <div className="border border-gray-600 rounded-[3px] p-5 md:p-6 lg:p-8 bg-bg-card mt-2">
               <h2 className="font-archivo font-medium text-[24px] md:text-[28px] lg:text-[26px] xl:text-[28px] min-[1800px]:text-[32px] leading-[1.09] text-white capitalize">
                 Product Execution Stories
@@ -99,7 +94,7 @@ export default function CaseStudiesPreview() {
             </div>
           </div>
 
-          {/* Right: 2x2 cards grid — each card equal height */}
+          {/* Right: 2x2 cards grid */}
           <div
             ref={gridRef}
             className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 auto-rows-fr"

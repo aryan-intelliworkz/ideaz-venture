@@ -18,7 +18,7 @@ export default function InsightsPage() {
       <MasterLayout
         backgroundImage="/assets/whoWeAreBg.png"
         heading="Insights"
-        description="Lorem ipsum dolor sit amet consectetur. Pretium orci nunc enim massa magna duis arcu mattis morbi. Pulvinar nec tincidunt a eget fusce lectus imperdiet."
+        description="Explore business consulting insights and startup growth insights shaped by real execution, from product strategy to scaling decisions that drive outcomes."
         ctaText="Contact us"
         ctaHref="/get-in-touch"
       />

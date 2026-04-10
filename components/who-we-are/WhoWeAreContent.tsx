@@ -21,7 +21,7 @@ const executionApproach = [
   {
     title: "Think Before We Build",
     descriptionOne:
-      "We begin by understanding the problem, users, and business context, not just the feature or idea. This helps define what should be built and why it matters. By aligning early on product direction and execution priorities, we reduce uncertainty and ensure every step forward is intentional.",
+      "We begin by understanding the problem, users, and business context, not just the feature or idea. This helps define what should be built and why it matters.\n\nBy aligning early on product direction and execution priorities, we reduce uncertainty and ensure every step forward is intentional.",
     cardDesc:
       "Think Before We Build\n Understand the problem before writing a single line.",
     image: "/assets/execution-1.png",
@@ -29,7 +29,7 @@ const executionApproach = [
   {
     title: "Structure The Foundation",
     descriptionOne:
-      "Before development begins, we define architecture, workflows, and execution plans, creating a stable foundation for speed and clarity. This ensures teams move forward with direction, avoiding confusion and unnecessary rework.",
+      "Before development begins, we define architecture, workflows, and execution plans, creating a stable foundation for speed and clarity.\n\nThis ensures teams move forward with direction, avoiding confusion and unnecessary rework.",
     cardDesc:
       "Structure The Foundation\n Build clarity into systems before execution begins.",
     image: "/assets/execution-2.png",
@@ -37,7 +37,7 @@ const executionApproach = [
   {
     title: "Build With Discipline",
     descriptionOne:
-      "We approach development with engineering discipline, focusing on performance, scalability, and clean execution rather than shortcuts. Every decision is made with long-term impact in mind, ensuring the product remains stable as it evolves.",
+      "We approach development with engineering discipline, focusing on performance, scalability, and clean execution rather than shortcuts.\n\nEvery decision is made with long-term impact in mind, ensuring the product remains stable as it evolves.",
     cardDesc:
       "Build With Discipline\n Develop with precision, not shortcuts or assumptions.",
     image: "/assets/execution-3.png",
@@ -45,7 +45,7 @@ const executionApproach = [
   {
     title: "Launch With Direction",
     descriptionOne:
-      "Launch is treated as a structured step toward validation and growth, not just completion. Each release is aligned with clear goals, ensuring the product enters the market with purpose and direction.",
+      "Launch is treated as a structured step toward validation and growth, not just completion.\n\nEach release is aligned with clear goals, ensuring the product enters the market with purpose and direction.",
     cardDesc:
       "Launch With Direction\n Enter the market with purpose and defined outcomes.",
     image: "/assets/execution-4.png",
@@ -53,7 +53,7 @@ const executionApproach = [
   {
     title: "Scale With Systems",
     descriptionOne:
-      "As products grow, we strengthen systems, processes, and infrastructure to support scale without instability. This allows businesses to expand confidently without rebuilding or slowing down.",
+      "As products grow, we strengthen systems, processes, and infrastructure to support scale without instability.\n\nThis allows businesses to expand confidently without rebuilding or slowing down.",
     cardDesc:
       "Scale With Systems\n Strengthen systems to support growth without disruption.",
     image: "/assets/execution-5.png",
@@ -64,19 +64,19 @@ const corePrinciples = [
   {
     title: "Founder-First Thinking",
     description:
-      "We approach every engagement with a founder's mindset — prioritizing speed, resourcefulness, and outcomes over process for the sake of process.",
+      "We align with your vision and priorities, approaching every decision with ownership and long-term impact in mind.",
     image: "/assets/OurCore1.png",
   },
   {
     title: "End-To-End Execution",
     description:
-      "From strategy and design to engineering and launch, we own the entire product lifecycle so founders can focus on growth and vision.",
+      "From strategy to launch, we stay accountable across the entire journey, ensuring nothing breaks between planning and delivery.",
     image: "/assets/OurCore2.png",
   },
   {
     title: "Built For Scale",
     description:
-      "Every product we build is architected for scale — clean code, modular systems, and infrastructure that grows with your business.",
+      "We design systems and products that grow with your business, stable, adaptable, and ready for long-term expansion.",
     image: "/assets/OurCore3.png",
   },
 ];
@@ -85,7 +85,7 @@ const differentiators = [
   {
     title: "Execution Over Advice",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Mattis habitare sapien dolor sit. Erot a sapien aenean lacus accumsan. Non a mauris quis mauris. Placerat amet viverra mauris egestas lacus dui amet tristique turpis. In ut tellus id consectetur malesuada vel fermentum tristique lobortis. Elementum eget nec sem nulla lorem ac sit habitasse. Blandit vitae elementum viverra vitae nunc enim nascetur. Tellus diam dui cum odio in congue. Diam non ullamcorper.",
+      "We don’t just guide, we execute. As startup business consultants, we turn plans into real products, launches, and outcomes.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -103,7 +103,7 @@ const differentiators = [
   {
     title: "Built For Startups",
     description:
-      "We understand the unique challenges startups face — tight budgets, fast timelines, and the need to iterate quickly. Every process and decision is optimized for early-stage velocity.",
+      "Our approach is shaped around startup realities, speed, uncertainty, and the need to move with clarity.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -135,7 +135,7 @@ const differentiators = [
   {
     title: "End-To-End Ownership",
     description:
-      "From strategy to deployment, we own the entire lifecycle. No hand-offs, no gaps — one team that takes your idea from validation through launch and beyond.",
+      "From idea to scale, we take responsibility across strategy, product, and execution, ensuring continuity at every stage.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -159,7 +159,7 @@ const differentiators = [
   {
     title: "Product + Business Thinking",
     description:
-      "We don't just write code. We think about your market, your users, and your business model — ensuring every feature we build drives real value and growth.",
+      "We build with both product depth and business context, aligning what you create with how it succeeds.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -193,7 +193,7 @@ const differentiators = [
   {
     title: "Scalable By Design",
     description:
-      "We architect every product for growth from day one. Clean code, modular systems, and infrastructure that scales — so you never have to rebuild from scratch.",
+      "Everything is built to grow, structured for performance today and scalability tomorrow.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -217,7 +217,7 @@ const differentiators = [
   {
     title: "Flexible Team Model",
     description:
-      "Whether you need a full product team or specific engineering talent, our flexible engagement models adapt to your needs — not the other way around.",
+      "We adapt to your stage, offering the right mix of consulting, execution, and team support when you need it.",
     icon: (
       <svg width="76" height="76" viewBox="0 0 76 76" fill="none">
         <circle cx="38" cy="38" r="37" stroke="white" strokeOpacity="0.3" />
@@ -390,7 +390,7 @@ export default function WhoWeAreContent() {
             className="reveal-fade-up flex flex-col items-center gap-3 mb-10"
           >
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
-              What Makes Us Different
+              What Sets Us Apart
             </h2>
             <p className="font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-500 max-w-[700px] text-center">
               We&apos;re not a typical development agency. We operate as an
@@ -610,9 +610,9 @@ export default function WhoWeAreContent() {
                   Our Mission
                 </h3>
                 <p className="font-bricolage text-[14px] leading-[1.5] text-gray-100 max-w-[220px]">
-                  To help founders build the right product faster — with
-                  clarity, structure, and execution that reduces risk and
-                  accelerates growth.
+                  To help founders build the right product, faster, with
+                  clarity, structure, and execution that reduces risk and drives
+                  real progress.
                 </p>
               </div>
             </div>
@@ -635,8 +635,9 @@ export default function WhoWeAreContent() {
                   Our Vision
                 </h3>
                 <p className="font-bricolage text-[14px] leading-[1.5] text-gray-100 max-w-[220px]">
-                  To become the long-term execution partner startups trust to
-                  build, launch, and scale technology products globally.
+                  To be the execution partner that founders trust to build,
+                  launch, and scale products with consistency and long-term
+                  impact.
                 </p>
               </div>
             </div>
@@ -656,8 +657,8 @@ export default function WhoWeAreContent() {
               Our Core Principles
             </h2>
             <p className="mt-3 font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] mx-auto">
-              These principles guide how we think, build, and collaborate —
-              ensuring consistency in every product we deliver.
+              These principles guide how we think, build, and execute, ensuring
+              consistency across every venture we work on.
             </p>
           </div>
 
@@ -702,12 +703,12 @@ export default function WhoWeAreContent() {
             className="reveal-fade-up text-center mb-8 md:mb-10 lg:mb-14"
           >
             <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize">
-              How We Approach Execution
+              Our Execution Approach
             </h2>
             <p className="mt-3 font-bricolage text-[16px] lg:text-[16px] xl:text-[18px] leading-[1.44] text-gray-400 max-w-[780px] mx-auto">
-              Our approach combines structured thinking with practical execution
-              — ensuring every product is built with clarity, speed, and
-              long-term scalability.
+              A structured approach that connects strategy, product, and
+              execution, so every step moves the product forward with clarity
+              and purpose.
             </p>
           </div>
 

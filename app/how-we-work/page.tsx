@@ -7,7 +7,7 @@ export default function HowWeWorkPage() {
       <MasterLayout
         backgroundImage="/assets/whoWeAreBg.png"
         heading="A Clear Process To Build, Launch, And Scale Products"
-        description="We follow a structured yet flexible product development process that helps founders move from idea to launch with clarity, speed, and confidence — without unnecessary complexity."
+        description="Our business consulting process is built as a structured business consulting framework, helping founders move from idea to scale with clarity, speed, and disciplined execution."
         ctaText="Book an Idea Discovery Call"
         ctaHref="/get-in-touch"
       />

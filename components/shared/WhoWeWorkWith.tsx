@@ -5,24 +5,26 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+import foundersImg from "./Who we are/Founders & Early-Stage Startups.webp";
+import growingStartupsImg from "./Who we are/Growing Startups.webp";
+import enterprisesImg from "./Who we are/Enterprises & Digital Platforms.webp";
+
 const workWithData = [
   {
     title: "Founders & Early-Stage Startups",
-    description:
-      "We help first-time and serial founders go from idea to MVP with validated strategies, lean development, and investor-ready products.",
-    image: "https://picsum.photos/seed/founders/800/500",
+    description: "Turning ideas into validated, execution-ready products.",
+    image: foundersImg,
   },
   {
     title: "Growing Startups",
-    description:
-      "For startups that have found product-market fit, we help scale the product, optimize performance, and expand into new markets with robust engineering.",
-    image: "https://picsum.photos/seed/growing/800/500",
+    description: "Scaling products, systems, and growth with structure.",
+    image: growingStartupsImg,
   },
   {
     title: "Enterprises & Digital Platforms",
     description:
-      "We partner with enterprises to modernize legacy systems, build new digital products, and drive innovation with cutting-edge technology stacks.",
-    image: "https://picsum.photos/seed/enterprise/800/500",
+      "Building scalable, high-performance digital products and platforms.",
+    image: enterprisesImg,
   },
 ];
 

@@ -78,7 +78,7 @@ export default function CaseStudiesPage() {
                     }`}
                   >
                     <Image
-                      src="/assets/caseStudyImg.png"
+                      src={cs.thumbnail}
                       alt={cs.title}
                       fill
                       className="object-cover object-center"

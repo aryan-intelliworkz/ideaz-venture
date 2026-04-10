@@ -22,7 +22,14 @@ export interface ServiceEngagementModel {
 
 export interface ServicePage {
   slug: string;
-  hero: { title: string; subtitle: string; cta: string };
+  title: string; // ← Added
+  tagline: string; // ← Added (hero ke liye best)
+  hero: {
+    // purana hero bhi rakh sakte ho backup ke liye
+    title: string;
+    subtitle: string;
+    cta: string;
+  };
   problemFraming: { heading: string; paragraphs: string[] };
   whatWeDo: { subtitle: string; items: ServiceWhatWeDoItem[] };
   coreCapabilities: { subtitle: string; items: ServiceCapability[] };
@@ -43,6 +50,9 @@ export const servicePages: ServicePage[] = [
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
     slug: "startup-consulting",
+    title: "Validate And Plan Your Startup",
+    tagline:
+      "We provide structured startup consulting services to help founders validate ideas, define product direction, and reduce execution risk before development begins.",
     hero: {
       title: "Validate And Plan Your Startup",
       subtitle:
@@ -53,7 +63,7 @@ export const servicePages: ServicePage[] = [
       heading: "Most Startup Mistakes Start Before Development",
       paragraphs: [
         "Most startups move into development based on assumptions, leading to wasted time, misaligned products, and avoidable costs. Without structured startup consulting services, ideas often lack validation, direction, and a clear execution path.",
-        "At Ideaz Ventures, our startup consulting services focus on validating ideas, defining product direction, and creating a structured roadmap before development begins. This ensures you\u2019re building something users actually need, not just something you assume will work.",
+        "At Ideaz Ventures, our startup consulting services focus on validating ideas, defining product direction, and creating a structured roadmap before development begins. This ensures you’re building something users actually need, not just something you assume will work.",
       ],
     },
     whatWeDo: {
@@ -207,6 +217,9 @@ export const servicePages: ServicePage[] = [
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
     slug: "product-development",
+    title: "Build Your Startup Product The Right Way",
+    tagline:
+      "We deliver structured startup product development services that take you from MVP to scalable product, focused on real users, clean architecture, and long-term growth.",
     hero: {
       title: "Build Your Startup Product The Right Way",
       subtitle:
@@ -371,10 +384,13 @@ export const servicePages: ServicePage[] = [
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
     slug: "branding-gtm",
+    title: "Make Your Product Clear, Visible, And Market-Ready",
+    tagline:
+      "Our startup branding services and go-to-market strategy services help you position your product, communicate value clearly, and launch with confidence.",
     hero: {
       title: "Make Your Product Clear, Visible, And Market-Ready",
       subtitle:
-        "Our startup branding services and go-to-market strategy services help you position your product, communicate value clearly, and launch with confidence\u2014so users understand it from day one.",
+        "Our startup branding services and go-to-market strategy services help you position your product, communicate value clearly, and launch with confidence—so users understand it from day one.",
       cta: "Book an Idea Discovery Call",
     },
     problemFraming: {
@@ -532,11 +548,14 @@ export const servicePages: ServicePage[] = [
      4. INVESTOR READINESS SUPPORT
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
-    slug: "investor-readiness",
+    slug: "post-launch-support",
+    title: "Scale What You’ve Built. Improve What Matters.",
+    tagline:
+      "Our post-launch support services and startup growth consulting help you improve performance, scale your product, and make data-driven decisions after launch.",
     hero: {
-      title: "Be Ready When Investors Start Asking Questions",
+      title: "Scale What You’ve Built. Improve What Matters.",
       subtitle:
-        "Our investor readiness consulting helps founders prepare for real investor conversations\u2014covering product clarity, growth strategy, and structured presentation so you\u2019re ready to raise with confidence.",
+        "Our post-launch support services and startup growth consulting help you improve performance, scale your product, and make data-driven decisions after launch, so your product continues to grow, not stall.",
       cta: "Book an Idea Discovery Call",
     },
     problemFraming: {
@@ -695,11 +714,14 @@ export const servicePages: ServicePage[] = [
      5. POST-LAUNCH SUPPORT
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
-    slug: "post-launch-support",
+    slug: "investor-readiness",
+    title: "Be Ready When Investors Start Asking Questions",
+    tagline:
+      "Our investor readiness consulting helps founders prepare for real investor conversations with clarity and confidence.",
     hero: {
-      title: "Scale What You\u2019ve Built. Improve What Matters.",
+      title: "Be Ready When Investors Start Asking Questions",
       subtitle:
-        "Our post-launch support services and startup growth consulting help you improve performance, scale your product, and make data-driven decisions after launch, so your product continues to grow, not stall.",
+        "Our investor readiness consulting helps founders prepare for real investor conversations—covering product clarity, growth strategy, and structured presentation so you’re ready to raise with confidence.",
       cta: "Book an Idea Discovery Call",
     },
     problemFraming: {
@@ -858,6 +880,9 @@ export const servicePages: ServicePage[] = [
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   {
     slug: "managed-operations",
+    title: "Run Your Operations With Structure And Control",
+    tagline:
+      "Our managed operations services help startups streamline processes, improve efficiency, and maintain consistent execution as you scale.",
     hero: {
       title: "Run Your Operations With Structure And Control",
       subtitle:

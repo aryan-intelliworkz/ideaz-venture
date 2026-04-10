@@ -4,6 +4,10 @@ import MasterLayout from "@/components/layout/MasterLayout";
 import RevealSection from "@/components/ui/RevealSection";
 import ContactForm from "@/components/get-in-touch/ContactForm";
 
+import usa from "./Get in Touch/USA.webp";
+import uae from "./Get in Touch/UAE.webp";
+import india from "./Get in Touch/India.webp";
+
 export const metadata: Metadata = {
   title: "Get In Touch — Ideaz Ventures",
   description:
@@ -13,14 +17,14 @@ export const metadata: Metadata = {
 const offices = [
   {
     country: "USA",
-    image: "/assets/OurCore1.png",
+    image: usa,
     address: "5511, Mercier Street, Lewis Center, Ohio 43035",
     phone: "+1 614 999 2286",
     email: "usa@ideaz.ventures",
   },
   {
     country: "UAE",
-    image: "/assets/OurCore2.png",
+    image: uae,
     address:
       "Office No. 25, 13th Floor, Al Saqar Business Tower, Near Museum of the Future, Sheikh Zayed Road, Dubai, UAE",
     phone: "+971 56 343 5362",
@@ -28,7 +32,7 @@ const offices = [
   },
   {
     country: "India",
-    image: "/assets/OurCore3.png",
+    image: india,
     address:
       "Block-B, B912-A, World Trade Tower, Near BMW Showroom, SG Highway, Ahmedabad – 380051, Gujarat, India",
     phone: "+91 97370 45567",
@@ -44,7 +48,7 @@ export default function GetInTouchPage() {
         backgroundImage="/assets/whoWeAreBg.png"
         heading="Get In Touch"
         description="Whether you're validating an idea, building a product, or looking to hire a business consultant, we help founders and businesses move forward with clarity, structure, and execution."
-        ctaText=""
+        ctaText="" 
       />
 
       {/* Arrow Section + Form */}

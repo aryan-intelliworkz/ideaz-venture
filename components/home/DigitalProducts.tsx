@@ -8,6 +8,12 @@ import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import AIPowered from "./Homepage/AI-Powered Products & Automation.webp";
+import WebPlatform from "./Homepage/Web Platforms & SaaS Products.webp";
+import Marketplace from "./Homepage/Marketplace & Platform Solutions.webp";
+import MobileApp from "./Homepage/Mobile App Development.webp";
+import ERP from "./Homepage/ERP & CRM Systems.webp";
+import EAP from "./Homepage/EAP (Enterprise Application Platforms).webp";
 
 const products = [
   {
@@ -16,8 +22,7 @@ const products = [
       "We build intelligent, AI-powered applications that automate workflows, improve decision-making, and enhance user experiences. From predictive analytics to intelligent assistants, our solutions are designed to deliver measurable impact in real-world environments.",
     descriptionTwo:
       "Our AI product development approach focuses on practical implementation, integrating machine learning, data processing, and automation into scalable systems that grow with your business.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80",
+    image: AIPowered,
   },
   {
     title: "Web Platforms & SaaS Products",
@@ -25,8 +30,7 @@ const products = [
       "We develop scalable web platforms and SaaS products designed for performance, security, and long-term growth. From business dashboards to subscription-based platforms, every solution is built with clean architecture and user-focused design.",
     descriptionTwo:
       "Our SaaS product development services ensure your platform is ready to handle users, data, and evolving business needs without compromising speed or stability.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80",
+    image: WebPlatform,
   },
   {
     title: "Marketplace & Platform Solutions",
@@ -34,8 +38,7 @@ const products = [
       "We build robust marketplace platforms that seamlessly manage users, transactions, and multi-sided interactions. Whether B2B or B2C, our solutions are designed for scalability, trust, and operational efficiency.",
     descriptionTwo:
       "Our platform development solutions focus on creating structured ecosystems that enable vendors, customers, and businesses to interact smoothly at scale.",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80",
+    image: Marketplace,
   },
   {
     title: "Mobile App Development",
@@ -43,8 +46,7 @@ const products = [
       "We create high-performance mobile applications designed for usability, speed, and scalability. From consumer-facing apps to enterprise tools, our mobile solutions are built for real-world usage and long-term growth.",
     descriptionTwo:
       "Our mobile app development services ensure seamless user experiences across devices while maintaining strong backend integration and performance.",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80",
+    image: MobileApp,
   },
   {
     title: "ERP & CRM Systems",
@@ -52,8 +54,7 @@ const products = [
       "We build customized ERP and CRM systems that streamline operations, manage data, and improve business efficiency. These systems are tailored to your workflows, ensuring better control, visibility, and decision-making.",
     descriptionTwo:
       "Our enterprise solution development approach ensures your systems scale alongside your business while remaining structured and easy to manage.",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=900&q=80",
+    image: ERP,
   },
   {
     title: "EAP (Enterprise Application Platforms)",
@@ -61,8 +62,7 @@ const products = [
       "We develop advanced enterprise application platforms (EAP) designed to support complex business processes and integrations. These systems act as the backbone for operations, automation, and large-scale workflows.",
     descriptionTwo:
       "Our enterprise application development services focus on building flexible, scalable platforms that connect multiple systems and support long-term digital transformation.",
-    image:
-      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=900&q=80",
+    image: EAP,
   },
 ];
 
@@ -120,10 +120,17 @@ export default function DigitalProducts() {
           <h2 className="font-archivo font-medium text-[28px] md:text-[36px] lg:text-[32px] xl:text-[36px] 2xl:text-[38px] min-[1800px]:text-[40px] leading-[1.2] text-white capitalize text-center">
             Digital Products & Platforms Built for Scale
           </h2>
-          <p className="font-bricolage text-[15px] md:text-[16px] lg:text-[18px] leading-[1.44] text-gray-400 max-w-[700px] text-center">
-            As a technology consulting company, we design and build scalable
-            digital solutions that solve real business problems, combining
-            engineering, product thinking, and long-term execution.
+          <p className="font-bricolage text-[15px] md:text-[15px] lg:text-[16px] leading-[1.44] text-gray-400 max-w-[700px] text-center">
+            As a{" "}
+            <span
+              className="font-black tracking-[-0.02em]"
+              style={{ fontWeight: 900 }}
+            >
+              technology consulting company
+            </span>
+            , we design and build scalable digital solutions that solve real
+            business problems, combining engineering, product thinking, and
+            long-term execution.
           </p>
         </div>
 
@@ -164,7 +171,7 @@ export default function DigitalProducts() {
                       <h3 className="font-archivo font-normal text-[24px] md:text-[28px] lg:text-[24px] xl:text-[27px] 2xl:text-[28px] min-[1800px]:text-[30px] leading-[1.09] text-white capitalize">
                         {product.title}
                       </h3>
-                      <p className="font-bricolage text-[16px] md:text-[18px] leading-[1.44] text-gray-500">
+                      <p className="font-bricolage text-[15px] md:text-[16px] leading-[1.44] text-gray-500">
                         {product.descriptionOne}
                       </p>
                       <p className="font-bricolage text-[16px] md:text-[18px] leading-[1.44] text-gray-500">

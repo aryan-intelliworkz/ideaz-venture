@@ -14,7 +14,7 @@ export default function WhoWeArePage() {
       <MasterLayout
         backgroundImage="/assets/whoWeAreBg.png"
         heading="Who We Are"
-        description="Backed by the engineering foundation of Intelliworkz, we combine startup agility with enterprise-grade discipline — ensuring every product we build is reliable, scalable, and ready for growth."
+        description="We are startup business consultants who turn ideas into structured, execution-ready ventures."
         ctaText="Contact us"
         ctaHref="/get-in-touch"
       />

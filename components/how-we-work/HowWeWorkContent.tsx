@@ -6,93 +6,105 @@ import { cn } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import RevealSection from "@/components/ui/RevealSection";
 
+import clarityBeforeCodeImg from "./How we work/Idea Understanding & Discovery.webp";
+import validateBeforeBuildingImg from "./How we work/Validation & Planning.webp";
+import structureBeforeDevelopmentImg from "./How we work/Concept & Wireframing.webp";
+import buildToValidateImg from "./How we work/POC Development.webp";
+import fullScaaleDevelopmentImg from "./How we work/Full-Scale Development.webp";
+import testingDeploymentImg from "./How we work/Testing, Deployment & Launch.webp";
+import growthImg from "./How we work/Post-Launch Growth & Scaling.webp";
+
 /* ─── Process Steps Data ─── */
 const steps = [
   {
     number: "01",
-    tagline: "Clarifying your vision and business goals",
-    title: "Consultation & Discovery",
+    tagline: "Clarity Before Code",
+    title: "Idea Understanding & Discovery",
     description:
-      "We start with a deep-dive consultation to understand your business, market, and vision. Together, we clarify your objectives, target audience, and the unique value your product will deliver. This ensures every next step is rooted in your real business needs.",
-    image: "/assets/sections/how-we-work/consultation.jpg",
+      "We begin by understanding the problem, users, and business context. This stage focuses on defining real needs and aligning the product direction with business goals, ensuring every decision starts with clarity.",
+    image: clarityBeforeCodeImg,
   },
   {
     number: "02",
-    tagline: "Validating ideas with real market insights",
-    title: "Research & Validation",
+    tagline: "Validate Before Building",
+    title: "Validation & Planning",
     description:
-      "We conduct market research, competitor analysis, and user interviews to validate your core assumptions. This phase reduces risk and ensures we’re building something the market actually wants.",
-    image: "/assets/sections/how-we-work/research.jpg",
+      "We validate key assumptions and define priorities before development begins. This ensures the roadmap is grounded in real insights, reducing risk and enabling structured execution.",
+    image: validateBeforeBuildingImg,
   },
   {
     number: "03",
-    tagline: "Turning strategy into a clear execution plan",
-    title: "Strategy & Roadmapping",
+    tagline: "Structure Before Development",
+    title: "Concept & Wireframing",
     description:
-      "We define the product strategy, prioritize features, and create a clear roadmap. You’ll know exactly what will be built, when, and why—ensuring alignment across all stakeholders.",
-    image: "/assets/sections/how-we-work/roadmap.jpg",
+      "We translate ideas into clear product flows and wireframes. This stage defines how the product will function, ensuring alignment across teams before execution starts.",
+    image: structureBeforeDevelopmentImg,
   },
   {
     number: "04",
-    tagline: "Designing experiences that delight and convert",
-    title: "UX/UI Design & Prototyping",
+    tagline: "Build To Validate",
+    title: "MVP / POC Development",
     description:
-      "Our designers craft intuitive user flows, wireframes, and high-fidelity prototypes. You’ll see and test the product experience before a single line of code is written.",
-    image: "/assets/sections/how-we-work/design.jpg",
+      "We develop a focused MVP or POC to test real-world use cases. This helps validate product direction early while minimizing time, cost, and unnecessary complexity.",
+    image: buildToValidateImg,
   },
   {
     number: "05",
-    tagline: "Building robust, scalable digital products",
-    title: "Agile Development",
+    tagline: "Built For Scale",
+    title: "Full-Scale Development",
     description:
-      "Our engineering team brings your product to life using agile sprints. We focus on rapid, transparent development with regular demos and feedback loops—so you’re always in control.",
-    image: "/assets/sections/how-we-work/development.jpg",
+      "We build a stable, scalable product with clean architecture and performance-driven execution. Every component is designed to support long-term growth and reliability.",
+    image: fullScaaleDevelopmentImg,
   },
   {
     number: "06",
-    tagline: "Ensuring quality, security, and launch-readiness",
-    title: "Testing & Launch",
+    tagline: "Launch With Confidence",
+    title: "Testing, Deployment & Launch",
     description:
-      "We rigorously test your product for quality, security, and performance. Once ready, we manage the deployment and support your go-to-market launch for maximum impact.",
-    image: "/assets/sections/how-we-work/launch.jpg",
+      "We test thoroughly, refine performance, and deploy with a structured approach. This ensures the product enters the market in a stable and reliable state.",
+    image: testingDeploymentImg,
   },
   {
     number: "07",
-    tagline: "Supporting growth and continuous improvement",
-    title: "Post-Launch Partnership",
+    tagline: "Scale With Structure",
+    title: "Post-Launch Growth & Scaling",
     description:
-      "After launch, we remain your strategic partner—monitoring performance, iterating on features, and supporting your growth with ongoing enhancements and team scaling as needed.",
-    image: "/assets/sections/how-we-work/growth.jpg",
+      "We support growth through continuous improvements, system optimization, and scaling strategies, helping the product evolve without compromising stability or performance.",
+    image: growthImg,
   },
 ];
 
 /* ─── FAQ Data ─── */
 const faqs = [
   {
-    question:
-      "How long does the consulting and product development process take?",
+    question: "What is your business consulting process?",
     answer:
-      "Timelines vary based on project scope and complexity. A typical end-to-end engagement (from discovery to launch) ranges from 3 to 9 months. We provide a detailed roadmap and timeline after the initial consultation phase.",
+      "Our business consulting process follows a structured approach, from discovery and validation to development, launch, and scaling. Each stage is designed to reduce risk, improve clarity, and ensure products are built with real market alignment.",
   },
   {
-    question: "Can you help if I only have an idea and no technical team?",
+    question: "How is your business consulting framework different?",
     answer:
-      "Absolutely. We specialize in working with founders at all stages, including those with just an idea. Our team handles everything from strategy and design to development and launch, acting as your product and technical partner.",
+      "Our business consulting framework focuses on execution, not just strategy. We combine product thinking, engineering, and operational planning to ensure ideas are not only validated but successfully built and scaled.",
   },
   {
-    question: "What if I already have an MVP or existing product?",
+    question: "What is your business consulting methodology for startups?",
     answer:
-      "We can step in at any stage—whether you need a product audit, help with scaling, or a full redesign and rebuild. Our process is modular and adapts to your current needs.",
+      "Our business consulting methodology is designed for startups, helping founders move from idea to execution with a clear structure. It connects validation, product development, and scaling into one continuous process.",
   },
   {
-    question: "How do you ensure my product will succeed in the market?",
+    question: "Do you help validate startup ideas before development?",
     answer:
-      "We combine deep market research, user validation, and agile execution. Our process is designed to minimize risk, maximize market fit, and ensure you’re building something users actually want.",
+      "Yes, we focus heavily on idea validation. We analyze user needs, business goals, and market fit to ensure the product is built on a strong foundation before development begins.",
   },
   {
-    question: "What happens after launch?",
+    question: "What happens after the product is launched?",
     answer:
-      "We offer ongoing partnership options for growth, support, and team scaling. Whether you need continuous feature development, performance optimization, or help hiring and managing your own team, we’re here to help.",
+      "After launch, we focus on optimization, scaling systems, and improving performance. Our approach ensures the product continues to evolve based on real user feedback and business growth needs.",
+  },
+  {
+    question: "Is this process suitable for early-stage startups?",
+    answer:
+      "Yes, our process is built specifically for early-stage startups. It helps founders reduce uncertainty, make better decisions, and build products that are structured for long-term growth.",
   },
 ];
 
@@ -137,15 +149,14 @@ export default function HowWeWorkContent() {
             {/* Right — description */}
             <div ref={introRightRef} className="reveal-slide-right lg:w-[55%]">
               <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/60 mb-4">
-                Every product we build follows a proven execution framework. It
-                keeps teams aligned, reduces risk, and ensures progress at every
-                stage — while still allowing room to adapt as you learn from
-                users and the market.
+                Every product we build follows a defined business consulting
+                framework, ensuring decisions are structured, execution is
+                aligned, and progress is measurable at every stage.
               </p>
               <p className="font-bricolage text-[15px] lg:text-[16px] leading-[1.7] text-white/60">
-                From validation to launch and beyond, we take ownership of
-                building, shipping, and scaling digital products that are
-                designed to succeed in real markets.
+                Our business consulting process removes ambiguity by connecting
+                strategy, product, and execution, so teams move forward with
+                clarity instead of assumptions.
               </p>
             </div>
           </div>

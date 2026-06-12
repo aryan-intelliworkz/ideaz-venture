@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { insights } from "@/lib/insights";
 import { notFound } from "next/navigation";
@@ -221,7 +221,7 @@ export default async function InsightDetailPage({ params }: Props) {
       <section className="py-8 md:py-12 border-t border-white/10">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="flex items-center justify-between">
-            <Link
+            <AppLink
               href={`/insights/${prevInsight.slug}`}
               className="flex items-center gap-3 group"
             >
@@ -237,8 +237,8 @@ export default async function InsightDetailPage({ params }: Props) {
                   {prevInsight.title}
                 </p>
               </div>
-            </Link>
-            <Link
+            </AppLink>
+            <AppLink
               href={`/insights/${nextInsight.slug}`}
               className="flex items-center gap-3 group text-right"
             >
@@ -254,7 +254,7 @@ export default async function InsightDetailPage({ params }: Props) {
                 size={18}
                 className="text-gray-400 group-hover:text-white transition-colors"
               />
-            </Link>
+            </AppLink>
           </div>
         </div>
       </section>

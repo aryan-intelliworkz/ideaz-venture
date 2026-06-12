@@ -1,4 +1,4 @@
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import Image from "next/image";
 import { ArrowUpRight, Phone, Mail } from "lucide-react";
 
@@ -46,7 +46,7 @@ export default function Footer() {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-x-8 gap-y-4">
               {links.map((link) => (
-                <Link
+                <AppLink
                   key={link.label}
                   href={link.href}
                   className="group flex items-center gap-2 pb-1 border-b border-white/15 hover:border-white/40 font-bricolage text-[1rem] md:text-[1.08rem] text-white/80 hover:text-white transition-colors"
@@ -55,7 +55,7 @@ export default function Footer() {
                   <span className="text-[1rem] ml-1 group-hover:text-white/90 transition-colors">
                     ↗
                   </span>
-                </Link>
+                </AppLink>
               ))}
             </div>
           </div>

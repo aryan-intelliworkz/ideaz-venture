@@ -14,23 +14,27 @@ export default function PageTransition({
     "enter",
   );
   const prevPathname = useRef(pathname);
+  // Ref avoids effect deps on `children` — updates during client nav cleared the exit timeout and left the shell at opacity 0.
+  const childrenRef = useRef(children);
+  childrenRef.current = children;
 
   useEffect(() => {
     if (pathname !== prevPathname.current) {
-      // Route changed — trigger exit, then swap content
       setTransitionStage("exit");
       const timeout = setTimeout(() => {
-        setDisplayChildren(children);
+        setDisplayChildren(childrenRef.current);
         window.scrollTo({ top: 0 });
         setTransitionStage("enter");
         prevPathname.current = pathname;
       }, 300);
       return () => clearTimeout(timeout);
-    } else {
-      // Same route (initial render or content update)
-      setDisplayChildren(children);
     }
-  }, [pathname, children]);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (pathname !== prevPathname.current) return;
+    setDisplayChildren(children);
+  }, [children, pathname]);
 
   return (
     <div

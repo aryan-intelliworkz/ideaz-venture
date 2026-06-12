@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import Image from "next/image";
 import { caseStudies } from "@/lib/case-studies";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
@@ -100,7 +100,7 @@ export default function CaseStudiesPreview() {
             className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5 auto-rows-fr"
           >
             {cards.map((cs, index) => (
-              <Link
+              <AppLink
                 href={`/case-studies/${cs.slug}`}
                 key={cs.slug}
                 className="reveal-child group border border-gray-600 rounded-[30px] p-5 md:p-6 lg:p-7 bg-bg-card hover:border-white/30 transition-all duration-300 flex flex-col"
@@ -124,7 +124,7 @@ export default function CaseStudiesPreview() {
                     </div>
                   ))}
                 </div>
-              </Link>
+              </AppLink>
             ))}
           </div>
         </div>

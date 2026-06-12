@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import { insights } from "@/lib/insights";
 import MasterLayout from "@/components/layout/MasterLayout";
 import RevealSection from "@/components/ui/RevealSection";
@@ -33,7 +33,7 @@ export default function InsightsPage() {
                 className="reveal-fade-up"
                 threshold={0.1}
               >
-                <Link
+                <AppLink
                   href={`/insights/${insight.slug}`}
                   className="group flex flex-col border border-white/35 overflow-hidden bg-[#0a0a0a] transition-all duration-300 h-full"
                 >
@@ -107,7 +107,7 @@ export default function InsightsPage() {
                       {insight.excerpt}
                     </p>
                   </div>
-                </Link>
+                </AppLink>
               </RevealSection>
             ))}
           </div>

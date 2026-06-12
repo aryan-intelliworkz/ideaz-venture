@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -151,12 +151,12 @@ export default function ServicesSection() {
                         className="w-20 h-20"
                       />
                     </div>
-                    <Link
+                    <AppLink
                       href={`/services/${service.slug}`}
                       onClick={(e) => e.stopPropagation()}
                     >
                       <ArrowButton />
-                    </Link>
+                    </AppLink>
                   </div>
 
                   <div className="mt-auto flex flex-col gap-4">
@@ -211,12 +211,12 @@ export default function ServicesSection() {
                         className="w-16 h-16"
                       />
                     </div>
-                    <Link
+                    <AppLink
                       href={`/services/${service.slug}`}
                       onClick={(e) => e.stopPropagation()}
                     >
                       <ArrowButton />
-                    </Link>
+                    </AppLink>
                   </div>
                   <h3 className="font-archivo font-normal text-[24px] leading-[1.09] text-white capitalize">
                     {service.title}
@@ -259,12 +259,12 @@ export default function ServicesSection() {
                         className="w-12 h-12"
                       />
                     </div>
-                    <Link
+                    <AppLink
                       href={`/services/${service.slug}`}
                       onClick={(e) => e.stopPropagation()}
                     >
                       <ArrowButton />
-                    </Link>
+                    </AppLink>
                   </div>
                   <h3 className="font-archivo font-normal text-[22px] leading-[1.09] text-white capitalize">
                     {service.title}

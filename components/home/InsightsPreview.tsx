@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { insights } from "@/lib/insights";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
@@ -25,17 +25,17 @@ export default function InsightsPreview() {
               Perspectives on startup execution, technology, and growth.
             </p>
           </div>
-          <Link
+          <AppLink
             href="/insights"
             className="mt-4 lg:mt-0 inline-flex items-center gap-2 font-bricolage text-[15px] md:text-[16px] lg:text-[18px] text-white hover:text-red transition-colors"
           >
             View All <ArrowRight size={18} />
-          </Link>
+          </AppLink>
         </div>
 
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {previewInsights.map((insight) => (
-            <Link
+            <AppLink
               key={insight.slug}
               href={`/insights/${insight.slug}`}
               className="reveal-child group border border-white/10 p-8 hover:border-white/20 transition-all duration-300"
@@ -65,7 +65,7 @@ export default function InsightsPreview() {
                   </span>
                 </div>
               </div>
-            </Link>
+            </AppLink>
           ))}
         </div>
       </div>

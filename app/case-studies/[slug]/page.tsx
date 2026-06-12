@@ -289,7 +289,7 @@
 
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import PrimaryButton from "@/components/ui/PrimaryButton";
@@ -531,7 +531,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       <section className="py-8 md:py-12 border-t border-white/10">
         <div className="mx-auto max-w-[1920px] px-6 md:px-8 lg:px-[160px]">
           <div className="flex items-center justify-between">
-            <Link
+            <AppLink
               href={`/case-studies/${prevCs.slug}`}
               className="flex items-center gap-3 group"
             >
@@ -547,9 +547,9 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                   {prevCs.title}
                 </p>
               </div>
-            </Link>
+            </AppLink>
 
-            <Link
+            <AppLink
               href={`/case-studies/${nextCs.slug}`}
               className="flex items-center gap-3 group text-right"
             >
@@ -565,7 +565,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
                 size={18}
                 className="text-gray-400 group-hover:text-white transition-colors"
               />
-            </Link>
+            </AppLink>
           </div>
         </div>
       </section>

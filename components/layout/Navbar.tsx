@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import Link from "next/link";
+import AppLink from "@/components/AppLink";
 import { usePathname } from "next/navigation";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -53,14 +53,14 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
     <nav className="fixed top-0 left-0 right-0 z-50 nav-bg backdrop-blur-md">
       <div className="mx-auto max-w-[1920px] flex items-center justify-between px-6 md:px-8 lg:px-[160px] h-[80px] xl:h-[90px] 2xl:h-[90px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0">
+        <AppLink href="/" className="flex items-center shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/logo.svg"
             alt="Ideaz Ventures"
             className="h-[70px] w-auto"
           />
-        </Link>
+        </AppLink>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-8 min-[1800px]:gap-[60px]">
@@ -79,7 +79,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                   onMouseEnter={handleServicesEnter}
                   onMouseLeave={handleServicesLeave}
                 >
-                  <Link
+                  <AppLink
                     href={link.href}
                     className={cn(
                       "group relative font-bricolage text-[14px] xl:text-[15px] 2xl:text-[16px] min-[1800px]:text-[18px] font-normal leading-[1.2] transition-all duration-300 flex items-center gap-1.5 nav-link",
@@ -103,7 +103,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                         isActive ? "w-full" : "w-0 group-hover:w-full",
                       )}
                     />
-                  </Link>
+                  </AppLink>
 
                   {/* Dropdown panel */}
                   <div
@@ -118,7 +118,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                       {serviceSubLinks.map((sub) => {
                         const subActive = pathname === sub.href;
                         return (
-                          <Link
+                          <AppLink
                             key={sub.href}
                             href={sub.href}
                             className={cn(
@@ -129,7 +129,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                             )}
                           >
                             {sub.label}
-                          </Link>
+                          </AppLink>
                         );
                       })}
                     </div>
@@ -140,7 +140,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
 
             /* ── Regular nav link ── */
             return (
-              <Link
+              <AppLink
                 key={link.href}
                 href={link.href}
                 className={cn(
@@ -158,7 +158,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                     isActive ? "w-full" : "w-0 group-hover:w-full",
                   )}
                 />
-              </Link>
+              </AppLink>
             );
           })}
         </div>
@@ -256,7 +256,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                       {serviceSubLinks.map((sub) => {
                         const subActive = pathname === sub.href;
                         return (
-                          <Link
+                          <AppLink
                             key={sub.href}
                             href={sub.href}
                             onClick={() => setMobileOpen(false)}
@@ -268,7 +268,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                             )}
                           >
                             {sub.label}
-                          </Link>
+                          </AppLink>
                         );
                       })}
                     </div>
@@ -278,7 +278,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
             }
 
             return (
-              <Link
+              <AppLink
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
@@ -289,7 +289,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               >
                 {link.label}
                 {isActive && <span className="w-2 h-2 bg-red shrink-0" />}
-              </Link>
+              </AppLink>
             );
           })}
           <PrimaryButton

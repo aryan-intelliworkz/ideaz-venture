@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
 
 const services = [
@@ -20,7 +19,6 @@ export default function ServiceDropdown({
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const router = useRouter();
 
   const current = services.find((s) => s.slug === currentSlug);
 
@@ -67,7 +65,8 @@ export default function ServiceDropdown({
               key={s.slug}
               onClick={() => {
                 setOpen(false);
-                if (!isActive) router.push(`/services/${s.slug}`);
+                if (!isActive)
+                  window.location.assign(`/services/${s.slug}`);
               }}
               className={`w-full text-left px-5 py-3.5 font-bricolage text-[14px] md:text-[15px] transition-colors cursor-pointer ${
                 isActive
